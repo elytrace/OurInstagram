@@ -1,0 +1,34 @@
+.download-insta{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+}
+.get-the-app-text, .get-the-app-link{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+
+    height: 10%;
+}
+.get-the-app-text{
+    font-size: 1.6vh;
+}
+.get-the-app-link{
+    height: 60%;
+}
+.ggplay-download-link, .microsoft-download-link {
+    height: 45%;
+}
+.ggplay-navigate, .microsoft-navigate {
+    height: 100%;
+    border-radius: 5px;
+}
+.microsoft-navigate {
+    margin-left: 5px;
+}
