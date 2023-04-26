@@ -16,31 +16,21 @@ public class LoginController : Controller
         _db = db;
     }
     
-    public IActionResult Login()
+    public IActionResult Index()
     {
         return View();
     }
 
-    // public IActionResult Signin(int? userID)
-    // {
-    //     user = new User();
-    //     if (userID == null)
-    //     {
-    //         return View;
-    //     }
-    // }
-    
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public IActionResult LoginManually()
+    public IActionResult Login()
     {
         //TODO: add authentication
         if (ModelState.IsValid)
         {
-            return View("~/Views/Home/Index.cshtml");
+            
         }
-
-        return View("Login");
+        return RedirectToAction("Index", "Home");
     }
     
     [HttpPost]
@@ -50,9 +40,9 @@ public class LoginController : Controller
         //TODO: add authentication
         if (ModelState.IsValid)
         {
-            return View("~/Views/Home/Index.cshtml");
+            
         }
-        return View("Login");
+        return RedirectToAction("Index", "Home");
     }
     
     [HttpPost]
