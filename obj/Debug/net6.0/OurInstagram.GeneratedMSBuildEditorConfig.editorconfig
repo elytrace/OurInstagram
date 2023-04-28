@@ -8,45 +8,41 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = OurInstagram
 build_property.RootNamespace = OurInstagram
-build_property.ProjectDir = D:\LinhTinh\OurInstagram\
+build_property.ProjectDir = E:\OurInstagram\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = true
-build_property.MSBuildProjectDirectory = D:\LinhTinh\OurInstagram
+build_property.MSBuildProjectDirectory = E:\OurInstagram
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/LinhTinh/OurInstagram/Views/Home/Index.cshtml]
+[E:/OurInstagram/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/LinhTinh/OurInstagram/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/LinhTinh/OurInstagram/Views/Login/Index.cshtml]
+[E:/OurInstagram/Views/Login/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/LinhTinh/OurInstagram/Views/Login/Signup.cshtml]
+[E:/OurInstagram/Views/Login/Signup.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cU2lnbnVwLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/LinhTinh/OurInstagram/Views/Shared/Error.cshtml]
+[E:/OurInstagram/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/LinhTinh/OurInstagram/Views/Shared/_ValidationScriptsPartial.cshtml]
+[E:/OurInstagram/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/LinhTinh/OurInstagram/Views/_ViewImports.cshtml]
+[E:/OurInstagram/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/LinhTinh/OurInstagram/Views/_ViewStart.cshtml]
+[E:/OurInstagram/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/LinhTinh/OurInstagram/Views/Shared/_Layout.cshtml]
+[E:/OurInstagram/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-z9or0uau0k

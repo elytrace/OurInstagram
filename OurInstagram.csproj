@@ -115,7 +115,6 @@
       <None Include="wwwroot\Resources\moon.png" />
       <None Include="wwwroot\Resources\more.png" />
       <None Include="wwwroot\Resources\navigate_microsoft.png" />
-      <None Include="wwwroot\Resources\navigation_ggplay.png" />
       <None Include="wwwroot\Resources\photo.png" />
       <None Include="wwwroot\Resources\plus.png" />
       <None Include="wwwroot\Resources\post.png" />

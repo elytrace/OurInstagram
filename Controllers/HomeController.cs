@@ -18,9 +18,10 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult Privacy()
+    [HttpGet]
+    public IActionResult Search()
     {
-        return View();
+        return View("Index");
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

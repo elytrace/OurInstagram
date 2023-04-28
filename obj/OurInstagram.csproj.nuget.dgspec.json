@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\LinhTinh\\OurInstagram\\OurInstagram.csproj": {}
+    "E:\\OurInstagram\\OurInstagram.csproj": {}
   },
   "projects": {
-    "D:\\LinhTinh\\OurInstagram\\OurInstagram.csproj": {
+    "E:\\OurInstagram\\OurInstagram.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\LinhTinh\\OurInstagram\\OurInstagram.csproj",
+        "projectUniqueName": "E:\\OurInstagram\\OurInstagram.csproj",
         "projectName": "OurInstagram",
-        "projectPath": "D:\\LinhTinh\\OurInstagram\\OurInstagram.csproj",
-        "packagesPath": "C:\\Users\\9999\\.nuget\\packages\\",
-        "outputPath": "D:\\LinhTinh\\OurInstagram\\obj\\",
+        "projectPath": "E:\\OurInstagram\\OurInstagram.csproj",
+        "packagesPath": "C:\\Users\\hieum\\.nuget\\packages\\",
+        "outputPath": "E:\\OurInstagram\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\9999\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\hieum\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -65,7 +65,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -77,7 +78,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
