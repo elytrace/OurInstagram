@@ -127,7 +127,6 @@
       <None Include="wwwroot\Resources\screenshot4.png" />
       <None Include="wwwroot\Resources\send.png" />
       <None Include="wwwroot\Resources\sendmes.png" />
-      <None Include="wwwroot\Resources\settings.png" />
       <None Include="wwwroot\Resources\tag.png" />
       <None Include="wwwroot\Resources\time.png" />
     </ItemGroup>

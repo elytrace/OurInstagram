@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "vUhh5sqP80J/+ra5145ZtGg0MfeHYd9qhJgzNloX8as=",
+  "Hash": "/zUxyBlTxiefGf8plJZ53FcyQbDNuNK+Oa+2TqSL/jA=",
   "Source": "OurInstagram",
   "BasePath": "_content/OurInstagram",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "OurInstagram\\wwwroot",
       "Source": "OurInstagram",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "E:\\OurInstagram\\obj\\Debug\\net6.0\\scopedcss\\bundle\\OurInstagram.styles.css",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\obj\\Debug\\net6.0\\scopedcss\\bundle\\OurInstagram.styles.css",
       "SourceId": "OurInstagram",
       "SourceType": "Computed",
-      "ContentRoot": "E:\\OurInstagram\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "OurInstagram.styles.css",
       "AssetKind": "All",
@@ -31,13 +31,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "E:\\OurInstagram\\obj\\Debug\\net6.0\\scopedcss\\bundle\\OurInstagram.styles.css"
+      "OriginalItemSpec": "D:\\LinhTinh\\OurInstagram\\obj\\Debug\\net6.0\\scopedcss\\bundle\\OurInstagram.styles.css"
     },
     {
-      "Identity": "E:\\OurInstagram\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\OurInstagram.bundle.scp.css",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\OurInstagram.bundle.scp.css",
       "SourceId": "OurInstagram",
       "SourceType": "Computed",
-      "ContentRoot": "E:\\OurInstagram\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "OurInstagram.bundle.scp.css",
       "AssetKind": "All",
@@ -48,15 +48,15 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "E:\\OurInstagram\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\OurInstagram.bundle.scp.css"
+      "OriginalItemSpec": "D:\\LinhTinh\\OurInstagram\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\OurInstagram.bundle.scp.css"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\css\\Home\\styles.css",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\css\\Home\\color.css",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
-      "RelativePath": "css/Home/styles.css",
+      "RelativePath": "css/Home/color.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -65,13 +65,115 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\Home\\styles.css"
+      "OriginalItemSpec": "wwwroot\\css\\Home\\color.css"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\css\\Login\\download.css",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\css\\Home\\createPost.css",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
+      "BasePath": "_content/OurInstagram",
+      "RelativePath": "css/Home/createPost.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Home\\createPost.css"
+    },
+    {
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\css\\Home\\instagram.css",
+      "SourceId": "OurInstagram",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
+      "BasePath": "_content/OurInstagram",
+      "RelativePath": "css/Home/instagram.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Home\\instagram.css"
+    },
+    {
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\css\\Home\\loading.css",
+      "SourceId": "OurInstagram",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
+      "BasePath": "_content/OurInstagram",
+      "RelativePath": "css/Home/loading.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Home\\loading.css"
+    },
+    {
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\css\\Home\\navbar.css",
+      "SourceId": "OurInstagram",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
+      "BasePath": "_content/OurInstagram",
+      "RelativePath": "css/Home/navbar.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Home\\navbar.css"
+    },
+    {
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\css\\Home\\post_home.css",
+      "SourceId": "OurInstagram",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
+      "BasePath": "_content/OurInstagram",
+      "RelativePath": "css/Home/post_home.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Home\\post_home.css"
+    },
+    {
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\css\\Home\\scrollbar.css",
+      "SourceId": "OurInstagram",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
+      "BasePath": "_content/OurInstagram",
+      "RelativePath": "css/Home/scrollbar.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Home\\scrollbar.css"
+    },
+    {
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\css\\Login\\download.css",
+      "SourceId": "OurInstagram",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "css/Login/download.css",
       "AssetKind": "All",
@@ -85,10 +187,10 @@
       "OriginalItemSpec": "wwwroot\\css\\Login\\download.css"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\css\\Login\\login.css",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\css\\Login\\login.css",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "css/Login/login.css",
       "AssetKind": "All",
@@ -102,10 +204,10 @@
       "OriginalItemSpec": "wwwroot\\css\\Login\\login.css"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\css\\Login\\main.css",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\css\\Login\\main.css",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "css/Login/main.css",
       "AssetKind": "All",
@@ -119,10 +221,10 @@
       "OriginalItemSpec": "wwwroot\\css\\Login\\main.css"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\css\\Login\\phone.css",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\css\\Login\\phone.css",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "css/Login/phone.css",
       "AssetKind": "All",
@@ -136,10 +238,10 @@
       "OriginalItemSpec": "wwwroot\\css\\Login\\phone.css"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\css\\Login\\signup.css",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\css\\Login\\signup.css",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "css/Login/signup.css",
       "AssetKind": "All",
@@ -153,10 +255,10 @@
       "OriginalItemSpec": "wwwroot\\css\\Login\\signup.css"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\favicon.ico",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\favicon.ico",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -170,10 +272,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\62216-instagram-logo.json",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\62216-instagram-logo.json",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/62216-instagram-logo.json",
       "AssetKind": "All",
@@ -187,10 +289,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\62216-instagram-logo.json"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\accept.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\accept.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/accept.png",
       "AssetKind": "All",
@@ -204,10 +306,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\accept.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\back.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\back.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/back.png",
       "AssetKind": "All",
@@ -221,10 +323,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\back.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\bookmark.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\bookmark.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/bookmark.png",
       "AssetKind": "All",
@@ -238,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\bookmark.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\chat.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\chat.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/chat.png",
       "AssetKind": "All",
@@ -255,10 +357,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\chat.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\close.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\close.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/close.png",
       "AssetKind": "All",
@@ -272,10 +374,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\close.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\comment_home.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\comment_home.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/comment_home.png",
       "AssetKind": "All",
@@ -289,10 +391,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\comment_home.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\comment_post.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\comment_post.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/comment_post.png",
       "AssetKind": "All",
@@ -306,10 +408,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\comment_post.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\comment.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\comment.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/comment.png",
       "AssetKind": "All",
@@ -323,10 +425,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\comment.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\compass-regular.svg",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\compass-regular.svg",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/compass-regular.svg",
       "AssetKind": "All",
@@ -340,10 +442,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\compass-regular.svg"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\compass-solid.svg",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\compass-solid.svg",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/compass-solid.svg",
       "AssetKind": "All",
@@ -357,10 +459,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\compass-solid.svg"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\create_chat.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\create_chat.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/create_chat.png",
       "AssetKind": "All",
@@ -374,10 +476,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\create_chat.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\cross.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\cross.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/cross.png",
       "AssetKind": "All",
@@ -391,10 +493,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\cross.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\default_ava.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\default_ava.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/default_ava.png",
       "AssetKind": "All",
@@ -408,10 +510,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\default_ava.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\Default_pfp.svg",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\Default_pfp.svg",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/Default_pfp.svg",
       "AssetKind": "All",
@@ -425,10 +527,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Default_pfp.svg"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\ellipsis.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\ellipsis.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/ellipsis.png",
       "AssetKind": "All",
@@ -442,10 +544,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\ellipsis.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\facebooklogo.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\facebooklogo.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/facebooklogo.png",
       "AssetKind": "All",
@@ -459,10 +561,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\facebooklogo.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\heart_fill.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\heart_fill.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/heart_fill.png",
       "AssetKind": "All",
@@ -476,10 +578,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\heart_fill.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\heart_liked.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\heart_liked.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/heart_liked.png",
       "AssetKind": "All",
@@ -493,10 +595,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\heart_liked.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\heart.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\heart.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/heart.png",
       "AssetKind": "All",
@@ -510,10 +612,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\heart.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\home_blank.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\home_blank.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/home_blank.png",
       "AssetKind": "All",
@@ -527,10 +629,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\home_blank.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\home_fill.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\home_fill.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/home_fill.png",
       "AssetKind": "All",
@@ -544,10 +646,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\home_fill.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\home.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\home.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/home.png",
       "AssetKind": "All",
@@ -561,10 +663,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\home.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\house-solid.svg",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\house-solid.svg",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/house-solid.svg",
       "AssetKind": "All",
@@ -578,10 +680,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\house-solid.svg"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\icon_burger.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\icon_burger.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/icon_burger.png",
       "AssetKind": "All",
@@ -595,10 +697,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\icon_burger.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\icon_fb_messenger.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\icon_fb_messenger.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/icon_fb_messenger.png",
       "AssetKind": "All",
@@ -612,10 +714,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\icon_fb_messenger.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\image.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\image.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/image.png",
       "AssetKind": "All",
@@ -629,10 +731,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\image.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\insta_logo_frame.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\insta_logo_frame.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/insta_logo_frame.png",
       "AssetKind": "All",
@@ -646,10 +748,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\insta_logo_frame.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\insta_logo.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\insta_logo.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/insta_logo.png",
       "AssetKind": "All",
@@ -663,10 +765,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\insta_logo.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\insta_title.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\insta_title.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/insta_title.png",
       "AssetKind": "All",
@@ -680,10 +782,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\insta_title.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\instagram-reels-icon.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\instagram-reels-icon.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/instagram-reels-icon.png",
       "AssetKind": "All",
@@ -697,10 +799,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\instagram-reels-icon.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\Instagram.drawio",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\Instagram.drawio",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/Instagram.drawio",
       "AssetKind": "All",
@@ -714,10 +816,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\Instagram.drawio"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\like_favorite_heart_5759.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\like_favorite_heart_5759.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/like_favorite_heart_5759.png",
       "AssetKind": "All",
@@ -731,10 +833,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\like_favorite_heart_5759.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\like.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\like.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/like.png",
       "AssetKind": "All",
@@ -748,10 +850,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\like.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\login_pic1.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\login_pic1.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/login_pic1.png",
       "AssetKind": "All",
@@ -765,10 +867,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\login_pic1.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\love.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\love.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/love.png",
       "AssetKind": "All",
@@ -782,10 +884,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\love.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\magnifying-glass-solid.svg",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\magnifying-glass-solid.svg",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/magnifying-glass-solid.svg",
       "AssetKind": "All",
@@ -799,10 +901,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\magnifying-glass-solid.svg"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\messenger.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\messenger.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/messenger.png",
       "AssetKind": "All",
@@ -816,10 +918,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\messenger.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\moon.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\moon.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/moon.png",
       "AssetKind": "All",
@@ -833,10 +935,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\moon.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\more.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\more.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/more.png",
       "AssetKind": "All",
@@ -850,10 +952,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\more.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\navigate_ggplay.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\navigate_ggplay.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/navigate_ggplay.png",
       "AssetKind": "All",
@@ -867,10 +969,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\navigate_ggplay.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\navigate_microsoft.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\navigate_microsoft.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/navigate_microsoft.png",
       "AssetKind": "All",
@@ -884,10 +986,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\navigate_microsoft.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\phone_frame1.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\phone_frame1.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/phone_frame1.png",
       "AssetKind": "All",
@@ -901,10 +1003,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\phone_frame1.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\phone_frame2.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\phone_frame2.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/phone_frame2.png",
       "AssetKind": "All",
@@ -918,10 +1020,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\phone_frame2.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\photo.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\photo.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/photo.png",
       "AssetKind": "All",
@@ -935,10 +1037,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\photo.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\plus.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\plus.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/plus.png",
       "AssetKind": "All",
@@ -952,10 +1054,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\plus.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\post.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\post.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/post.png",
       "AssetKind": "All",
@@ -969,10 +1071,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\post.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\problem.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\problem.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/problem.png",
       "AssetKind": "All",
@@ -986,10 +1088,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\problem.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\profile_blank.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\profile_blank.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/profile_blank.png",
       "AssetKind": "All",
@@ -1003,10 +1105,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\profile_blank.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\profile_fill.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\profile_fill.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/profile_fill.png",
       "AssetKind": "All",
@@ -1020,10 +1122,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\profile_fill.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\profile.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\profile.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/profile.png",
       "AssetKind": "All",
@@ -1037,10 +1139,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\profile.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\reel.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\reel.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/reel.png",
       "AssetKind": "All",
@@ -1054,10 +1156,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\reel.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\reply.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\reply.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/reply.png",
       "AssetKind": "All",
@@ -1071,10 +1173,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\reply.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\report.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\report.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/report.png",
       "AssetKind": "All",
@@ -1088,10 +1190,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\report.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\screenshot2.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\screenshot2.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/screenshot2.png",
       "AssetKind": "All",
@@ -1105,10 +1207,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\screenshot2.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\screenshot3.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\screenshot3.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/screenshot3.png",
       "AssetKind": "All",
@@ -1122,10 +1224,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\screenshot3.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\screenshot4.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\screenshot4.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/screenshot4.png",
       "AssetKind": "All",
@@ -1139,10 +1241,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\screenshot4.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\search_blank.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\search_blank.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/search_blank.png",
       "AssetKind": "All",
@@ -1156,10 +1258,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\search_blank.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\search_fill.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\search_fill.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/search_fill.png",
       "AssetKind": "All",
@@ -1173,10 +1275,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\search_fill.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\search.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\search.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/search.png",
       "AssetKind": "All",
@@ -1190,10 +1292,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\search.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\send.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\send.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/send.png",
       "AssetKind": "All",
@@ -1207,10 +1309,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\send.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\sendmes.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\sendmes.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/sendmes.png",
       "AssetKind": "All",
@@ -1224,10 +1326,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\sendmes.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\setting_blank.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\setting_blank.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/setting_blank.png",
       "AssetKind": "All",
@@ -1241,10 +1343,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\setting_blank.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\setting_fill.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\setting_fill.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/setting_fill.png",
       "AssetKind": "All",
@@ -1258,10 +1360,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\setting_fill.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\setting.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\setting.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/setting.png",
       "AssetKind": "All",
@@ -1275,10 +1377,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\setting.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\tag.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\tag.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/tag.png",
       "AssetKind": "All",
@@ -1292,10 +1394,10 @@
       "OriginalItemSpec": "wwwroot\\Resources\\tag.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\time.png",
+      "Identity": "D:\\LinhTinh\\OurInstagram\\wwwroot\\Resources\\time.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "ContentRoot": "D:\\LinhTinh\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
       "RelativePath": "Resources/time.png",
       "AssetKind": "All",
