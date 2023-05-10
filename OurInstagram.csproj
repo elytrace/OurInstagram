@@ -72,6 +72,17 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="Views\Hiep_Home" />
+      <Folder Include="Views\Khang_Profile" />
+      <Folder Include="Views\Nguyen_Login" />
+      <Folder Include="wwwroot\css\Hiep_Home" />
+      <Folder Include="wwwroot\css\Nguyen_Login" />
+      <Folder Include="wwwroot\css\Hieu_NavBar" />
+      <Folder Include="wwwroot\css\Khang_Profile" />
+      <Folder Include="wwwroot\js\Hiep_Home" />
+      <Folder Include="wwwroot\js\Nguyen_Login" />
+      <Folder Include="wwwroot\js\Hieu_NavBar" />
+      <Folder Include="wwwroot\js\Khang_Profile" />
       <Folder Include="wwwroot\lib" />
     </ItemGroup>
 
@@ -114,7 +125,6 @@
       <None Include="wwwroot\Resources\moon.png" />
       <None Include="wwwroot\Resources\more.png" />
       <None Include="wwwroot\Resources\navigate_microsoft.png" />
-      <None Include="wwwroot\Resources\navigation_ggplay.png" />
       <None Include="wwwroot\Resources\photo.png" />
       <None Include="wwwroot\Resources\plus.png" />
       <None Include="wwwroot\Resources\post.png" />
@@ -127,7 +137,6 @@
       <None Include="wwwroot\Resources\screenshot4.png" />
       <None Include="wwwroot\Resources\send.png" />
       <None Include="wwwroot\Resources\sendmes.png" />
-      <None Include="wwwroot\Resources\settings.png" />
       <None Include="wwwroot\Resources\tag.png" />
       <None Include="wwwroot\Resources\time.png" />
     </ItemGroup>

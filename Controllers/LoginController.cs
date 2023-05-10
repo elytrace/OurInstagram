@@ -8,58 +8,11 @@ public class LoginController : Controller
 {
     private readonly OurDbContext _db;
 
-    [BindProperty]
-    public User user { get; set; }
-    
-    public LoginController(OurDbContext db)
-    {
-        _db = db;
-    }
-    
-    public IActionResult Login()
-    {
-        return View();
-    }
+    private readonly ILogger<LoginController> _logger;
 
-    // public IActionResult Signin(int? userID)
-    // {
-    //     user = new User();
-    //     if (userID == null)
-    //     {
-    //         return View;
-    //     }
-    // }
-    
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public IActionResult LoginManually()
+    public LoginController(ILogger<LoginController> logger)
     {
-        //TODO: add authentication
-        if (ModelState.IsValid)
-        {
-            return View("~/Views/Home/Index.cshtml");
-        }
-
-        return View("Login");
-    }
-    
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public IActionResult LoginWithFacebook()
-    {
-        //TODO: add authentication
-        if (ModelState.IsValid)
-        {
-            return View("~/Views/Home/Index.cshtml");
-        }
-        return View("Login");
-    }
-    
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public IActionResult Signup()
-    {
-        return View("Signup");
+        _logger = logger;
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
