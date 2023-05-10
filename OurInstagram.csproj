@@ -74,7 +74,6 @@
     <ItemGroup>
       <Folder Include="wwwroot\css\Hiep_Home" />
       <Folder Include="wwwroot\css\Nguyen_Login" />
-      <Folder Include="wwwroot\css\Hieu_NavBar" />
       <Folder Include="wwwroot\css\Khang_Profile" />
       <Folder Include="wwwroot\js\Hiep_Home" />
       <Folder Include="wwwroot\js\Nguyen_Login" />
