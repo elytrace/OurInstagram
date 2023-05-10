@@ -72,9 +72,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Views\Hiep_Home" />
-      <Folder Include="Views\Khang_Profile" />
-      <Folder Include="Views\Nguyen_Login" />
       <Folder Include="wwwroot\css\Hiep_Home" />
       <Folder Include="wwwroot\css\Nguyen_Login" />
       <Folder Include="wwwroot\css\Hieu_NavBar" />

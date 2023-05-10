@@ -15,16 +15,16 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = D:\LinhTinh\OurInstagram
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/LinhTinh/OurInstagram/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+[D:/LinhTinh/OurInstagram/Views/Hiep_Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGllcF9Ib21lXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/LinhTinh/OurInstagram/Views/Login/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
+[D:/LinhTinh/OurInstagram/Views/Khang_Profile/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2hhbmdfUHJvZmlsZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/LinhTinh/OurInstagram/Views/Login/Signup.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cU2lnbnVwLmNzaHRtbA==
+[D:/LinhTinh/OurInstagram/Views/Nguyen_Login/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmd1eWVuX0xvZ2luXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/LinhTinh/OurInstagram/Views/Shared/Error.cshtml]
@@ -43,6 +43,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/LinhTinh/OurInstagram/Views/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-z9or0uau0k
+[D:/LinhTinh/OurInstagram/Views/Shared/_Navbar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9OYXZiYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-nb7zcff26p
