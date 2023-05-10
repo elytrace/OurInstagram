@@ -1,3 +1,5 @@
+// IGNORED
+
 namespace OurInstagram.Models;
 
 public class ErrorViewModel

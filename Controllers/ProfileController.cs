@@ -4,11 +4,11 @@ using OurInstagram.Models;
 
 namespace OurInstagram.Controllers;
 
-public class HomeController : Controller
+public class ProfileController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
+    private readonly ILogger<ProfileController> _logger;
 
-    public HomeController(ILogger<HomeController> logger)
+    public ProfileController(ILogger<ProfileController> logger)
     {
         _logger = logger;
     }

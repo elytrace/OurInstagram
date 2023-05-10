@@ -4,11 +4,11 @@ using OurInstagram.Models;
 
 namespace OurInstagram.Controllers;
 
-public class HomeController : Controller
+public class NavBarControllers : Controller
 {
-    private readonly ILogger<HomeController> _logger;
+    private readonly ILogger<NavBarControllers> _logger;
 
-    public HomeController(ILogger<HomeController> logger)
+    public NavBarControllers(ILogger<NavBarControllers> logger)
     {
         _logger = logger;
     }
