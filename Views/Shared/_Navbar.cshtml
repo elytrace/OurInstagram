@@ -7,140 +7,79 @@
     <title>@ViewData["Title"] - Our Instagram</title>
 
     <link rel="stylesheet" type="text/css"  href="css/Hieu_NavBar/color.css"/>
-    <link rel="stylesheet" type="text/css"  href="css/Hieu_NavBar/styles.css"/>
+    <link rel="stylesheet" type="text/css"  href="css/Hieu_NavBar/mystyles.css"/>
+    
+    <script src="js/Hieu_NavBar/search.js" defer></script>
 </head>
 <body>
-<div class="navbarDiv">
-    <div class="Dashboard_navBar">
-        <div class="Dashboard_navBar-Logo">
-            <img src="Resources/insta_title.png" class = "logo-primary">
-            <img src="Resources/insta_logo_frame.png" class="logo-secondary">
+<div class="navbar">
+    <div class="main_panel">
+        <div class="section_logo">
+            <img class="title" alt="Instagram Title" src="Resources/insta_title.png"/>
+            <img class="logo" alt="Instagram Logo" src="Resources/insta_logo_frame.png"/>
         </div>
-        <div class="Dashboard_navBar-functions">
-            <a class="functionDiv" href="/home">
-                <div class="aFuntion">
-                    <div class="logo-funtion">
-                        <img src="Resources/house-solid.svg" class="img_function">
-                    </div>
-                    <p class="aFuntion_name pageLoading">Home</p>
-                </div>
+        
+        <div class="section_function">
+            @* Home *@
+            <a class="no_underline function" asp-area="" asp-controller="NavBar" asp-action="ToHome">
+                <img alt="Home Icon" src="Resources/home_fill.png" class="function_img">
+                <p class="function_name current_function">Home</p>
             </a>
-            <div class="aFuntion search">
-                <div class="logo-funtion">
-                    <img src="Resources/magnifying-glass-solid.svg" class="img_function">
-                </div>
-                <p class="aFuntion_name">Search</p>
+            @* Search *@
+            <div class="function search">
+                <img alt="Search Icon" src="Resources/search_blank.png" class="function_img">
+                <p class="function_name">Search</p>
             </div>
-            <a class="functionDiv" href="/commingSoon">
-                <div class="aFuntion">
-                    <div class="logo-funtion">
-                        <img src="Resources/compass-regular.svg" class="img_function">
-                    </div>
-                    <p class="aFuntion_name">Explore</p>
-                </div>
+            @* Explore *@
+            <a class="no_underline function" asp-area="" asp-controller="NavBar" asp-action="ToExplore">
+                <img alt="Explore Icon" src="Resources/reel_blank.png" class="function_img">
+                <p class="function_name">Explore</p>
             </a>
-            <a class="functionDiv" href="/commingSoon">
-                <div class="aFuntion">
-                    <div class="logo-funtion">
-                        <img src="Resources/instagram-reels-icon.png" class="img_function">
-                    </div>
-                    <p class="aFuntion_name">Reels</p>
-                </div>
-            </a>
-            <a class="functionDiv" href="/message">
-                <div class="aFuntion">
-                    <div class="logo-funtion">
-                        <img src="Resources/messenger.png" class="img_function">
-                    </div>
-                    <p class="aFuntion_name">Messages</p>
-                </div>
-            </a>
-            <div class="aFuntion notification">
-                <div class="logo-funtion">
-                    <img src="Resources/heart.png" class="img_function">
-                </div>
-                <p class="aFuntion_name">Notifications</p>
+            @* Message *@
+            <div class="function">
+                <img alt="Search Icon" src="Resources/messenger.png" class="function_img">
+                <p class="function_name">Message</p>
             </div>
-            <div class="aFuntion">
-                <div class="logo-funtion">
-                    <img src="Resources/more.png" class="img_function">
-                </div>
-                <p class="aFuntion_name">Create</p>
+            @* Notification *@
+            <div class="function">
+                <img alt="Notification Icon" src="Resources/heart.png" class="function_img">
+                <p class="function_name">Notification</p>
             </div>
-            <a class="functionDiv toProfile" href="/">
-                <div class="aFuntion">
-                    <div class="logo-funtion avatarDiv">
-                        <img src="" class="img_function avatar">
-                    </div>
-                    <p class="aFuntion_name">Profile</p>
-                </div>
+            @* Create *@
+            <div class="function">
+                <img alt="Create Icon" src="Resources/plus.png" class="function_img">
+                <p class="function_name">Create</p>
+            </div>
+            @* Profile *@
+            <a class="no_underline function" asp-area="" asp-controller="NavBar" asp-action="ToProfile">
+                <img alt="Profile Icon" src="Resources/default_ava.png" class="function_img">
+                <p class="function_name">Profile</p>
             </a>
         </div>
-        <div class="Dashboard_navBar-more">
-            <div class="logo-funtion">
-                <img src="Resources/icon_burger.png" class="img_more">
-            </div>
-            <p class="more_text">More</p>
-            <div class="moreClicked hideMenu">
-                <div class="moreSide firstSide">
-                    <a class="aFunctionsInSide" href="/edit">
-                        <p class="functionName">Setting</p>
-                        <img src="Resources/setting_blank.png" class="iconFunction">
-                    </a>
-                    <div class="aFunctionsInSide">
-                        <p class="functionName">Saved</p>
-                        <img src="Resources/bookmark.png" class="iconFunction">
-                    </div>
-                    <div class="aFunctionsInSide">
-                        <p class="functionName">Switch appearance</p>
-                        <img src="Resources/moon.png" class="iconFunction">
-                    </div>
-                    <div class="aFunctionsInSide">
-                        <p class="functionName">Your activities</p>
-                        <img src="Resources/time.png" class="iconFunction">
-                    </div>
-                    <div class="aFunctionsInSide">
-                        <p class="functionName">Report a problem</p>
-                        <img src="Resources/report.png" class="iconFunction">
-                    </div>
-
-                </div>
-                <div class="moreSide secondSide">
-                    <a class="aFunctionsInSide" href="/login">
-                        <p class="functionName">Switch Account</p>
-                    </a>
-                    <a class="aFunctionsInSide" href="/login">
-                        <p class="functionName">Log out</p>
-                    </a>
-                </div>
-            </div>
+        
+        @* Section 'More' *@
+        <div class="function section_more">
+            <img alt="More Icon" src="Resources/icon_burger.png" class="function_img">
+            <p class="function_name">More</p>
         </div>
     </div>
-    <div class="searchPane hideSearch">
-        <div class="searchDiv">
-            <p class="searchText">Search</p>
-            <input type="text" placeholder="Search" class="searchInput">
+    
+    <div class="search_panel hide" name="sub_panel">
+        <div class="section_search">
+            <p class="search_text">Search</p>
+            <input type="text" placeholder="Search" class="search_input">
         </div>
-        <div class="searchRecentAndResult">
-            <div class="recentSearch showMenu" >
-                <p class="recentText">Recent</p>
-                <div class="resultRecent">
-
-                </div>
+        <div class="section_result">
+            <div class="recent_search show" >
+                <p class="recent_text">Recent</p>
+                <div class="recent_result"></div>
             </div>
-            <div class="resultSearch hideMenu">
-
-            </div>                    
+            <div class="result_search hide"></div> 
         </div>
-
     </div>
-    <div class="notificationPane hide">
-        <div class="headerNotification">
-            <p class="headerTextNotification">Notifications</p>
-        </div>
-        <div class="listNotification">
 
-        </div>
+    <div class="notify_panel hide" name="sub_panel">
+        
     </div>
 </div>
     

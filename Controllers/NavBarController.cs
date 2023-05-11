@@ -4,11 +4,12 @@ using OurInstagram.Models;
 
 namespace OurInstagram.Controllers;
 
-public class NavBarControllers : Controller
+public class NavBarController : Controller
 {
-    private readonly ILogger<NavBarControllers> _logger;
+    private readonly ILogger<NavBarController> _logger;
+    private bool isSearching = false;
 
-    public NavBarControllers(ILogger<NavBarControllers> logger)
+    public NavBarController(ILogger<NavBarController> logger)
     {
         _logger = logger;
     }
@@ -17,5 +18,20 @@ public class NavBarControllers : Controller
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+    }
+
+    public IActionResult ToHome()
+    {
+        return RedirectToAction("Index", "Home", isSearching);
+    }
+
+    public IActionResult ToExplore()
+    {
+        return RedirectToAction("Explore", "Home");
+    }
+
+    public IActionResult ToProfile()
+    {
+        return RedirectToAction("Index", "Profile");
     }
 }

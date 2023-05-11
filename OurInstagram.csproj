@@ -77,7 +77,6 @@
       <Folder Include="wwwroot\css\Khang_Profile" />
       <Folder Include="wwwroot\js\Hiep_Home" />
       <Folder Include="wwwroot\js\Nguyen_Login" />
-      <Folder Include="wwwroot\js\Hieu_NavBar" />
       <Folder Include="wwwroot\js\Khang_Profile" />
       <Folder Include="wwwroot\lib" />
     </ItemGroup>
