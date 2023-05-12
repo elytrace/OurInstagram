@@ -1,69 +1,55 @@
-body {
-    /*height: fit-content;*/
-    /*min-width: 100%;*/
-    /*background-color: var(--Color2);*/
-    /*overflow-x: hidden;*/
-}
-.navbarDiv {
+.navbar {
     position: fixed;
     height: 100vh;
     width: fit-content;
     z-index: 1;
     top: 0;
     left: 0;
-
+    
     display: flex;
     flex-direction: row;
 }
-
-.Dashboard_navBar{
+/************************************ MAIN ************************************/
+.main_panel {
     display: flex;
     flex-direction: column;
-
     height: 100%;
     padding: 8px 12px 20px 12px;
     background-color: var(--Color1);
     border-right: 1px solid var(--Color3);
-    width: 310px;
-    z-index: 1;
+    width: 250px;
 }
-.DashboardPane{
-    height: fit-content;
-    min-height: 500px;
-    width: 850px;
-    margin: 30px auto 0px;
-
-    display: flex;
-    flex-direction: row;
-}
-.Dashboard_navBar-Logo{
+.section_logo {
     position: relative;
     width: 100%;
-    height: 10%;
+    height: 20%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-
+    justify-content: flex-start;
+    align-items: center;
 }
-.logo-primary, .logo-secondary{
-    position: absolute;
-}
-.logo-primary{
+.title {
     padding: 10px;
-    width: 110px;
+    width: 80%;
 }
-.logo-secondary{
-    display: none;
+.logo {
+    display: block;
+    width: 20%;
 }
-.Dashboard_navBar-functions{
+
+.section_function {
     display: flex;
     flex-direction: column;
     position: relative;
     width: 100%;
-    height: 80%;
+    height: 70%;
 }
-
-.aFuntion, .Dashboard_navBar-more{
+.no_underline {
+    text-decoration: none;
+    width: 100%;
+    color: var(--text1);
+}
+.function {
     height: 30px;
     margin-bottom: 10px;
     padding: 10px;
@@ -72,541 +58,242 @@ body {
     flex-direction: row;
     align-items: center;
     transition: 0.2s;
-
     position: relative;
+    user-select: none;
 }
-.functionDiv{
-    text-decoration: none;
-    color: var(--text1);
-    width: 100%;
+.function_logo {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 35px;
+    width: 25px;
+    transition: 0.2s;
+}
+.function_img {
+    height: 25px;
+    width: 25px;
+    transition: 0.2s;
+}
+.function_name {
+    margin-left: 15px;
+}
+.current_function {
+    font-weight: bold;
+}
+.function:hover {
+    cursor: pointer;
+}
+.function:hover, .function_logo {
+    transform: scale(1.05);
+}
 
-}
-.searchPane, .notificationPane {
+/************************************ SEARCH + NOTIFY ************************************/
+.search_panel, .message_panel, .notify_panel {
     display: flex;
     flex-direction: column;
     align-items: center;
 
     height: 100vh;
-    width: 200px;
+    width: 350px;
     background-color: var(--Color1);
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
-    box-shadow: 0 0 20px var(--Color3);
+    box-shadow: 5px 0 20px var(--Color3);
     z-index: 0;
-    animation: fadin 0.2s;
+    animation: fade 0.5s;
 }
-@keyframes fadin {
-    0%{opacity: 0;}
-    100%{opacity: 1;}
-}
-.searchDiv, .headerNotification{
+.sub_panel_header {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
 
-    height: 16%;
     width: 100%;
     border-bottom: 1px solid var(--Color3);
 }
-.headerNotification{
+.search_header {
+    height: 18%;
+}
+.message_header, .notify_header {
     height: 10%;
 }
-.headerTextNotification{
-    font-size: 2.7vh;
-    font-weight: 500;
-    margin-left: 20px;
+.sub_panel_title, .search_input {
+    padding: 0 20px;
 }
-.searchText, .searchInput, .recentText{
-    padding: 0px 20px;
-}
-.searchText, .recentText{
-    height: 50px;
+.sub_panel_title {
+    margin-top: 20px;
+    height: 40px;
     font-size: 2.7vh;
     font-weight: 500;
 }
-.searchRecentAndResult{
-    height: 87%;
-    width: 100%;
-}
-.recentText{
-    padding-top: 20px;
-    font-size: 1.7vh;
-}
-.resultRecent{
-    width: 100%;
-    max-height: calc(100% - 50px);
-    height: fit-content;
-
-    overflow-y: auto;
-    overflow-x: hidden;
-}
-.searchInput{
-    margin: 0px 20px;
+.search_input {
+    margin: 10px 15px;
     width: 80%;
     height: 40px;
 
     border: 1px solid var(--Color2);
     background-color: var(--Color4);
     border-radius: 10px;
-
 }
-.searchInput:focus {
+.search_input:focus {
     outline: none;
 }
-.searchInput::-webkit-search-cancel-button{
+.search_input::-webkit-search-cancel-button {
     margin-left: 10px;
     background-image: url("Resources/close.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 7px;
     cursor: pointer;
-
-    -webkit-appearance: none;
-    background-color: var(--Color3);
-    height: 15px;
-    width: 15px;
-    border-radius: 100%;
 }
-.searchInput::placeholder {
+.search_input::placeholder {
     color: var(--Color3);
-    font-size: 1.5vh;
+    font-size: 2vh;
     font-weight: 100;
 }
-.recentSearch, .resultSearch{
+.section_result {
+    height: 87%;
+    width: 100%;
+}
+.recent_search, .result_search{
     width: 100%;
     height: 100%;
 }
-.resultSearch{
-    padding-top: 20px;
-    overflow-y: auto;
+.show {
+    display: block;
 }
-.resultSearch > a{
-    text-decoration: none;
-    color: var(--text1);
+.hide {
+    display: none;
+    animation: fade 0.2s;
 }
-.userResult_SearchHolder{
-    width: 90%;
-    height: 60px;
 
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    overflow: hidden;
-    padding: 2px 20px;
-    transition-duration: 0.2s;
-}
-.userResult_SearchHolder:hover{
-    background-color: var(--Color2);
-    cursor: pointer;
-}
-.userResult_SearchHolder:hover .userResult_AvatarPart{
-    transform: scale(1.05);
-}
-.userResult_SearchHolder:active{
-    transform: scale(0.95);
-}
-.userResult_AvatarPart{
-    height: 50px;
-    width: 50px;
-
-    border-radius: 100%;
-    overflow: hidden;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition-duration: 0.2s;
-}
-.userResult_AvatarUser, .userResult_InforPart{
-    height: 50px;
-    width: auto;
-}
-.userResult_InforPart{
-    margin-left: 20px;
-}
-.userResult_username, .userResult_fullname {
-    height: 50%;
-
-    display: flex;
-    flex-direction: column;
-    font-size: 1.7vh;
-}
-.userResult_username{
-    justify-content: flex-end;
-    font-weight: bold;
-}
-.userResult_fullname{
-    justify-content: flex-start;
-}
-.buttonRemoveRecent{
-    height: 20px;
-    width: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: transparent;
-    border: none;
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translate(-50%, -50%);
-}
-.buttonRemoveRecent > img {
-    width: 15px;
-}
-.buttonRemoveRecent:hover {
-    cursor: pointer;
-}
-.listNotification{
+.notify_list {
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 90%;
     overflow-y: auto;
 }
-.aNotificationInList{
-    min-height: 80px;
-    height: 80px;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    text-decoration: none;
-    color: var(--text1);
-    transition-duration: 0.1s;
+
+
+/************************************ MORE ************************************/
+.section_more {
+    height: 10%;
 }
-.notSeenNoti{
-    background-color: var(--button1);
-    font-weight: bold;
-}
-.avatarNotiHolder{
-    width: 20%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.avatarNotiClip{
-    width: 40px;
-    height: 40px;
+
+/************************************ CREATE ************************************/
+.blur {
     overflow: hidden;
-    border-radius: 100%;
+    transition:  0.2s;
+    -webkit-filter: blur(2px);
+    filter: blur(2px);
+}
+.create_panel {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    visibility: hidden;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.create_popup {
+    opacity: 0;
+    overflow: hidden;
+    background-color: var(--Color1);
+    box-shadow: 0 0 20px var(--Color3);
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.show_popup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: visible;
+    transition: all 0.9s;
+}
+.show_popup .create_popup {
+    min-width: 50%;
+    margin: auto;
+    width: 30%;
+    height: 50%;
+    opacity: 1;
+}
+.create_header {
+    min-width: 50%;
+    width: 100%;
+    height: 15%;
+    border-bottom: 1px solid var(--text1);
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 3px solid var(--Color3);
 }
-.contentNotiHolder{
-    width: 80%;
-    height: 100%;
-    overflow-y: hidden;
-    display: flex;
-    flex-direction: column ;
-    justify-content: center;
-    row-gap: 5px;
-}
-.contentTextNoti{
-    overflow-wrap: break-word;
-    width: 100%;
-    margin: 0;
-    font-size: 1.5vh;
-}
-.profileLink{
-    text-decoration: none;
+.create_title {
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;
     color: var(--text1);
-    font-weight: bold;
-    transition-duration: 0.1s;
+    font-size: 2vh;
+    font-weight: 500;
+    user-select: none;
 }
-.timeNoti{
-    font-size: 1.5vh;
-    color: var(--Color7);
+.close_img {
+    right: 10px;
+    position: absolute;
+    height: 50%;
 }
-.profileLink:hover {
-    color: var(--Color7);
-}
-.aNotificationInList:hover {
-    background-color: var(--button1);
+.close_img:hover {
     cursor: pointer;
+    transform: scale(1.05);
 }
-.notSeenNoti:hover{
-    background-color: var(--Color5);
-}
-.avatarNoti{
-    height: 40px;
-}
-.logo-funtion{
-    position: relative;
+.create_content {
+    height: 85%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
-    height: 35px;
-    width: 25px;
-
-    transition: 0.2s;
-}
-.aFuntion_name, .more_text{
-    margin-left: 15px;
-}
-.img_function, .img_more{
-    height: 25px;
-    width: 25px;
-    transition: 0.2s;
-}
-.aFuntion:hover, .Dashboard_navBar-more:hover{
-    cursor: pointer;
-    background-color: var(--Color2) ;
-}
-
-.aFuntion:hover .logo-funtion, .Dashboard_navBar-more:hover .img_more{
-    transform: scale(1.05);
-}
-
-.Dashboard_navBar-more{
-    height: 10%;
-}
-.Dashboard_mainBoard{
-    background-color: var(--Color2);
-    width: auto;
-    height: 100%;
-
-    margin-left: 335px;
-}
-.avatarDiv{
-    height: 25px;
-    border-radius: 100%;
-
-    overflow: hidden;
-    transition-duration: 0.2s;
-
-    display: flex;
-    justify-content: center;
     align-items: center;
 }
-.avatar{
-    width: auto;
-    height: 35px;
-
-    min-height: 25px;
-    min-width: 25px;
+.upload_img {
+    min-width: 20%;
+    width: 20%;
 }
-.moreClicked{
+.upload_text {
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 70%;
+}
+.input_img {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
     position: absolute;
-    height: 300px;
-    width: fit-content;
-    background-color: var(--Color2);
-    border-radius: 10px;
-
-    top: 0;
-    transform: translate(0, -97%);
+    z-index: -1;
 }
-.moreSide{
-    background-color: var(--Color1);
-    border-radius: 10px;
+.input_button {
     display: inline-block;
-    overflow: hidden;
-    height: fit-content;
-    width: 230px;
-    box-shadow: 0px 0px 20px var(--Color3);
+    background: var(--button1);
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 1.7vh;
+    font-weight: 700;
+    margin-top: 10px;
 }
-.firstSide{
-    margin-bottom: 3px;
-}
-a.aFunctionsInSide{
-    text-decoration: none;
-    color: var(--text1);
-}
-.aFunctionsInSide{
-    position: relative;
-    border-bottom: 1px solid var(--Color3);
-    transition-duration: 0.2s;
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 15px;
-    color: var(--text1);
-}
-.aFunctionsInSide:hover{
-    background-color: var(--Color2);
-}
-.aFunctionsInSide:hover .iconFunction{
-    transform: rotate(180deg) scale(1.05);
-}
-.functionName{
-    height: 20px;
-
-    display: flex;
-    align-items: center;
-}
-
-.iconFunction{
-    height: 22px;
-    transition-duration: 0.5s;
-}
-.pageLoading{
-    font-weight: bold;
-}
-@media screen and (max-width: 1325px) {
-    .aFuntion_name, .more_text{
-        display: none;
-        width: 0;
-    }
-    .Dashboard_navBar {
-        width: 45px;
-    }
-    .Dashboard_mainBoard{
-        margin-left: 70px;
-    }
-    .avatarDiv{
-        height: 25px;
-        width: 25px;
-    }
-    .logo-primary {
-        display: none;
-    }
-    .logo-secondary{
-        display: block;
-        width: 25px;
-    }
-    .Dashboard_navBar-Logo{
-        align-items: center;
-    }
-}
-.showMenu, .showSearch{
-    display: block;
-}
-
-.hideMenu, .hideSearch{
-    display: none;
-    animation: fade 0.2s;
-}
-@media screen and (max-width: 935px) {
-    .DashboardPane{
-        width: 100%;
-        margin: 30px 0;
-    }
-}
-@media screen and (max-width: 766px) {
-    .navbarDiv{
-        width: 100%;
-        height: 50px;
-        bottom: 0;
-        top: auto;
-        border-top: 1px solid var(--Color3);
-        z-index: 1;
-    }
-    .Dashboard_navBar{
-        width: 100%;
-    }
-    .Dashboard_mainBoard{
-        margin-left: 0;
-    }
-    .Dashboard_navBar, .Dashboard_navBar-functions{
-        flex-direction: row;
-    }
-    .Dashboard_navBar{
-        height: 60px;
-        padding: 0px 12px;
-    }
-    .Dashboard_navBar-more{
-        display: none;
-    }
-    .Dashboard_navBar-functions{
-        width: 100%;
-        height: 100%;
-        align-items: center;
-        flex-direction: row;
-        justify-content: space-around;
-    }
-    .img_function{
-        width: 20px;
-        height: 20px;
-    }
-    .functionDiv{
-        width: 30px;
-    }
-    .aFuntion{
-        padding: 10px 0;
-    }
-    .DashboardPane{
-        width: 100%;
-        margin: 60px 0;
-    }
-    .addCommentToPostHolder{
-        border: none;
-    }
-    .Dashboard_navBar::before{
-        content: '';
-        height: 50px;
-        width: 100%;
-        position: fixed;
-        top: 0;
-        left: 0;
-        background-color: var(--Color1);
-        border-bottom: 1px solid var(--Color3);
-
-    }
-    .Dashboard_navBar-Logo{
-        display: flex;
-        position: fixed;
-        top: 0;
-        left: 10px;
-        padding: 0;
-        height: 50px;
-        width: 120px;
-    }
-    .logo-primary{
-        height: 40px;
-    }
-    .logo-primary {
-        padding: 0;
-        display: block;
-    }
-    .logo-secondary{
-        display: none;
-    }
-    .searchDiv{
-        margin-top: 60px;
-    }
-    .searchPane, .notificationPane  {
-        position: fixed;
-        height: 100%;
-        width: 100%;
-        z-index: 0;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-    }
-    .notification{
-        position: fixed;
-        top: 0;
-        right: 10px;
-    }
-    .headerNotification{
-        margin-top: 50px;
-    }
-    .functionDiv:nth-child(5){
-        position: fixed;
-        top: 0;
-        right: 50px;
-    }
-}
-@media screen and (max-width: 570px) {
-    .DashboardPane{
-        width: 100%;
-    }
-}
-
-@keyframes fade {
-    from{
-        opacity: 1;
-    }
-    to{
-        opacity: 0;
-        visibility: hidden;
-    }
+.input_button:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    background-color: var(--button2);
 }

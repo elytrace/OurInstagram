@@ -5,11 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>@ViewData["Title"] - Our Instagram</title>
+    
+    <link rel="icon" href="Resources/insta_logo.png" type="image/icon type">
 
     <link rel="stylesheet" type="text/css"  href="css/Hieu_NavBar/color.css"/>
-    <link rel="stylesheet" type="text/css"  href="css/Hieu_NavBar/mystyles.css"/>
+    <link rel="stylesheet" type="text/css"  href="css/Hieu_NavBar/styles.css"/>
     
-    <script src="js/Hieu_NavBar/search.js" defer></script>
+    <script src="js/Hieu_NavBar/openSubPanel.js" defer></script>
 </head>
 <body>
 <div class="navbar">
@@ -23,66 +25,96 @@
             @* Home *@
             <a class="no_underline function" asp-area="" asp-controller="NavBar" asp-action="ToHome">
                 <img alt="Home Icon" src="Resources/home_fill.png" class="function_img">
-                <p class="function_name current_function">Home</p>
+                <p class="function_name current_function" id="Home">Home</p>
             </a>
             @* Search *@
             <div class="function search">
                 <img alt="Search Icon" src="Resources/search_blank.png" class="function_img">
-                <p class="function_name">Search</p>
+                <p class="function_name" id="Search">Search</p>
             </div>
             @* Explore *@
             <a class="no_underline function" asp-area="" asp-controller="NavBar" asp-action="ToExplore">
-                <img alt="Explore Icon" src="Resources/reel_blank.png" class="function_img">
-                <p class="function_name">Explore</p>
+                <img alt="Explore Icon" src="Resources/explore_blank.png" class="function_img">
+                <p class="function_name" id="Explore">Explore</p>
             </a>
             @* Message *@
-            <div class="function">
-                <img alt="Search Icon" src="Resources/messenger.png" class="function_img">
-                <p class="function_name">Message</p>
+            <div class="function message">
+                <img alt="Message Icon" src="Resources/message_blank.png" class="function_img">
+                <p class="function_name" id="Message">Message</p>
             </div>
             @* Notification *@
-            <div class="function">
-                <img alt="Notification Icon" src="Resources/heart.png" class="function_img">
-                <p class="function_name">Notification</p>
+            <div class="function notify">
+                <img alt="Notification Icon" src="Resources/notification_blank.png" class="function_img">
+                <p class="function_name" id="Notification">Notification</p>
             </div>
             @* Create *@
-            <div class="function">
-                <img alt="Create Icon" src="Resources/plus.png" class="function_img">
-                <p class="function_name">Create</p>
+            <div class="function create">
+                <img alt="Create Icon" src="Resources/create_blank.png" class="function_img">
+                <p class="function_name" id="Create">Create</p>
             </div>
             @* Profile *@
             <a class="no_underline function" asp-area="" asp-controller="NavBar" asp-action="ToProfile">
-                <img alt="Profile Icon" src="Resources/default_ava.png" class="function_img">
-                <p class="function_name">Profile</p>
+                <img alt="Profile Icon" src="Resources/profile_blank.png" class="function_img">
+                <p class="function_name" id="Profile">Profile</p>
             </a>
         </div>
         
         @* Section 'More' *@
         <div class="function section_more">
             <img alt="More Icon" src="Resources/icon_burger.png" class="function_img">
-            <p class="function_name">More</p>
+            <p class="function_name" id="More">More</p>
         </div>
     </div>
     
-    <div class="search_panel hide" name="sub_panel">
-        <div class="section_search">
-            <p class="search_text">Search</p>
+    @* SEARCH PANEL *@
+    <div class="search_panel hide">
+        <div class="sub_panel_header search_header">
+            <p class="sub_panel_title">Search</p>
             <input type="text" placeholder="Search" class="search_input">
         </div>
         <div class="section_result">
             <div class="recent_search show" >
-                <p class="recent_text">Recent</p>
+                <p class="sub_panel_title">Recent</p>
                 <div class="recent_result"></div>
             </div>
             <div class="result_search hide"></div> 
         </div>
     </div>
+    
+    @* MESSAGE PANEL *@
+    <div class="message_panel hide">
+        <div class="sub_panel_header message_header">
+            <p class="sub_panel_title">Message</p>
+        </div>
+    </div>
+    
+    @* NOTIFY PANEL *@
+    <div class="notify_panel hide">
+        <div class="sub_panel_header notify_header">
+            <p class="sub_panel_title">Notifications</p>
+        </div>
+        <div class="notify_list">
 
-    <div class="notify_panel hide" name="sub_panel">
-        
+        </div>
     </div>
 </div>
-    
+
+@* CREATE POPUP *@
+<div class="create_panel">
+    <div class="create_popup">
+        <div class="create_header">
+            <p class="create_title">Upload new image</p>
+            <img alt="Close" src="Resources/close.png" class="close_img"/>
+        </div>            
+        <div class="create_content">
+            <img alt="Create" src="Resources/image.png" class="upload_img"/>
+            <p class="upload_text">Upload an image to create new post</p>
+            <input type="file" id="file" accept="image/*" class="input_img" required/>
+            <label for="file" class="input_button">Choose an image</label>
+        </div>
+    </div>
+</div>
+
 <main>
     @RenderBody()
 </main>
