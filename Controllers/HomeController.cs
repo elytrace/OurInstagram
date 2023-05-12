@@ -18,6 +18,11 @@ public class HomeController : Controller
         return View("~/Views/Hiep_Home/Index.cshtml");
     }
 
+    public IActionResult Explore()
+    {
+        return NotFound("Chức năng đang được thực hiện");
+    }
+
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
