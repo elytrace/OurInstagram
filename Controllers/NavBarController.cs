@@ -22,7 +22,7 @@ public class NavBarController : Controller
 
     public IActionResult ToHome()
     {
-        return RedirectToAction("Index", "Home", isSearching);
+        return RedirectToAction("Index", "Home");
     }
 
     public IActionResult ToExplore()
