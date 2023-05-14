@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "uOGFwrKC97YbxZe7+3tGVQGWcXZjURaXkwNJnbtK8a8=",
+  "Hash": "aqvNf/iiBoEctc529T1VQ3TfcWd4cHooyPi2aVXX1Nc=",
   "Source": "OurInstagram",
   "BasePath": "_content/OurInstagram",
   "Mode": "Default",
@@ -355,6 +355,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\OldResources\\back.png"
+    },
+    {
+      "Identity": "E:\\OurInstagram\\wwwroot\\OldResources\\bookmark.png",
+      "SourceId": "OurInstagram",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "BasePath": "_content/OurInstagram",
+      "RelativePath": "OldResources/bookmark.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\OldResources\\bookmark.png"
     },
     {
       "Identity": "E:\\OurInstagram\\wwwroot\\OldResources\\chat.png",
@@ -950,23 +967,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\OldResources\\setting.png"
-    },
-    {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\bookmark.png",
-      "SourceId": "OurInstagram",
-      "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
-      "BasePath": "_content/OurInstagram",
-      "RelativePath": "Resources/bookmark.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Resources\\bookmark.png"
     },
     {
       "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\burger.png",
