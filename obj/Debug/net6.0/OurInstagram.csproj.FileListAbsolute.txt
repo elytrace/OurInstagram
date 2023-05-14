@@ -773,9 +773,7 @@ E:\OurInstagram\obj\Debug\net6.0\OurInstagram.RazorAssemblyInfo.cache
 E:\OurInstagram\obj\Debug\net6.0\OurInstagram.RazorAssemblyInfo.cs
 E:\OurInstagram\obj\Debug\net6.0\staticwebassets.build.json
 E:\OurInstagram\obj\Debug\net6.0\staticwebassets.development.json
-E:\OurInstagram\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 E:\OurInstagram\obj\Debug\net6.0\scopedcss\bundle\OurInstagram.styles.css
-E:\OurInstagram\obj\Debug\net6.0\scopedcss\projectbundle\OurInstagram.bundle.scp.css
 E:\OurInstagram\obj\Debug\net6.0\OurInstagram.csproj.CopyComplete
 E:\OurInstagram\obj\Debug\net6.0\OurInstagram.dll
 E:\OurInstagram\obj\Debug\net6.0\refint\OurInstagram.dll
