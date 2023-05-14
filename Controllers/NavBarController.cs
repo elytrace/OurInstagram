@@ -7,7 +7,6 @@ namespace OurInstagram.Controllers;
 public class NavBarController : Controller
 {
     private readonly ILogger<NavBarController> _logger;
-    private bool isSearching = false;
 
     public NavBarController(ILogger<NavBarController> logger)
     {

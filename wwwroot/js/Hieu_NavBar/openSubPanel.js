@@ -46,7 +46,7 @@ document.addEventListener("click", e => {
     if (!createPopup.contains(e.target) && !btnCreate.contains(e.target)) {
         navbar.classList.remove("blur");
         main.classList.remove("blur");
-        createPanel.classList.remove("show_popup");
+        createPanel.classList.remove("show");
     }
 });
 
@@ -55,7 +55,7 @@ let btnClose = document.querySelector(".close_img");
 btnClose.addEventListener("click", () => {
     navbar.classList.remove("blur");
     main.classList.remove("blur");
-    createPanel.classList.remove("show_popup");
+    createPanel.classList.remove("show");
 });
 
 /************************************************************************************************/
