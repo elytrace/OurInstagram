@@ -1,1 +1,12 @@
 ﻿/*some css*/
+.avatar {
+    width: 9em;
+    height: 9em;
+    border-radius: 100%;
+    border: 1px solid #fff;
+    box-shadow: red 0px 2px 8px 0px;
+}
+
+h1, h4, a {
+    color: #fff;
+}
