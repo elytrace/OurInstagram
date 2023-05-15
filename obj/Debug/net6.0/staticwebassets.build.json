@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "48p80wSeBrtLSa6HwSkrM5gSYlG5Q/8UBcUnwMB504s=",
+  "Hash": "kZfXCrrgQ+I8YQKn2NX/U2LPAhjpLDwamUznObyUkDY=",
   "Source": "OurInstagram",
   "BasePath": "_content/OurInstagram",
   "Mode": "Default",
@@ -16,6 +16,23 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "E:\\OurInstagram\\wwwroot\\css\\Hiep_Home\\styles.css",
+      "SourceId": "OurInstagram",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "BasePath": "_content/OurInstagram",
+      "RelativePath": "css/Hiep_Home/styles.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Hiep_Home\\styles.css"
+    },
     {
       "Identity": "E:\\OurInstagram\\wwwroot\\css\\Hieu_NavBar\\color.css",
       "SourceId": "OurInstagram",
@@ -51,6 +68,40 @@
       "OriginalItemSpec": "wwwroot\\css\\Hieu_NavBar\\styles.css"
     },
     {
+      "Identity": "E:\\OurInstagram\\wwwroot\\css\\Khang_Profile\\styles.css",
+      "SourceId": "OurInstagram",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "BasePath": "_content/OurInstagram",
+      "RelativePath": "css/Khang_Profile/styles.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Khang_Profile\\styles.css"
+    },
+    {
+      "Identity": "E:\\OurInstagram\\wwwroot\\css\\Nguyen_Login\\styles.css",
+      "SourceId": "OurInstagram",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "BasePath": "_content/OurInstagram",
+      "RelativePath": "css/Nguyen_Login/styles.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Nguyen_Login\\styles.css"
+    },
+    {
       "Identity": "E:\\OurInstagram\\wwwroot\\favicon.ico",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
@@ -68,12 +119,12 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\js\\Hieu_NavBar\\more.js",
+      "Identity": "E:\\OurInstagram\\wwwroot\\js\\Hiep_Home\\index.js",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
       "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
-      "RelativePath": "js/Hieu_NavBar/more.js",
+      "RelativePath": "js/Hiep_Home/index.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -82,7 +133,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\Hieu_NavBar\\more.js"
+      "OriginalItemSpec": "wwwroot\\js\\Hiep_Home\\index.js"
     },
     {
       "Identity": "E:\\OurInstagram\\wwwroot\\js\\Hieu_NavBar\\openSubPanel.js",
@@ -102,12 +153,12 @@
       "OriginalItemSpec": "wwwroot\\js\\Hieu_NavBar\\openSubPanel.js"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "E:\\OurInstagram\\wwwroot\\js\\Khang_Profile\\index.js",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
       "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
-      "RelativePath": "lib/jquery/dist/jquery.js",
+      "RelativePath": "js/Khang_Profile/index.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -116,15 +167,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
+      "OriginalItemSpec": "wwwroot\\js\\Khang_Profile\\index.js"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "E:\\OurInstagram\\wwwroot\\js\\Nguyen_Login\\index.js",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
       "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
-      "RelativePath": "lib/jquery/dist/jquery.min.js",
+      "RelativePath": "js/Nguyen_Login/index.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -133,15 +184,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
+      "OriginalItemSpec": "wwwroot\\js\\Nguyen_Login\\index.js"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "E:\\OurInstagram\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
       "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
-      "RelativePath": "lib/jquery/dist/jquery.min.map",
+      "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -150,15 +201,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
+      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "E:\\OurInstagram\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
       "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
-      "RelativePath": "lib/jquery/LICENSE.txt",
+      "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -167,7 +218,24 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
+      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Identity": "E:\\OurInstagram\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "SourceId": "OurInstagram",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "BasePath": "_content/OurInstagram",
+      "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
       "Identity": "E:\\OurInstagram\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
@@ -255,12 +323,12 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "E:\\OurInstagram\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
       "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
-      "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
+      "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -269,15 +337,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+      "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "E:\\OurInstagram\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
       "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
-      "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
+      "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -286,15 +354,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+      "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "E:\\OurInstagram\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
       "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
-      "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
+      "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -303,7 +371,24 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+      "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Identity": "E:\\OurInstagram\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "SourceId": "OurInstagram",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "BasePath": "_content/OurInstagram",
+      "RelativePath": "lib/jquery/LICENSE.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
     },
     {
       "Identity": "E:\\OurInstagram\\wwwroot\\OldResources\\62216-instagram-logo.json",
@@ -374,12 +459,12 @@
       "OriginalItemSpec": "wwwroot\\OldResources\\bookmark.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\OldResources\\comment.png",
+      "Identity": "E:\\OurInstagram\\wwwroot\\OldResources\\chat.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
       "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
       "BasePath": "_content/OurInstagram",
-      "RelativePath": "OldResources/comment.png",
+      "RelativePath": "OldResources/chat.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -388,7 +473,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\OldResources\\comment.png"
+      "OriginalItemSpec": "wwwroot\\OldResources\\chat.png"
     },
     {
       "Identity": "E:\\OurInstagram\\wwwroot\\OldResources\\comment_home.png",
@@ -423,6 +508,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\OldResources\\comment_post.png"
+    },
+    {
+      "Identity": "E:\\OurInstagram\\wwwroot\\OldResources\\comment.png",
+      "SourceId": "OurInstagram",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "BasePath": "_content/OurInstagram",
+      "RelativePath": "OldResources/comment.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\OldResources\\comment.png"
     },
     {
       "Identity": "E:\\OurInstagram\\wwwroot\\OldResources\\compass-regular.svg",
@@ -491,23 +593,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\OldResources\\cross.png"
-    },
-    {
-      "Identity": "E:\\OurInstagram\\wwwroot\\OldResources\\chat.png",
-      "SourceId": "OurInstagram",
-      "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
-      "BasePath": "_content/OurInstagram",
-      "RelativePath": "OldResources/chat.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\OldResources\\chat.png"
     },
     {
       "Identity": "E:\\OurInstagram\\wwwroot\\OldResources\\default_ava.png",
@@ -748,40 +833,6 @@
       "OriginalItemSpec": "wwwroot\\OldResources\\navigate_microsoft.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\OldResources\\post.png",
-      "SourceId": "OurInstagram",
-      "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
-      "BasePath": "_content/OurInstagram",
-      "RelativePath": "OldResources/post.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\OldResources\\post.png"
-    },
-    {
-      "Identity": "E:\\OurInstagram\\wwwroot\\OldResources\\problem.png",
-      "SourceId": "OurInstagram",
-      "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
-      "BasePath": "_content/OurInstagram",
-      "RelativePath": "OldResources/problem.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\OldResources\\problem.png"
-    },
-    {
       "Identity": "E:\\OurInstagram\\wwwroot\\OldResources\\phone_frame1.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
@@ -831,6 +882,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\OldResources\\photo.png"
+    },
+    {
+      "Identity": "E:\\OurInstagram\\wwwroot\\OldResources\\post.png",
+      "SourceId": "OurInstagram",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "BasePath": "_content/OurInstagram",
+      "RelativePath": "OldResources/post.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\OldResources\\post.png"
+    },
+    {
+      "Identity": "E:\\OurInstagram\\wwwroot\\OldResources\\problem.png",
+      "SourceId": "OurInstagram",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "BasePath": "_content/OurInstagram",
+      "RelativePath": "OldResources/problem.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\OldResources\\problem.png"
     },
     {
       "Identity": "E:\\OurInstagram\\wwwroot\\OldResources\\reply.png",
@@ -1122,23 +1207,6 @@
       "OriginalItemSpec": "wwwroot\\Resources\\image.png"
     },
     {
-      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\insta_logo.png",
-      "SourceId": "OurInstagram",
-      "SourceType": "Discovered",
-      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
-      "BasePath": "_content/OurInstagram",
-      "RelativePath": "Resources/insta_logo.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Resources\\insta_logo.png"
-    },
-    {
       "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\insta_logo_frame.png",
       "SourceId": "OurInstagram",
       "SourceType": "Discovered",
@@ -1154,6 +1222,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Resources\\insta_logo_frame.png"
+    },
+    {
+      "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\insta_logo.png",
+      "SourceId": "OurInstagram",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\OurInstagram\\wwwroot\\",
+      "BasePath": "_content/OurInstagram",
+      "RelativePath": "Resources/insta_logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Resources\\insta_logo.png"
     },
     {
       "Identity": "E:\\OurInstagram\\wwwroot\\Resources\\insta_title.png",
