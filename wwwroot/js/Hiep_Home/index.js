@@ -77,6 +77,13 @@ function generateMasonryGrid(columns, posts) {
 
 let previousScreenSize = window.innerWidth;
 
+
+window.addEventListener("DOMContentLoaded", () => {
+    imageIndex = 0;
+    generateMasonryGrid(4, posts);
+    previousScreenSize = window.innerWidth;
+})
+
 // Responsive
 window.addEventListener('resize', () => {
     imageIndex = 0;

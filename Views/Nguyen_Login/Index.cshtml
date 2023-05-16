@@ -1,4 +1,39 @@
 ﻿@{
-    Layout = null;
+    Layout = "_LoginSection";
+    ViewData["Title"] = "Login";
 }
 
+@section Stylesheets
+{
+    <link rel="stylesheet" type="text/css" href="css/Nguyen_Login/styles.css"/>
+    <link rel="stylesheet" type="text/css" href="lib/fullpage/dist/fullpage.css"/>
+}
+@section Scripts 
+{
+    <script type="text/javascript" src="lib/fullpage/dist/fullpage.js"></script>
+    <script type="text/javascript" src="js/Nguyen_Login/index.js"></script>
+}
+
+<div id="fullpage">
+    <div class="section">Section 1</div>
+    <div class="section">Section 2</div>
+    <div class="section">Section 3</div>
+    <div class="section">Section 4</div>
+</div>
+
+@* <div class="login-section"> *@
+@*     <div class="login-box"> *@
+@*         <h1>Login</h1> *@
+@*         <form> *@
+@*             <label>Email</label> *@
+@*             <input type="email" placeholder=""/> *@
+@*             <label>Password</label> *@
+@*             <input type="password" placeholder=""/> *@
+@*             <input type="button" value="Submit"/> *@
+@*             <closeform></closeform> *@
+@*         </form> *@
+@*     </div> *@
+@*     <p class="para-2"> *@
+@*         Don't have an account? <a asp-area="" asp-controller="Login" asp-action="Signup">Sign Up Here</a> *@
+@*     </p> *@
+@* </div> *@

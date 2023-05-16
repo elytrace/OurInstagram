@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 
 namespace OurInstagram.Models;
 
@@ -8,5 +9,4 @@ public class OurDbContext : DbContext
     {
         
     }
-    
 }

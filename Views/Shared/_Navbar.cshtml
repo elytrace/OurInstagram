@@ -147,10 +147,9 @@
     </div>
 </div>
 
-<main>
-    @RenderBody()
-</main>
+@RenderBody()
 
+@await RenderSectionAsync("Stylesheets", required: false)
 @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

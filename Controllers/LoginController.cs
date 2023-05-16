@@ -20,6 +20,11 @@ public class LoginController : Controller
         return View("~/Views/Nguyen_Login/Index.cshtml");
     }
 
+    public IActionResult Signup()
+    {
+        return View("~/Views/Nguyen_Login/Signup.cshtml");
+    }
+
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {

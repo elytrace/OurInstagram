@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>@ViewData["Title"] - Our Instagram</title>
+    
+    <link rel="icon" href="Resources/insta_logo.png" type="image/icon type">
+    <link rel="stylesheet" type="text/css" href="css/Hieu_NavBar/color.css"/>
+    <link rel="stylesheet" type="text/css" href="css/Nguyen_Login/navbar.css"/>
+
+    @await RenderSectionAsync("Stylesheets", false)
+</head>
+<body>
+
+<div class="navbar">
+    <div class="section_logo">
+        <img class="title" alt="Instagram Title" src="Resources/insta_title.png"/>
+        @* <img class="logo" alt="Instagram Logo" src="Resources/insta_logo_frame.png"/> *@
+    </div>
+    <div class="section_function">
+        <input type="button" id="login" class="btn"/>
+        <label for="login" class="label_login">Log In</label>
+        <input type="button" id="signup" class="btn"/>
+        <label for="login" class="label_signup">Sign Up</label>
+    </div>
+</div>
+
+@RenderBody()
+
+@await RenderSectionAsync("Scripts", false)
+</body>
+</html>
