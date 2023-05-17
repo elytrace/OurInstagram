@@ -52,48 +52,52 @@
     <div class="section">Section 3</div>
     <div class="section active">
         <div class="login-section">
-            <div class="login-box show">
+            <div class="login-box hide_panel">
                 <div class="login_logo">
                     <img class="logo" alt="Instagram Logo" src="Resources/insta_logo_frame.png"/>
-                    <p class="title">Welcome To Our Instagram</p>
+                    <p class="title">Welcome To Instagram</p>
                 </div>
-                <form>
-                    <label>Email</label>
-                    <input type="email" placeholder=""/>
-                    <label>Password</label>
-                    <input type="password" placeholder=""/>
-                    <input type="button" value="Submit"/>
-                    <closeform></closeform>
+                <form class="login-form">
+                    <label for="email">Email</label>
+                    <input class="btn_email" id="email" type="email" placeholder="Email"/>
+                    <label for="password">Password</label>
+                    <input class="btn_password" id="password" type="password" placeholder="Password"/>
+                    <a asp-area="" asp-controller="" asp-action="" class="forgot_password">Forgot your password?</a>
+                    <input class="btn_submit" type="submit" value="Log in"/>
                 </form>
-            </div>
-            <p class="para-2 show">
-                Don't have an account? <a asp-area="" asp-controller="Login" asp-action="Signup">Sign Up Here</a>
-            </p>
-            
-            <div class="signup-box hide">
-                    <h1>Sign Up</h1>
-                    <form>
-                        <label>First Name</label>
-                        <input type="text" placeholder="" />
-                        <label>Last Name</label>
-                        <input type="text" placeholder="" />
-                        <label>Email</label>
-                        <input type="email" placeholder="" />
-                        <label>Password</label>
-                        <input type="password" placeholder="" />
-                        <label>Confirm Password</label>
-                        <input type="password" placeholder="" />
-                        <input type="button" value="Submit" />
-                        <closeform></closeform>
-                    </form>
-                    <p>
-                        By clicking the Sign Up button,you agree to our <br />
-                        <a href="#">Terms and Condition</a> and <a href="#">Policy Privacy</a>
-                    </p>
+                <p class="or">OR</p>
+                <div class="login_with_facebook">
+                    <img class="facebook_logo" src="Resources/facebook.png" alt="Facebook Logo"/>
+                    <span class="facebook_login">Continue with facebook</span>
                 </div>
-            <p class="para-2 hide">
-                Already have an account? <a href="login.html">Login here</a>
-            </p>
+                <p class="to_signup">Not on Instagram yet? Sign up</p>
+            </div>
+
+            <div class="signup-box show_panel">
+                <div class="login_logo">
+                    <img class="logo" alt="Instagram Logo" src="Resources/insta_logo_frame.png"/>
+                    <p class="title">Welcome To Instagram</p>
+                </div>
+                <form class="signup-form">
+                    <label for="firstName">First Name</label>
+                    <input class="btn_name" id="firstName" type="text" placeholder="First Name"/>
+                    <label for="lastName">Last Name</label>
+                    <input class="btn_name" id="lastName" type="text" placeholder="Last Name"/>
+                    <label for="signup_email">Email</label>
+                    <input class="btn_email" id="signup_email" type="email" placeholder="Email"/>
+                    <label for="signup_password">Password</label>
+                    <input class="btn_password" id="signup_password" type="password" placeholder="Password"/>
+                    <label for="confirm_password">Confirm password</label>
+                    <input class="btn_password" id="confirm_password" type="password" placeholder="Password"/>
+                    <input class="btn_submit" type="submit" value="Sign up"/>
+                </form>
+                <p class="or">OR</p>
+                <div class="login_with_facebook">
+                    <img class="facebook_logo" src="Resources/facebook.png" alt="Facebook Logo"/>
+                    <span class="facebook_login">Continue with facebook</span>
+                </div>
+                <p class="to_login">Already a member? Login</p>
+            </div>
         </div>
     </div>
 </div>

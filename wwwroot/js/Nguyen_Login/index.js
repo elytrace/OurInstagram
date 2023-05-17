@@ -92,3 +92,25 @@ setInterval(() => {
         });
     }
 }, 3000);
+
+let toSignup = document.querySelector(".to_signup")
+toSignup.addEventListener("click", () => {
+    let loginBox = document.querySelector(".login-box")
+    let signupBox = document.querySelector(".signup-box")
+    loginBox.classList.remove("show")
+    loginBox.classList.add("hide")
+    
+    signupBox.classList.remove("hide")
+    signupBox.classList.add("show")
+})
+
+let toLogin = document.querySelector(".to_login")
+toLogin.addEventListener("click", () => {
+    let loginBox = document.querySelector(".login-box")
+    let signupBox = document.querySelector(".signup-box")
+    loginBox.classList.remove("hide")
+    loginBox.classList.add("show")
+
+    signupBox.classList.remove("show")
+    signupBox.classList.add("hide")
+})

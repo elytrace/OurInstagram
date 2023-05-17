@@ -51,8 +51,8 @@
     background-color: indianred;
     color: var(--button1);
     border-radius: 50px;
-    padding: 10px;
-    font-size: 2vh;
+    padding: 15px;
+    font-size: 1.8vh;
     font-weight: bold;
 }
 .label_login:hover {
@@ -66,14 +66,14 @@
     background-color: var(--Color3);
     color: var(--text1);
     border-radius: 50px;
-    padding: 10px;
-    font-size: 2vh;
+    padding: 15px;
+    font-size: 1.8vh;
     font-weight: bold;
 }
 .label_signup:hover {
     cursor: pointer;
     transform: scale(1.05);
-    background-color: var(--button2);
+    background-color: #8a8a8a;
 }
 .fp-watermark, .fp-warning {
     display: none;
