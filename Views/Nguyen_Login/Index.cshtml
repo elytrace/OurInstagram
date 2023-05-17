@@ -1,5 +1,5 @@
 ﻿@{
-    Layout = "_LoginSection";
+    Layout = "_LoginNavbar";
     ViewData["Title"] = "Login";
 }
 
@@ -15,25 +15,86 @@
 }
 
 <div id="fullpage">
-    <div class="section">Section 1</div>
+    <div class="section">
+        <div class="section_title">
+            <div class="title_head">
+                Get your next
+            </div>
+            <div class="title_tail color1 show">weeknight dinner idea</div>
+            <div class="title_tail color2 hide">home decor idea</div>
+            <div class="title_tail color3 hide">new look outfit</div>
+            <div class="title_tail color4 hide">green thumb idea</div>
+        </div>
+        <div class="section_image">
+            <div class="column1">
+                <img alt="Image" src="" class="column_image image1 show"/>
+                <img alt="Image" src="" class="column_image image7 hide"/>
+            </div>
+            <div class="column2">
+                <img alt="Image" src="" class="column_image image2 show"/>
+                <img alt="Image" src="" class="column_image image8 hide"/>
+            </div>
+            <div class="column3">
+                <img alt="Image" src="" class="column_image image3 show"/>
+                <img alt="Image" src="" class="column_image image9 hide"/>
+            </div>
+            <div class="column4">
+                <img alt="Image" src="" class="column_image image4 show"/>
+                <img alt="Image" src="" class="column_image image0 hide"/>
+            </div>
+            <div class="column5">
+                <img alt="Image" src="" class="column_image image5 show"/>
+                <img alt="Image" src="" class="column_image image6 hide"/>
+            </div>
+        </div>
+    </div>
     <div class="section">Section 2</div>
     <div class="section">Section 3</div>
-    <div class="section">Section 4</div>
+    <div class="section active">
+        <div class="login-section">
+            <div class="login-box show">
+                <div class="login_logo">
+                    <img class="logo" alt="Instagram Logo" src="Resources/insta_logo_frame.png"/>
+                    <p class="title">Welcome To Our Instagram</p>
+                </div>
+                <form>
+                    <label>Email</label>
+                    <input type="email" placeholder=""/>
+                    <label>Password</label>
+                    <input type="password" placeholder=""/>
+                    <input type="button" value="Submit"/>
+                    <closeform></closeform>
+                </form>
+            </div>
+            <p class="para-2 show">
+                Don't have an account? <a asp-area="" asp-controller="Login" asp-action="Signup">Sign Up Here</a>
+            </p>
+            
+            <div class="signup-box hide">
+                    <h1>Sign Up</h1>
+                    <form>
+                        <label>First Name</label>
+                        <input type="text" placeholder="" />
+                        <label>Last Name</label>
+                        <input type="text" placeholder="" />
+                        <label>Email</label>
+                        <input type="email" placeholder="" />
+                        <label>Password</label>
+                        <input type="password" placeholder="" />
+                        <label>Confirm Password</label>
+                        <input type="password" placeholder="" />
+                        <input type="button" value="Submit" />
+                        <closeform></closeform>
+                    </form>
+                    <p>
+                        By clicking the Sign Up button,you agree to our <br />
+                        <a href="#">Terms and Condition</a> and <a href="#">Policy Privacy</a>
+                    </p>
+                </div>
+            <p class="para-2 hide">
+                Already have an account? <a href="login.html">Login here</a>
+            </p>
+        </div>
+    </div>
 </div>
 
-@* <div class="login-section"> *@
-@*     <div class="login-box"> *@
-@*         <h1>Login</h1> *@
-@*         <form> *@
-@*             <label>Email</label> *@
-@*             <input type="email" placeholder=""/> *@
-@*             <label>Password</label> *@
-@*             <input type="password" placeholder=""/> *@
-@*             <input type="button" value="Submit"/> *@
-@*             <closeform></closeform> *@
-@*         </form> *@
-@*     </div> *@
-@*     <p class="para-2"> *@
-@*         Don't have an account? <a asp-area="" asp-controller="Login" asp-action="Signup">Sign Up Here</a> *@
-@*     </p> *@
-@* </div> *@

@@ -22,7 +22,7 @@ public class LoginController : Controller
 
     public IActionResult Signup()
     {
-        return View("~/Views/Nguyen_Login/Signup.cshtml");
+        return View("~/Views/Nguyen_Login/Index.cshtml");
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

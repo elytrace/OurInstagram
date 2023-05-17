@@ -46,6 +46,7 @@
     z-index: -1;
 }
 .label_login {
+    white-space: nowrap;
     display: inline-block;
     background-color: indianred;
     color: var(--button1);
@@ -60,6 +61,7 @@
     background-color: darkred;
 }
 .label_signup {
+    white-space: nowrap;
     display: inline-block;
     background-color: var(--Color3);
     color: var(--text1);
