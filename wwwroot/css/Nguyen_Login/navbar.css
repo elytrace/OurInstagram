@@ -45,7 +45,7 @@
     position: absolute;
     z-index: -1;
 }
-.label_login {
+.navbar_label_login {
     white-space: nowrap;
     display: inline-block;
     background-color: indianred;
@@ -55,12 +55,12 @@
     font-size: 1.8vh;
     font-weight: bold;
 }
-.label_login:hover {
+.navbar_label_login:hover {
     cursor: pointer;
     transform: scale(1.05);
     background-color: darkred;
 }
-.label_signup {
+.navbar_label_signup {
     white-space: nowrap;
     display: inline-block;
     background-color: var(--Color3);
@@ -70,7 +70,7 @@
     font-size: 1.8vh;
     font-weight: bold;
 }
-.label_signup:hover {
+.navbar_label_signup:hover {
     cursor: pointer;
     transform: scale(1.05);
     background-color: #8a8a8a;

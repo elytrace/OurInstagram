@@ -3,8 +3,7 @@ let myFullpage = new fullpage('#fullpage', {
     licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
     controlArrows: false,
     sectionsColor: ['#f2f2f2', 
-                    '#4BBFC3', 
-                    '#7BAABE', 
+                    '#4BBFC3',
                     'whitesmoke'],
     // afterLoad: function (origin, destination, direction) {
     //     clearInterval(g_interval);
@@ -97,20 +96,20 @@ let toSignup = document.querySelector(".to_signup")
 toSignup.addEventListener("click", () => {
     let loginBox = document.querySelector(".login-box")
     let signupBox = document.querySelector(".signup-box")
-    loginBox.classList.remove("show")
-    loginBox.classList.add("hide")
+    loginBox.classList.remove("show_panel")
+    loginBox.classList.add("hide_panel")
     
-    signupBox.classList.remove("hide")
-    signupBox.classList.add("show")
+    signupBox.classList.remove("hide_panel")
+    signupBox.classList.add("show_panel")
 })
 
 let toLogin = document.querySelector(".to_login")
 toLogin.addEventListener("click", () => {
     let loginBox = document.querySelector(".login-box")
     let signupBox = document.querySelector(".signup-box")
-    loginBox.classList.remove("hide")
-    loginBox.classList.add("show")
+    loginBox.classList.remove("hide_panel")
+    loginBox.classList.add("show_panel")
 
-    signupBox.classList.remove("show")
-    signupBox.classList.add("hide")
+    signupBox.classList.remove("show_panel")
+    signupBox.classList.add("hide_panel")
 })

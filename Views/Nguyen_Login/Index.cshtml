@@ -12,9 +12,10 @@
 {
     <script type="text/javascript" src="lib/fullpage/dist/fullpage.js"></script>
     <script type="text/javascript" src="js/Nguyen_Login/index.js"></script>
+    <script type="text/javascript" src="js/Nguyen_Login/popup.js"></script>
 }
 
-<div id="fullpage">
+<div id="fullpage" class="main">
     <div class="section">
         <div class="section_title">
             <div class="title_head">
@@ -49,19 +50,18 @@
         </div>
     </div>
     <div class="section">Section 2</div>
-    <div class="section">Section 3</div>
-    <div class="section active">
+    <div class="section">
         <div class="login-section">
-            <div class="login-box hide_panel">
+            <div class="login-box show_panel">
                 <div class="login_logo">
                     <img class="logo" alt="Instagram Logo" src="Resources/insta_logo_frame.png"/>
                     <p class="title">Welcome To Instagram</p>
                 </div>
-                <form class="login-form">
+                <form class="login-form" asp-area="" asp-controller="Login" asp-action="Login">
                     <label for="email">Email</label>
-                    <input class="btn_email" id="email" type="email" placeholder="Email"/>
+                    <input class="btn_email" id="email" type="email" placeholder="Email" required/>
                     <label for="password">Password</label>
-                    <input class="btn_password" id="password" type="password" placeholder="Password"/>
+                    <input class="btn_password" id="password" type="password" placeholder="Password" required/>
                     <a asp-area="" asp-controller="" asp-action="" class="forgot_password">Forgot your password?</a>
                     <input class="btn_submit" type="submit" value="Log in"/>
                 </form>
@@ -73,22 +73,22 @@
                 <p class="to_signup">Not on Instagram yet? Sign up</p>
             </div>
 
-            <div class="signup-box show_panel">
+            <div class="signup-box hide_panel">
                 <div class="login_logo">
                     <img class="logo" alt="Instagram Logo" src="Resources/insta_logo_frame.png"/>
                     <p class="title">Welcome To Instagram</p>
                 </div>
-                <form class="signup-form">
-                    <label for="firstName">First Name</label>
-                    <input class="btn_name" id="firstName" type="text" placeholder="First Name"/>
-                    <label for="lastName">Last Name</label>
-                    <input class="btn_name" id="lastName" type="text" placeholder="Last Name"/>
+                <form class="signup-form" asp-area="" asp-controller="Login" asp-action="Login">
+                    @* <label for="firstName">First Name</label> *@
+                    @* <input class="btn_name" id="firstName" type="text" placeholder="First Name"/> *@
+                    @* <label for="lastName">Last Name</label> *@
+                    @* <input class="btn_name" id="lastName" type="text" placeholder="Last Name"/> *@
                     <label for="signup_email">Email</label>
-                    <input class="btn_email" id="signup_email" type="email" placeholder="Email"/>
+                    <input class="btn_email" id="signup_email" type="email" placeholder="Email" required/>
                     <label for="signup_password">Password</label>
-                    <input class="btn_password" id="signup_password" type="password" placeholder="Password"/>
+                    <input class="btn_password" id="signup_password" type="password" placeholder="Password" required/>
                     <label for="confirm_password">Confirm password</label>
-                    <input class="btn_password" id="confirm_password" type="password" placeholder="Password"/>
+                    <input class="btn_password" id="confirm_password" type="password" placeholder="Confirm password" required/>
                     <input class="btn_submit" type="submit" value="Sign up"/>
                 </form>
                 <p class="or">OR</p>
@@ -102,3 +102,58 @@
     </div>
 </div>
 
+@* CREATE POPUP *@
+<div class="panel_login">
+    <div class="login-section">
+        <div class="login-box login_popup">
+            <div class="login_logo">
+                <img class="logo" alt="Instagram Logo" src="Resources/insta_logo_frame.png"/>
+                <p class="title">Welcome To Instagram</p>
+            </div>
+            <form class="login-form" asp-area="" asp-controller="Login" asp-action="Login">
+                <label for="popup_email">Email</label>
+                <input class="btn_email" id="popup_email" type="email" placeholder="Email" required/>
+                <label for="popup_password">Password</label>
+                <input class="btn_password" id="popup_password" type="password" placeholder="Password" required/>
+                <a asp-area="" asp-controller="" asp-action="" class="forgot_password">Forgot your password?</a>
+                <input class="btn_submit" type="submit" value="Log in"/>
+            </form>
+            <p class="or">OR</p>
+            <div class="login_with_facebook">
+                <img class="facebook_logo" src="Resources/facebook.png" alt="Facebook Logo"/>
+                <span class="facebook_login">Continue with facebook</span>
+            </div>
+            @* <p class="to_signup">Not on Instagram yet? Sign up</p> *@
+        </div>
+    </div>
+</div>
+
+<div class="panel_signup">
+    <div class="login-section">
+        <div class="signup-box signup_popup">
+            <div class="login_logo">
+                <img class="logo" alt="Instagram Logo" src="Resources/insta_logo_frame.png"/>
+                <p class="title">Welcome To Instagram</p>
+            </div>
+            <form class="signup-form" asp-area="" asp-controller="Login" asp-action="Login">
+                @* <label for="firstName">First Name</label> *@
+                @* <input class="btn_name" id="firstName" type="text" placeholder="First Name"/> *@
+                @* <label for="lastName">Last Name</label> *@
+                @* <input class="btn_name" id="lastName" type="text" placeholder="Last Name"/> *@
+                <label for="popup_signup_email">Email</label>
+                <input class="btn_email" id="popup_signup_email" type="email" placeholder="Email" required/>
+                <label for="popup_signup_password">Password</label>
+                <input class="btn_password" id="popup_signup_password" type="password" placeholder="Password" required/>
+                <label for="popup_confirm_password">Confirm password</label>
+                <input class="btn_password" id="popup_confirm_password" type="password" placeholder="Confirm password" required/>
+                <input class="btn_submit" type="submit" value="Sign up"/>
+            </form>
+            <p class="or">OR</p>
+            <div class="login_with_facebook">
+                <img class="facebook_logo" src="Resources/facebook.png" alt="Facebook Logo"/>
+                <span class="facebook_login">Continue with facebook</span>
+            </div>
+            @* <p class="to_login">Already a member? Login</p> *@
+        </div>
+    </div>
+</div>

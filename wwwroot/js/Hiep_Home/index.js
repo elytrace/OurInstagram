@@ -65,9 +65,7 @@ function generateMasonryGrid(columns, posts) {
             image.src = post.image;
             let hoverDiv = document.createElement('div');
             hoverDiv.classList.add('overlay');
-
-
-
+            
             postDiv.append(image, hoverDiv)
             div.appendChild(postDiv)
         });
