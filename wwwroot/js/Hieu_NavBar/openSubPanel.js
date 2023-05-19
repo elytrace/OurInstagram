@@ -68,40 +68,43 @@ imageInput.addEventListener("change", function() {
     file_reader.addEventListener("load", () => {
         const uploaded_image = file_reader.result;
         document.querySelector(".display_image").style.backgroundImage = `url(${uploaded_image})`;
-    });
-    file_reader.readAsDataURL(this.files[0]);
-
-    panelChoose.classList.add("show_upload");
-    panelChoose.classList.remove("hide_upload");
-
-    panelDisplay.classList.add("hide_upload");
-    panelDisplay.classList.remove("show_upload");
-
-});
-
-document.addEventListener("click", e => {
-    if (!createPopup.contains(e.target) && !btnCreate.contains(e.target)) {
-        navbar.classList.remove("blur");
-        main.classList.remove("blur");
-        createPanel.classList.remove("show_popup");
-
-        document.querySelector(".display_image").style.backgroundImage = "unset";
 
         panelChoose.classList.add("hide_upload");
         panelChoose.classList.remove("show_upload");
 
         panelDisplay.classList.add("show_upload");
         panelDisplay.classList.remove("hide_upload");
+    });
+    file_reader.readAsDataURL(this.files[0]);
+
+});
+
+function closePopup() {
+    navbar.classList.remove("blur");
+    main.classList.remove("blur");
+    createPanel.classList.remove("show_popup");
+
+    imageInput.value = null;
+    document.querySelector(".display_image").style.backgroundImage = "unset";
+
+    panelChoose.classList.add("show_upload");
+    panelChoose.classList.remove("hide_upload");
+
+    panelDisplay.classList.add("hide_upload");
+    panelDisplay.classList.remove("show_upload");
+}
+
+document.addEventListener("click", e => {
+    if (!createPopup.contains(e.target) && !btnCreate.contains(e.target)) {
+        closePopup();
     }
 });
 
 /************************************************************************************************/
 let btnClose = document.querySelector(".close_img");
-btnClose.addEventListener("click", () => {
-    navbar.classList.remove("blur");
-    main.classList.remove("blur");
-    createPanel.classList.remove("show_popup");
-});
+btnClose.addEventListener("click", () => closePopup());
+let btnCancel = document.querySelector(".btn_cancel")
+btnCancel.addEventListener("click", () => closePopup())
 
 /************************************************************************************************/
 let blankImageMap = new Map();

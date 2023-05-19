@@ -24,7 +24,7 @@ body {
     height: 100%;
     overflow: hidden;
     overflow-y: scroll;
-    padding: 16px 16px 16px 291px;
+    padding: 0 16px 16px 291px;
 }
 
 .home .homepage_container {
@@ -32,6 +32,7 @@ body {
     width: 100%;
     display: flex;
     gap: 16px;
+    margin-top: 16px;
 }
 
 .home .column {

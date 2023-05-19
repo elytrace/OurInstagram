@@ -368,7 +368,10 @@
     height: 85%;
     margin-bottom: 20px;
     border-radius: 20px;
-    background-color: var(--Color2);
+    border: 1px solid var(--Color2);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 .action_section {
     width: 85%;

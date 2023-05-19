@@ -24,8 +24,16 @@
         <div class="section_function">
             @* Home *@
             <a class="no_underline function" asp-area="" asp-controller="NavBar" asp-action="ToHome">
-                <img alt="Home Icon" src="Resources/home_fill.png" class="function_img">
-                <p class="function_name current_function" id="Home">Home</p>
+                @if (ViewData["Title"] == "Home")
+                {
+                    <img alt="Home Icon" src="Resources/home_fill.png" class="function_img">
+                    <p class="function_name current_function" id="Home">Home</p>
+                }
+                else
+                {
+                    <img alt="Home Icon" src="Resources/home_blank.png" class="function_img">
+                    <p class="function_name" id="Home">Home</p>
+                }
             </a>
             @* Search *@
             <div class="function search">
@@ -34,8 +42,17 @@
             </div>
             @* Explore *@
             <a class="no_underline function" asp-area="" asp-controller="NavBar" asp-action="ToExplore">
-                <img alt="Explore Icon" src="Resources/explore_blank.png" class="function_img">
-                <p class="function_name" id="Explore">Explore</p>
+                @if (ViewData["Title"] == "Explore")
+                {
+                    <img alt="Explore Icon" src="Resources/explore_fill.png" class="function_img">
+                    <p class="function_name current_function" id="Explore">Explore</p>
+                }
+                else
+                {
+                    <img alt="Explore Icon" src="Resources/explore_blank.png" class="function_img">
+                    <p class="function_name" id="Explore">Explore</p>
+                }
+                
             </a>
             @* Message *@
             <div class="function message">
@@ -54,8 +71,16 @@
             </div>
             @* Profile *@
             <a class="no_underline function" asp-area="" asp-controller="NavBar" asp-action="ToProfile">
-                <img alt="Profile Icon" src="Resources/profile_blank.png" class="function_img">
-                <p class="function_name" id="Profile">Profile</p>
+                @if (ViewData["Title"] == "Profile")
+                {
+                    <img alt="Profile Icon" src="Resources/profile_fill.png" class="function_img">
+                    <p class="function_name current_function" id="Profile">Profile</p>
+                }
+                else
+                {
+                    <img alt="Profile Icon" src="Resources/profile_blank.png" class="function_img">
+                    <p class="function_name" id="Profile">Profile</p>
+                }
             </a>
         </div>
         
