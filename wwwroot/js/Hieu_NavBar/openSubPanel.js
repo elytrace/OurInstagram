@@ -59,11 +59,39 @@ btnMore.addEventListener("click", () => {
 });
 
 /************************************************************************************************/
+let imageInput = document.querySelector(".input_img");
+let panelChoose = document.querySelector(".create_content");
+let panelDisplay = document.querySelector(".display_section");
+
+imageInput.addEventListener("change", function() {
+    const file_reader = new FileReader();
+    file_reader.addEventListener("load", () => {
+        const uploaded_image = file_reader.result;
+        document.querySelector(".display_image").style.backgroundImage = `url(${uploaded_image})`;
+    });
+    file_reader.readAsDataURL(this.files[0]);
+
+    panelChoose.classList.add("show_upload");
+    panelChoose.classList.remove("hide_upload");
+
+    panelDisplay.classList.add("hide_upload");
+    panelDisplay.classList.remove("show_upload");
+
+});
+
 document.addEventListener("click", e => {
     if (!createPopup.contains(e.target) && !btnCreate.contains(e.target)) {
         navbar.classList.remove("blur");
         main.classList.remove("blur");
         createPanel.classList.remove("show_popup");
+
+        document.querySelector(".display_image").style.backgroundImage = "unset";
+
+        panelChoose.classList.add("hide_upload");
+        panelChoose.classList.remove("show_upload");
+
+        panelDisplay.classList.add("show_upload");
+        panelDisplay.classList.remove("hide_upload");
     }
 });
 
