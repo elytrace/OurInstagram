@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using MySql.Data.MySqlClient;
 using OurInstagram.Models;
 
 namespace OurInstagram.Controllers;
@@ -15,7 +16,7 @@ public class ProfileController : Controller
     
     public IActionResult Index()
     {
-        return View("~/Views/Khang_Profile/Index.cshtml");
+        return View("~/Views/Khang_Profile/Index.cshtml", LoginController.user);
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

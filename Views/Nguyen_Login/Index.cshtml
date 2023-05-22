@@ -1,4 +1,6 @@
-﻿@{
+﻿@model LoginModel
+@* @model OurInstagram.Models.Login.LoginInput *@
+@{
     Layout = "_LoginNavbar";
     ViewData["Title"] = "Login";
 }
@@ -60,10 +62,10 @@
                     <p class="title">Welcome To Instagram</p>
                 </div>
                 <form class="login-form" asp-area="" asp-controller="Login" asp-action="Login">
-                    <label for="email">Email</label>
-                    <input class="btn_email" id="email" type="email" placeholder="Email" required/>
-                    <label for="password">Password</label>
-                    <input class="btn_password" id="password" type="password" placeholder="Password" required/>
+                    <label asp-for="@Model.LoginInput.Email" for="email">Email</label>
+                    <input asp-for="@Model.LoginInput.Email" class="btn_email" id="email" type="email" placeholder="Email" required/>
+                    <label asp-for="@Model.LoginInput.Password" for="password">Password</label>
+                    <input asp-for="@Model.LoginInput.Password" class="btn_password" id="password" type="password" placeholder="Password" required/>
                     <a asp-area="" asp-controller="" asp-action="" class="forgot_password">Forgot your password?</a>
                     <input class="btn_submit" type="submit" value="Log in"/>
                 </form>
@@ -81,16 +83,13 @@
                     <p class="title">Welcome To Instagram</p>
                 </div>
                 <form class="signup-form" asp-area="" asp-controller="Login" asp-action="Signup">
-                    @* <label for="firstName">First Name</label> *@
-                    @* <input class="btn_name" id="firstName" type="text" placeholder="First Name"/> *@
-                    @* <label for="lastName">Last Name</label> *@
-                    @* <input class="btn_name" id="lastName" type="text" placeholder="Last Name"/> *@
-                    <label for="signup_email">Email</label>
-                    <input class="btn_email" id="signup_email" type="email" placeholder="Email" required/>
-                    <label for="signup_password">Password</label>
-                    <input class="btn_password" id="signup_password" type="password" placeholder="Password" required/>
-                    <label for="confirm_password">Confirm password</label>
-                    <input class="btn_password" id="confirm_password" type="password" placeholder="Confirm password" required/>
+                    <label asp-for="@Model.SignupInput.Email" for="signup_email">Email</label>
+                    <input asp-for="@Model.SignupInput.Email" class="btn_email" id="signup_email" type="email" placeholder="Email" required/>
+                    <label asp-for="@Model.SignupInput.Password" for="signup_password">Password</label>
+                    <input asp-for="@Model.SignupInput.Password" class="btn_password" id="signup_password" type="password" placeholder="Password" required/>
+                    <label asp-for="@Model.SignupInput.ConfirmPassword" for="confirm_password">Confirm password</label>
+                    <input asp-for="@Model.SignupInput.ConfirmPassword" class="btn_password" id="confirm_password" type="password" placeholder="Confirm password" required/>
+                    <span asp-validation-for="@Model.SignupInput.ConfirmPassword" style="color: red"></span>
                     <input class="btn_submit" type="submit" value="Sign up"/>
                 </form>
                 <p class="or">OR</p>
@@ -113,10 +112,10 @@
                 <p class="title">Welcome To Instagram</p>
             </div>
             <form class="login-form" asp-area="" asp-controller="Login" asp-action="Login">
-                <label for="popup_email">Email</label>
-                <input class="btn_email" id="popup_email" type="email" placeholder="Email" required/>
-                <label for="popup_password">Password</label>
-                <input class="btn_password" id="popup_password" type="password" placeholder="Password" required/>
+                <label asp-for="@Model.LoginInput.Email" for="popup_email">Email</label>
+                <input asp-for="@Model.LoginInput.Email" class="btn_email" id="popup_email" type="email" placeholder="Email" required/>
+                <label asp-for="@Model.LoginInput.Password" for="popup_password">Password</label>
+                <input asp-for="@Model.LoginInput.Password" class="btn_password" id="popup_password" type="password" placeholder="Password" required/>
                 <a asp-area="" asp-controller="" asp-action="" class="forgot_password">Forgot your password?</a>
                 <input class="btn_submit" type="submit" value="Log in"/>
             </form>
@@ -138,16 +137,13 @@
                 <p class="title">Welcome To Instagram</p>
             </div>
             <form class="signup-form" asp-area="" asp-controller="Login" asp-action="Signup">
-                @* <label for="firstName">First Name</label> *@
-                @* <input class="btn_name" id="firstName" type="text" placeholder="First Name"/> *@
-                @* <label for="lastName">Last Name</label> *@
-                @* <input class="btn_name" id="lastName" type="text" placeholder="Last Name"/> *@
-                <label for="popup_signup_email">Email</label>
-                <input class="btn_email" id="popup_signup_email" type="email" placeholder="Email" required/>
-                <label for="popup_signup_password">Password</label>
-                <input class="btn_password" id="popup_signup_password" type="password" placeholder="Password" required/>
-                <label for="popup_confirm_password">Confirm password</label>
-                <input class="btn_password" id="popup_confirm_password" type="password" placeholder="Confirm password" required/>
+                <label asp-for="@Model.SignupInput.Email" for="popup_signup_email">Email</label>
+                <input asp-for="@Model.SignupInput.Email" class="btn_email" id="popup_signup_email" type="email" placeholder="Email" required/>
+                <label asp-for="@Model.SignupInput.Password" for="popup_signup_password">Password</label>
+                <input asp-for="@Model.SignupInput.Password" class="btn_password" id="popup_signup_password" type="password" placeholder="Password" required/>
+                <label asp-for="@Model.SignupInput.ConfirmPassword" for="popup_confirm_password">Confirm password</label>
+                <input asp-for="@Model.SignupInput.ConfirmPassword" class="btn_password" id="popup_confirm_password" type="password" placeholder="Confirm password" required/>
+                <span asp-validation-for="@Model.SignupInput.ConfirmPassword" style="color: red"></span>
                 <input class="btn_submit" type="submit" value="Sign up"/>
             </form>
             <p class="or">OR</p>

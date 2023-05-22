@@ -113,3 +113,4 @@ toLogin.addEventListener("click", () => {
     signupBox.classList.remove("show_panel")
     signupBox.classList.add("hide_panel")
 })
+

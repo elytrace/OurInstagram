@@ -1,14 +1,17 @@
+using System.Configuration;
 using Microsoft.EntityFrameworkCore;
 using OurInstagram.Models;
+using OurInstagram.Models.Users;
 
 var builder = WebApplication.CreateBuilder(args);
 
 
 // Add services to the container.
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContextPool<OurDbContext>(
-    options => options.UseSqlServer(connectionString)
-);
+builder.Services.Add(new ServiceDescriptor(typeof(UserContext), 
+    new UserContext(
+        builder.Configuration.GetConnectionString("DefaultConnection")
+    )
+));
 
 builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
 

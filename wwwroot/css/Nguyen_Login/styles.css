@@ -320,6 +320,7 @@ body {
 }
 .panel_login .login-section, .panel_signup .login-section {
     left: 0;
+    min-width: 500px;
 }
 
 .login_popup, .signup_popup {
@@ -353,4 +354,7 @@ body {
     text-align: center;
     font-size: 5vh;
     font-weight: 700;
+}
+.alert {
+    color: indianred;
 }
