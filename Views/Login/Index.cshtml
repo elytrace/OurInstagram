@@ -1,0 +1,243 @@
+﻿@model LoginModel
+@{
+    Layout = "_LoginNavbar";
+    ViewData["Title"] = "Login";
+}
+
+@section Stylesheets
+{
+    <link rel="stylesheet" type="text/css" href="~/css/Nguyen_Login/styles.css"/>
+    <link rel="stylesheet" type="text/css" href="~/lib/fullpage/dist/fullpage.css"/>
+}
+@section Scripts 
+{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    <script type="text/javascript" src="~/lib/fullpage/dist/fullpage.js"></script>
+    <script type="text/javascript" src="~/js/Nguyen_Login/index.js"></script>
+    <script type="text/javascript" src="~/js/Nguyen_Login/popup.js"></script>
+}
+
+<div id="fullpage" class="main">
+    <div class="section">
+        <div class="section_title">
+            <div class="title_head">
+                Get your next
+            </div>
+            <div class="title_tail color1 show">weeknight dinner idea</div>
+            <div class="title_tail color2 hide">home decor idea</div>
+            <div class="title_tail color3 hide">new look outfit</div>
+            <div class="title_tail color4 hide">green thumb idea</div>
+        </div>
+        <div class="section_image">
+            <div class="column1">
+                <img alt="Image" src="" class="column_image image1 show"/>
+                <img alt="Image" src="" class="column_image image7 hide"/>
+            </div>
+            <div class="column2">
+                <img alt="Image" src="" class="column_image image2 show"/>
+                <img alt="Image" src="" class="column_image image8 hide"/>
+            </div>
+            <div class="column3">
+                <img alt="Image" src="" class="column_image image3 show"/>
+                <img alt="Image" src="" class="column_image image9 hide"/>
+            </div>
+            <div class="column4">
+                <img alt="Image" src="" class="column_image image4 show"/>
+                <img alt="Image" src="" class="column_image image0 hide"/>
+            </div>
+            <div class="column5">
+                <img alt="Image" src="" class="column_image image5 show"/>
+                <img alt="Image" src="" class="column_image image6 hide"/>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <p class="section2_text">Hình ảnh minh hoạ (sẽ có trong tương lai)</p>
+    </div>
+    <div class="section">
+        <div class="login-section">
+            @if (ViewData.ModelState.ErrorCount > 0)
+            {
+                <div class="login-box hide_panel">
+                    <div class="login_logo">
+                        <img class="logo" alt="Instagram Logo" src="~/Resources/insta_logo_frame.png"/>
+                        <p class="title">Welcome To Instagram</p>
+                    </div>
+                    @using (Html.BeginForm("Login", "Login", FormMethod.Post, new { @class = "login-form" }))
+                    {
+                        @Html.LabelFor(m => m.LoginInput.Email)
+                        @Html.TextBoxFor(m => m.LoginInput.Email, new { @class = "btn_email" })
+                        @Html.LabelFor(m => m.LoginInput.Password)
+                        @Html.PasswordFor(m => m.LoginInput.Password, new { @class = "btn_password" })
+                        <input class="btn_submit" type="submit" value="Log in"/>
+                    }
+                    <p class="or">OR</p>
+                    <div class="login_with_facebook">
+                        <img class="facebook_logo" src="~/Resources/facebook.png" alt="Facebook Logo"/>
+                        <span class="facebook_login">Continue with facebook</span>
+                    </div>
+                    <p class="to_signup">Not on Instagram yet? Sign up</p>
+                </div>
+
+                <div class="signup-box show_panel">
+                    <div class="login_logo">
+                        <img class="logo" alt="Instagram Logo" src="~/Resources/insta_logo_frame.png"/>
+                        <p class="title">Welcome To Instagram</p>
+                    </div>
+                    @using (Html.BeginForm("Signup", "Login", FormMethod.Post, new { @class = "signup-form" }))
+                    {
+                        @Html.LabelFor(m => m.SignupInput.Email)
+                        @Html.TextBoxFor(m => m.SignupInput.Email, new { @class = "btn_email" })
+                        @Html.LabelFor(m => m.SignupInput.Password)
+                        @Html.PasswordFor(m => m.SignupInput.Password, new { @class = "btn_password" })
+                        @Html.LabelFor(m => m.SignupInput.ConfirmPassword)
+                        @Html.PasswordFor(m => m.SignupInput.ConfirmPassword, new { @class = "btn_password" })
+                        @Html.ValidationMessageFor(m => m.SignupInput.ConfirmPassword)
+                        <input class="btn_submit" type="submit" value="Sign up"/>
+                    }
+                    <p class="or">OR</p>
+                    <div class="login_with_facebook">
+                        <img class="facebook_logo" src="~/Resources/facebook.png" alt="Facebook Logo"/>
+                        <span class="facebook_login">Continue with facebook</span>
+                    </div>
+                    <p class="to_login">Already a member? Login</p>
+                </div>
+            }
+            else
+            {
+                <div class="login-box show_panel">
+                    <div class="login_logo">
+                        <img class="logo" alt="Instagram Logo" src="~/Resources/insta_logo_frame.png"/>
+                        <p class="title">Welcome To Instagram</p>
+                    </div>
+                    @using (Html.BeginForm("Login", "Login", FormMethod.Post, new { @class = "login-form" }))
+                    {
+                        @Html.LabelFor(m => m.LoginInput.Email)
+                        @Html.TextBoxFor(m => m.LoginInput.Email, new { @class = "btn_email" })
+                        @Html.LabelFor(m => m.LoginInput.Password)
+                        @Html.PasswordFor(m => m.LoginInput.Password, new { @class = "btn_password" })
+                        <input class="btn_submit" type="submit" value="Log in"/>
+                    }
+                    <p class="or">OR</p>
+                    <div class="login_with_facebook">
+                        <img class="facebook_logo" src="~/Resources/facebook.png" alt="Facebook Logo"/>
+                        <span class="facebook_login">Continue with facebook</span>
+                    </div>
+                    <p class="to_signup">Not on Instagram yet? Sign up</p>
+                </div>
+
+                <div class="signup-box hide_panel">
+                    <div class="login_logo">
+                        <img class="logo" alt="Instagram Logo" src="~/Resources/insta_logo_frame.png"/>
+                        <p class="title">Welcome To Instagram</p>
+                    </div>
+                    @using (Html.BeginForm("Signup", "Login", FormMethod.Post, new { @class = "signup-form" }))
+                    {
+                        @Html.LabelFor(m => m.SignupInput.Email)
+                        @Html.TextBoxFor(m => m.SignupInput.Email, new { @class = "btn_email" })
+                        @Html.LabelFor(m => m.SignupInput.Password)
+                        @Html.PasswordFor(m => m.SignupInput.Password, new { @class = "btn_password" })
+                        @Html.LabelFor(m => m.SignupInput.ConfirmPassword)
+                        @Html.PasswordFor(m => m.SignupInput.ConfirmPassword, new { @class = "btn_password" })
+                        @Html.ValidationMessageFor(m => m.SignupInput.ConfirmPassword)
+                        <input class="btn_submit" type="submit" value="Sign up"/>
+                    }
+                    <p class="or">OR</p>
+                    <div class="login_with_facebook">
+                        <img class="facebook_logo" src="~/Resources/facebook.png" alt="Facebook Logo"/>
+                        <span class="facebook_login">Continue with facebook</span>
+                    </div>
+                    <p class="to_login">Already a member? Login</p>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@* CREATE POPUP *@
+<div class="panel_login">
+    <div class="login-section">
+        <div class="login-box login_popup">
+            <div class="login_logo">
+                <img class="logo" alt="Instagram Logo" src="~/Resources/insta_logo_frame.png"/>
+                <p class="title">Welcome To Instagram</p>
+            </div>
+            @using (Html.BeginForm("Login", "Login", FormMethod.Post, new { @class = "login-form" }))
+            {
+                @Html.LabelFor(m => m.LoginInput.Email)
+                @Html.TextBoxFor(m => m.LoginInput.Email, new { @class = "btn_email" })
+                @Html.LabelFor(m => m.LoginInput.Password)
+                @Html.PasswordFor(m => m.LoginInput.Password, new { @class = "btn_password" })
+                <input class="btn_submit" type="submit" value="Log in"/>
+            }
+            <p class="or">OR</p>
+            <div class="login_with_facebook">
+                <img class="facebook_logo" src="~/Resources/facebook.png" alt="Facebook Logo"/>
+                <span class="facebook_login">Continue with facebook</span>
+            </div>
+            @* <p class="to_signup">Not on Instagram yet? Sign up</p> *@
+        </div>
+    </div>
+</div>
+
+@if (ViewData.ModelState.ErrorCount > 0)
+{
+    <div class="panel_signup show_popup">
+        <div class="login-section">
+            <div class="signup-box signup_popup">
+                <div class="login_logo">
+                    <img class="logo" alt="Instagram Logo" src="~/Resources/insta_logo_frame.png"/>
+                    <p class="title">Welcome To Instagram</p>
+                </div>
+                @using (Html.BeginForm("Signup", "Login", FormMethod.Post, new { @class = "signup-form"} ))
+                {
+                    @Html.LabelFor(m => m.SignupInput.Email)
+                    @Html.TextBoxFor(m => m.SignupInput.Email, new { @class = "btn_email" })
+                    @Html.LabelFor(m => m.SignupInput.Password)
+                    @Html.PasswordFor(m => m.SignupInput.Password, new { @class = "btn_password" })
+                    @Html.LabelFor(m => m.SignupInput.ConfirmPassword)
+                    @Html.PasswordFor(m => m.SignupInput.ConfirmPassword, new { @class = "btn_password" })
+                    @Html.ValidationMessageFor(m => m.SignupInput.ConfirmPassword)
+                    <input class="btn_submit" type="submit" value="Sign up"/>
+                }
+                <p class="or">OR</p>
+                <div class="login_with_facebook">
+                    <img class="facebook_logo" src="~/Resources/facebook.png" alt="Facebook Logo"/>
+                    <span class="facebook_login">Continue with facebook</span>
+                </div>
+                @* <p class="to_login">Already a member? Login</p> *@
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class="panel_signup">
+        <div class="login-section">
+            <div class="signup-box signup_popup">
+                <div class="login_logo">
+                    <img class="logo" alt="Instagram Logo" src="~/Resources/insta_logo_frame.png"/>
+                    <p class="title">Welcome To Instagram</p>
+                </div>
+                @using (Html.BeginForm("Signup", "Login", FormMethod.Post, new { @class = "signup-form"} ))
+                {
+                    @Html.LabelFor(m => m.SignupInput.Email)
+                    @Html.TextBoxFor(m => m.SignupInput.Email, new { @class = "btn_email" })
+                    @Html.LabelFor(m => m.SignupInput.Password)
+                    @Html.PasswordFor(m => m.SignupInput.Password, new { @class = "btn_password" })
+                    @Html.LabelFor(m => m.SignupInput.ConfirmPassword)
+                    @Html.PasswordFor(m => m.SignupInput.ConfirmPassword, new { @class = "btn_password" })
+                    @Html.ValidationMessageFor(m => m.SignupInput.ConfirmPassword)
+                    <input class="btn_submit" type="submit" value="Sign up"/>
+                }
+                <p class="or">OR</p>
+                <div class="login_with_facebook">
+                    <img class="facebook_logo" src="~/Resources/facebook.png" alt="Facebook Logo"/>
+                    <span class="facebook_login">Continue with facebook</span>
+                </div>
+                @* <p class="to_login">Already a member? Login</p> *@
+            </div>
+        </div>
+    </div>
+}

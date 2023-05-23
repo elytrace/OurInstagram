@@ -29,3 +29,10 @@ document.addEventListener("click", e => {
         panelSignup.classList.remove("show_popup");
     }
 });
+
+window.addEventListener("DOMContentLoaded", () => {
+    if(panelSignup.classList.contains("show_popup")) {
+        navbar.classList.add("blur");
+        main.classList.add("blur");
+    }
+})

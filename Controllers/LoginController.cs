@@ -16,19 +16,19 @@ public class LoginController : Controller
         _logger = logger;
     }
     
-    public IActionResult Index()
+    public ActionResult Index()
     {
-        return View("~/Views/Nguyen_Login/Index.cshtml");
+        return View();
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
+    public ActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 
     [HttpPost]
-    public IActionResult? Login(LoginModel model)
+    public ActionResult Login(LoginModel model)
     {
         if (ModelState.IsValid)
         {
@@ -39,20 +39,16 @@ public class LoginController : Controller
 
         throw new Exception("My Model state is not valid");
     }
-    
+
     [HttpPost]
-    public IActionResult Signup(LoginModel model)
+    public ActionResult Signup(LoginModel model)
     {
         if (ModelState.IsValid)
         {
             UserContext.CreateNewUser(model.SignupInput.Email, model.SignupInput.Password);
             return RedirectToAction("Index", "Home");
         }
-        // else
-        // {
-        //     return View("~/Views/Nguyen_Login/Index.cshtml", input);
-        // }
-        //
-        return View("~/Views/Nguyen_Login/Index.cshtml");
+
+        return View("Index", model);
     }
 }

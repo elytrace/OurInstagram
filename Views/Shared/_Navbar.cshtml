@@ -6,19 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>@ViewData["Title"] - Our Instagram</title>
     
-    <link rel="icon" href="Resources/insta_logo.png" type="image/icon type">
+    <link rel="icon" href="~/Resources/insta_logo.png" type="image/icon type">
 
-    <link rel="stylesheet" type="text/css"  href="css/Hieu_NavBar/color.css"/>
-    <link rel="stylesheet" type="text/css"  href="css/Hieu_NavBar/styles.css"/>
+    <link rel="stylesheet" type="text/css"  href="~/css/Hieu_NavBar/color.css"/>
+    <link rel="stylesheet" type="text/css"  href="~/css/Hieu_NavBar/styles.css"/>
     
-    <script src="js/Hieu_NavBar/openSubPanel.js" defer></script>
+    <script src="~/js/Hieu_NavBar/openSubPanel.js" defer></script>
 </head>
 <body>
 <div class="navbar">
     <div class="main_panel">
         <div class="section_logo">
-            <img class="title" alt="Instagram Title" src="Resources/insta_title.png"/>
-            <img class="logo" alt="Instagram Logo" src="Resources/insta_logo_frame.png"/>
+            <img class="title" alt="Instagram Title" src="~/Resources/insta_title.png"/>
+            <img class="logo" alt="Instagram Logo" src="~/Resources/insta_logo_frame.png"/>
         </div>
         
         <div class="section_function">
@@ -26,59 +26,59 @@
             <a class="no_underline function" asp-area="" asp-controller="NavBar" asp-action="ToHome">
                 @if (ViewData["Title"] == "Home")
                 {
-                    <img alt="Home Icon" src="Resources/home_fill.png" class="function_img">
+                    <img alt="Home Icon" src="~/Resources/home_fill.png" class="function_img">
                     <p class="function_name current_function" id="Home">Home</p>
                 }
                 else
                 {
-                    <img alt="Home Icon" src="Resources/home_blank.png" class="function_img">
+                    <img alt="Home Icon" src="~/Resources/home_blank.png" class="function_img">
                     <p class="function_name" id="Home">Home</p>
                 }
             </a>
             @* Search *@
             <div class="function search">
-                <img alt="Search Icon" src="Resources/search_blank.png" class="function_img">
+                <img alt="Search Icon" src="~/Resources/search_blank.png" class="function_img">
                 <p class="function_name" id="Search">Search</p>
             </div>
             @* Explore *@
             <a class="no_underline function" asp-area="" asp-controller="NavBar" asp-action="ToExplore">
                 @if (ViewData["Title"] == "Explore")
                 {
-                    <img alt="Explore Icon" src="Resources/explore_fill.png" class="function_img">
+                    <img alt="Explore Icon" src="~/Resources/explore_fill.png" class="function_img">
                     <p class="function_name current_function" id="Explore">Explore</p>
                 }
                 else
                 {
-                    <img alt="Explore Icon" src="Resources/explore_blank.png" class="function_img">
+                    <img alt="Explore Icon" src="~/Resources/explore_blank.png" class="function_img">
                     <p class="function_name" id="Explore">Explore</p>
                 }
                 
             </a>
             @* Message *@
             <div class="function message">
-                <img alt="Message Icon" src="Resources/message_blank.png" class="function_img">
+                <img alt="Message Icon" src="~/Resources/message_blank.png" class="function_img">
                 <p class="function_name" id="Message">Message</p>
             </div>
             @* Notification *@
             <div class="function notify">
-                <img alt="Notification Icon" src="Resources/notification_blank.png" class="function_img">
+                <img alt="Notification Icon" src="~/Resources/notification_blank.png" class="function_img">
                 <p class="function_name" id="Notification">Notification</p>
             </div>
             @* Create *@
             <div class="function create">
-                <img alt="Create Icon" src="Resources/create_blank.png" class="function_img">
+                <img alt="Create Icon" src="~/Resources/create_blank.png" class="function_img">
                 <p class="function_name" id="Create">Create</p>
             </div>
             @* Profile *@
             <a class="no_underline function" asp-area="" asp-controller="NavBar" asp-action="ToProfile">
                 @if (ViewData["Title"] == "Profile")
                 {
-                    <img alt="Profile Icon" src="Resources/profile_fill.png" class="function_img">
+                    <img alt="Profile Icon" src="~/Resources/profile_fill.png" class="function_img">
                     <p class="function_name current_function" id="Profile">Profile</p>
                 }
                 else
                 {
-                    <img alt="Profile Icon" src="Resources/profile_blank.png" class="function_img">
+                    <img alt="Profile Icon" src="~/Resources/profile_blank.png" class="function_img">
                     <p class="function_name" id="Profile">Profile</p>
                 }
             </a>
@@ -86,29 +86,29 @@
         
         @* Section 'More' *@
         <div class="function section_more">
-            <img alt="More Icon" src="Resources/burger.png" class="function_img">
+            <img alt="More Icon" src="~/Resources/burger.png" class="function_img">
             <p class="function_name" id="More">More</p>
             <div class="more_menu hide">
                 <div class="more_first_part">
                     <div class="sub_function">
                         <p class="sub_function_name">Settings</p>
-                        <img alt="Settings Icon" src="Resources/setting_blank.png" class="sub_function_img"/>
+                        <img alt="Settings Icon" src="~/Resources/setting_blank.png" class="sub_function_img"/>
                     </div>
                     <div class="sub_function">
                         <p class="sub_function_name">Saved</p>
-                        <img alt="Settings Icon" src="Resources/bookmark.png" class="sub_function_img"/>
+                        <img alt="Settings Icon" src="~/Resources/bookmark.png" class="sub_function_img"/>
                     </div>
                     <div class="sub_function">
                         <p class="sub_function_name">Switch Appearance</p>
-                        <img alt="Settings Icon" src="Resources/moon.png" class="sub_function_img"/>
+                        <img alt="Settings Icon" src="~/Resources/moon.png" class="sub_function_img"/>
                     </div>
                     <div class="sub_function">
                         <p class="sub_function_name">Your Activities</p>
-                        <img alt="Settings Icon" src="Resources/time.png" class="sub_function_img"/>
+                        <img alt="Settings Icon" src="~/Resources/time.png" class="sub_function_img"/>
                     </div>
                     <div class="sub_function">
                         <p class="sub_function_name">Report A Problem</p>
-                        <img alt="Settings Icon" src="Resources/report.png" class="sub_function_img"/>
+                        <img alt="Settings Icon" src="~/Resources/report.png" class="sub_function_img"/>
                     </div>
                 </div>
                 <div class="more_second_part">
@@ -161,10 +161,10 @@
     <div class="create_popup">
         <div class="create_header">
             <p class="create_title">Upload new image</p>
-            <img alt="Close" src="Resources/close.png" class="close_img"/>
+            <img alt="Close" src="~/Resources/close.png" class="close_img"/>
         </div>
         <div class="create_content show_upload">
-            <img alt="Create" src="Resources/image.png" class="upload_img"/>
+            <img alt="Create" src="~/Resources/image.png" class="upload_img"/>
             <p class="upload_text">Upload an image to create new post</p>
             <input type="file" id="file" accept="image/png, image/jpg, image/jpeg" class="input_img" required/>
             <label for="file" class="input_button">Choose an image</label>

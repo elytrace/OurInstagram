@@ -15,7 +15,7 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return View("~/Views/Hiep_Home/Index.cshtml");
+        return View();
     }
 
     public IActionResult Explore()

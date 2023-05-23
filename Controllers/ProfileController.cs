@@ -16,7 +16,7 @@ public class ProfileController : Controller
     
     public IActionResult Index()
     {
-        return View("~/Views/Khang_Profile/Index.cshtml", LoginController.user);
+        return View(LoginController.user);
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
