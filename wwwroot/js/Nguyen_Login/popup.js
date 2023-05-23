@@ -21,14 +21,12 @@ btnSignup.addEventListener("click", () => {
     panelSignup.classList.add("show_popup");
 });
 
-document.addEventListener("click", e => {
-    if (!signupPopup.contains(e.target) && !loginPopup.contains(e.target) && !btnLogin.contains(e.target)  && !btnSignup.contains(e.target)) {
-        navbar.classList.remove("blur");
-        main.classList.remove("blur");
-        panelLogin.classList.remove("show_popup");
-        panelSignup.classList.remove("show_popup");
-    }
-});
+function closePopup(e) {
+    navbar.classList.remove("blur");
+    main.classList.remove("blur");
+    panelLogin.classList.remove("show_popup");
+    panelSignup.classList.remove("show_popup");
+}
 
 window.addEventListener("DOMContentLoaded", () => {
     if(panelSignup.classList.contains("show_popup")) {

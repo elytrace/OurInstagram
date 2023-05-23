@@ -18,6 +18,7 @@ public class LoginController : Controller
     
     public ActionResult Index()
     {
+        // ModelState.Clear();
         return View();
     }
 
@@ -37,7 +38,8 @@ public class LoginController : Controller
             return NotFound("Không tồn tại user");
         }
 
-        throw new Exception("My Model state is not valid");
+        // ModelState.Clear();
+        return View("Index", model);
     }
 
     [HttpPost]
@@ -49,6 +51,7 @@ public class LoginController : Controller
             return RedirectToAction("Index", "Home");
         }
 
+        // ModelState.Clear();
         return View("Index", model);
     }
 }
