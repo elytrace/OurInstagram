@@ -4,11 +4,11 @@ using OurInstagram.Models.Users;
 
 namespace OurInstagram.Models;
 
-public class UserContext
+public class MyDbContext
 {
     private static string ConnectionString { get; set; }
 
-    public UserContext(string connectionString)
+    public MyDbContext(string connectionString)
     {
         ConnectionString = connectionString;
     }
@@ -39,7 +39,7 @@ public class UserContext
                         email = reader["email"].ToString(),
                         phone = reader["phone"].ToString(),
                         dateOfBirth = DateOnly.FromDateTime(Convert.ToDateTime(reader["dateOfBirth"])),
-                        gender = Convert.ToBoolean(reader["gender"]),
+                        gender = Convert.ToByte(reader["gender"]),
                         avatarPath = reader["avatarPath"].ToString(),
                         biography = reader["biography"].ToString(),
                         displayedName = reader["displayName"].ToString(),

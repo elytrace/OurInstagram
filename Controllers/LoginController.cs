@@ -8,7 +8,6 @@ namespace OurInstagram.Controllers;
 
 public class LoginController : Controller
 {
-    public static User? user;
     private readonly ILogger<LoginController> _logger;
 
     public LoginController(ILogger<LoginController> logger)
@@ -33,12 +32,12 @@ public class LoginController : Controller
     {
         if (ModelState.IsValid)
         {
-            user = UserContext.GetCurrentUser(model.LoginInput.Email, model.LoginInput.Password);
-            if (user != null) return RedirectToAction("Index", "Home");
+            // user = MyDbContext.GetCurrentUser(model.LoginInput.Email, model.LoginInput.Password);
+            var success = OurDbContext.ValidateLogin(model.LoginInput.Email, model.LoginInput.Password);
+            if (success) return RedirectToAction("Index", "Home");
             return NotFound("Không tồn tại user");
         }
 
-        // ModelState.Clear();
         return View("Index", model);
     }
 
@@ -47,11 +46,13 @@ public class LoginController : Controller
     {
         if (ModelState.IsValid)
         {
-            UserContext.CreateNewUser(model.SignupInput.Email, model.SignupInput.Password);
+            OurDbContext.CreateNewUser(model.SignupInput.Email, model.SignupInput.Password);
             return RedirectToAction("Index", "Home");
         }
 
         // ModelState.Clear();
         return View("Index", model);
     }
+    
+    
 }

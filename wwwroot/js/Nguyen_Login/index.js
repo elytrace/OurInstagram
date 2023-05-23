@@ -1,4 +1,4 @@
-﻿let g_interval;
+let g_interval;
 let myFullpage = new fullpage('#fullpage', {
     licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
     controlArrows: false,
@@ -113,4 +113,21 @@ toLogin.addEventListener("click", () => {
     signupBox.classList.remove("show_panel")
     signupBox.classList.add("hide_panel")
 })
+
+// let sectionList = document.querySelectorAll(".section")
+// document.addEventListener("scroll", e => {
+//     for(let i = 0; i < sectionList.length; i++) {
+//         if(sectionList[i].classList.contains("active")) {
+//             if(i === 2) {
+//                 navbar.classList.add("hide");
+//                 navbar.classList.remove("show");
+//             }
+//             else {
+//                 navbar.classList.add("show");
+//                 navbar.classList.remove("hide");
+//             }
+//             break;
+//         }
+//     }  
+// })
 
