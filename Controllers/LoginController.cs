@@ -28,24 +28,24 @@ public class LoginController : Controller
     }
 
     [HttpPost]
-    public IActionResult? Login(LoginModel input)
+    public IActionResult? Login(LoginModel model)
     {
         if (ModelState.IsValid)
         {
-            user = UserContext.GetCurrentUser(input.LoginInput.Email, input.LoginInput.Password);
+            user = UserContext.GetCurrentUser(model.LoginInput.Email, model.LoginInput.Password);
             if (user != null) return RedirectToAction("Index", "Home");
             return NotFound("Không tồn tại user");
         }
 
-        return null;
+        throw new Exception("My Model state is not valid");
     }
     
     [HttpPost]
-    public IActionResult Signup(LoginModel input)
+    public IActionResult Signup(LoginModel model)
     {
         if (ModelState.IsValid)
         {
-            UserContext.CreateNewUser(input.SignupInput.Email, input.SignupInput.Password);
+            UserContext.CreateNewUser(model.SignupInput.Email, model.SignupInput.Password);
             return RedirectToAction("Index", "Home");
         }
         // else

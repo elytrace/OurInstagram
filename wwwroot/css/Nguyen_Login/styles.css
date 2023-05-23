@@ -85,7 +85,7 @@ body {
     padding: 10px 0 10px 20px;
     margin: auto;
     display: block;
-    /*font-size: 2vh;*/
+    /* font-size: 2vh; */
 }
 
 .btn_submit, .login_with_facebook {
@@ -106,7 +106,7 @@ body {
     font-size: 2.5vh;
     background-color: darkred;
 }
-.signup-form .btn_submit {
+.btn_submit {
     margin-top: 25px;
 }
 .or {

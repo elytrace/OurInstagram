@@ -111,14 +111,22 @@
                 <img class="logo" alt="Instagram Logo" src="Resources/insta_logo_frame.png"/>
                 <p class="title">Welcome To Instagram</p>
             </div>
-            <form class="login-form" asp-area="" asp-controller="Login" asp-action="Login">
-                <label asp-for="@Model.LoginInput.Email" for="popup_email">Email</label>
-                <input asp-for="@Model.LoginInput.Email" class="btn_email" id="popup_email" type="email" placeholder="Email" required/>
-                <label asp-for="@Model.LoginInput.Password" for="popup_password">Password</label>
-                <input asp-for="@Model.LoginInput.Password" class="btn_password" id="popup_password" type="password" placeholder="Password" required/>
-                <a asp-area="" asp-controller="" asp-action="" class="forgot_password">Forgot your password?</a>
+            @using (Html.BeginForm("Login", "Login", FormMethod.Post, new { @class = "login-form" }))
+            {
+                @Html.LabelFor(m => m.LoginInput.Email)
+                @Html.TextBoxFor(m => m.LoginInput.Email, new { @class = "btn_email" })
+                @Html.LabelFor(m => m.LoginInput.Password)
+                @Html.TextBoxFor(m => m.LoginInput.Password, new { @class = "btn_password" })
                 <input class="btn_submit" type="submit" value="Log in"/>
-            </form>
+            }
+            @* <form class="login-form" asp-area="" asp-controller="Login" asp-action="Login"> *@
+            @*     <label asp-for="@Model.LoginInput.Email" for="popup_email">Email</label> *@
+            @*     <input asp-for="@Model.LoginInput.Email" class="btn_email" id="popup_email" type="email" placeholder="Email" required/> *@
+            @*     <label asp-for="@Model.LoginInput.Password" for="popup_password">Password</label> *@
+            @*     <input asp-for="@Model.LoginInput.Password" class="btn_password" id="popup_password" type="password" placeholder="Password" required/> *@
+            @*     <a asp-area="" asp-controller="" asp-action="" class="forgot_password">Forgot your password?</a> *@
+            @*     <input class="btn_submit" type="submit" value="Log in"/> *@
+            @* </form> *@
             <p class="or">OR</p>
             <div class="login_with_facebook">
                 <img class="facebook_logo" src="Resources/facebook.png" alt="Facebook Logo"/>
@@ -136,16 +144,26 @@
                 <img class="logo" alt="Instagram Logo" src="Resources/insta_logo_frame.png"/>
                 <p class="title">Welcome To Instagram</p>
             </div>
-            <form class="signup-form" asp-area="" asp-controller="Login" asp-action="Signup">
-                <label asp-for="@Model.SignupInput.Email" for="popup_signup_email">Email</label>
-                <input asp-for="@Model.SignupInput.Email" class="btn_email" id="popup_signup_email" type="email" placeholder="Email" required/>
-                <label asp-for="@Model.SignupInput.Password" for="popup_signup_password">Password</label>
-                <input asp-for="@Model.SignupInput.Password" class="btn_password" id="popup_signup_password" type="password" placeholder="Password" required/>
-                <label asp-for="@Model.SignupInput.ConfirmPassword" for="popup_confirm_password">Confirm password</label>
-                <input asp-for="@Model.SignupInput.ConfirmPassword" class="btn_password" id="popup_confirm_password" type="password" placeholder="Confirm password" required/>
-                <span asp-validation-for="@Model.SignupInput.ConfirmPassword" style="color: red"></span>
+            @using (Html.BeginForm("Signup", "Login", FormMethod.Post, new { @class = "signup-form"} ))
+            {
+                @Html.LabelFor(m => m.SignupInput.Email)
+                @Html.TextBoxFor(m => m.SignupInput.Email, new { @class = "btn_email" })
+                @Html.LabelFor(m => m.SignupInput.Password)
+                @Html.TextBoxFor(m => m.SignupInput.Password, new { @class = "btn_password" })
+                @Html.LabelFor(m => m.SignupInput.ConfirmPassword)
+                @Html.TextBoxFor(m => m.SignupInput.ConfirmPassword, new { @class = "btn_password" })
                 <input class="btn_submit" type="submit" value="Sign up"/>
-            </form>
+            }
+            @* <form class="signup-form" asp-area="" asp-controller="Login" asp-action="Signup"> *@
+            @*     <label asp-for="@Model.SignupInput.Email" for="popup_signup_email">Email</label> *@
+            @*     <input asp-for="@Model.SignupInput.Email" class="btn_email" id="popup_signup_email" type="email" placeholder="Email" required/> *@
+            @*     <label asp-for="@Model.SignupInput.Password" for="popup_signup_password">Password</label> *@
+            @*     <input asp-for="@Model.SignupInput.Password" class="btn_password" id="popup_signup_password" type="password" placeholder="Password" required/> *@
+            @*     <label asp-for="@Model.SignupInput.ConfirmPassword" for="popup_confirm_password">Confirm password</label> *@
+            @*     <input asp-for="@Model.SignupInput.ConfirmPassword" class="btn_password" id="popup_confirm_password" type="password" placeholder="Confirm password" required/> *@
+            @*     <span asp-validation-for="@Model.SignupInput.ConfirmPassword" style="color: red"></span> *@
+            @*     <input class="btn_submit" type="submit" value="Sign up"/> *@
+            @* </form> *@
             <p class="or">OR</p>
             <div class="login_with_facebook">
                 <img class="facebook_logo" src="Resources/facebook.png" alt="Facebook Logo"/>
