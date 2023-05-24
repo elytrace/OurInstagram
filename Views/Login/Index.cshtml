@@ -1,4 +1,4 @@
-﻿@model LoginModel
+﻿@model OurInstagram.Models.Login.LoginModel
 @{
     Layout = "_LoginNavbar";
     ViewData["Title"] = "Login";
@@ -65,7 +65,7 @@
     </div>
     <div class="section">
         <div class="login-section">
-            <div class="login-box @(ViewData.ModelState.ErrorCount > 0 ? "hide_panel" : "show_panel")">
+            <div class="login-box @(ViewData.ModelState.ContainsKey("Password") ? "hide_panel" : "show_panel")">
                 <div class="login_logo">
                     <img class="logo" alt="Instagram Logo" src="~/Resources/insta_logo_frame.png"/>
                     <p class="title">Welcome To Instagram</p>
@@ -76,6 +76,7 @@
                     @Html.TextBoxFor(m => m.LoginInput.Email, new { placeholder = "Email", @class = "input_email" })
                     @Html.LabelFor(m => m.LoginInput.Password)
                     @Html.PasswordFor(m => m.LoginInput.Password, new { placeholder = "Password", @class = "input_password" })
+                    @Html.ValidationMessage("Password")
                     <input class="btn_submit" type="submit" value="Log in"/>
                 }
                 <p class="or">OR</p>
@@ -86,7 +87,7 @@
                 <p class="to_signup">Not on Instagram yet? Sign up</p>
             </div>
 
-            <div class="signup-box @(ViewData.ModelState.ErrorCount > 0 ? "show_panel" : "hide_panel")">
+            <div class="signup-box @(ViewData.ModelState.ContainsKey("Confirm Password") ? "show_panel" : "hide_panel")">
                 <div class="login_logo">
                     <img class="logo" alt="Instagram Logo" src="~/Resources/insta_logo_frame.png"/>
                     <p class="title">Welcome To Instagram</p>
@@ -99,7 +100,7 @@
                     @Html.PasswordFor(m => m.SignupInput.Password, new { placeholder = "Password", @class = "input_password" })
                     @Html.LabelFor(m => m.SignupInput.ConfirmPassword)
                     @Html.PasswordFor(m => m.SignupInput.ConfirmPassword, new { placeholder = "Confirm password", @class = "input_password" })
-                    @Html.ValidationMessageFor(m => m.SignupInput.ConfirmPassword)
+                    @Html.ValidationMessage("Confirm Password")
                     <input class="btn_submit" type="submit" value="Sign up"/>
                 }
                 <p class="or">OR</p>
@@ -114,7 +115,7 @@
 </div>
 
 @* CREATE POPUP *@
-<div class="panel_login">
+<div class="panel_login @(ViewData.ModelState.ContainsKey("Password") ? "show_popup" : "")">
     <div class="login-section">
         <div class="login-box login_popup">
             <div class="login_logo">
@@ -127,6 +128,7 @@
                 @Html.TextBoxFor(m => m.LoginInput.Email, new { placeholder = "Email", @class = "input_email" })
                 @Html.LabelFor(m => m.LoginInput.Password)
                 @Html.PasswordFor(m => m.LoginInput.Password, new { placeholder = "Password", @class = "input_password" })
+                @Html.ValidationMessage("Password")
                 <input class="btn_submit" type="submit" value="Log in"/>
             }
             <p class="or">OR</p>
@@ -139,7 +141,7 @@
     </div>
 </div>
 
-<div class="panel_signup @(ViewData.ModelState.ErrorCount > 0 ? "show_popup" : "")">
+<div class="panel_signup @(ViewData.ModelState.ContainsKey("Confirm Password") ? "show_popup" : "")">
     <div class="login-section">
         <div class="signup-box signup_popup">
             <div class="login_logo">
@@ -154,7 +156,7 @@
                 @Html.PasswordFor(m => m.SignupInput.Password, new { placeholder = "Password", @class = "input_password" })
                 @Html.LabelFor(m => m.SignupInput.ConfirmPassword)
                 @Html.PasswordFor(m => m.SignupInput.ConfirmPassword, new { placeholder = "Confirm password", @class = "input_password" })
-                @Html.ValidationMessageFor(m => m.SignupInput.ConfirmPassword)
+                @Html.ValidationMessage("Confirm Password")
                 <input class="btn_submit" type="submit" value="Sign up"/>
             }
             <p class="or">OR</p>

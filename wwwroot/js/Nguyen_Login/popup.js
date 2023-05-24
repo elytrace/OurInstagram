@@ -21,7 +21,7 @@ btnSignup.addEventListener("click", () => {
     panelSignup.classList.add("show_popup");
 });
 
-function closePopup(e) {
+function closePopup() {
     navbar.classList.remove("blur");
     main.classList.remove("blur");
     panelLogin.classList.remove("show_popup");
@@ -30,6 +30,10 @@ function closePopup(e) {
 
 window.addEventListener("DOMContentLoaded", () => {
     if(panelSignup.classList.contains("show_popup")) {
+        navbar.classList.add("blur");
+        main.classList.add("blur");
+    }
+    if(panelLogin.classList.contains("show_popup")) {
         navbar.classList.add("blur");
         main.classList.add("blur");
     }

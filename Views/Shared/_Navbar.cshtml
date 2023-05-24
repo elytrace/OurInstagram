@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
@@ -8,10 +9,31 @@
     
     <link rel="icon" href="~/Resources/insta_logo.png" type="image/icon type">
 
+    
     <link rel="stylesheet" type="text/css"  href="~/css/Hieu_NavBar/color.css"/>
     <link rel="stylesheet" type="text/css"  href="~/css/Hieu_NavBar/styles.css"/>
-    
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
     <script src="~/js/Hieu_NavBar/openSubPanel.js" defer></script>
+    <script>
+        function uploadImage() {
+            let displayImage = document.querySelector(".display_image");
+            let image = displayImage.style.backgroundImage;
+            let url = image.slice(5, -2);
+            $.ajax({
+                url: "/Home/UploadImage",
+                type: "POST",
+                data: { "imageURL" : url },
+                success: function (data) {
+                    alert(data)
+                },
+                error: function(error)
+                {
+                    alert(error);
+                }
+            });
+        }
+    </script>
 </head>
 <body>
 <div class="navbar">
@@ -20,7 +42,7 @@
             <img class="title" alt="Instagram Title" src="~/Resources/insta_title.png"/>
             <img class="logo" alt="Instagram Logo" src="~/Resources/insta_logo_frame.png"/>
         </div>
-        
+
         <div class="section_function">
             @* Home *@
             <a class="no_underline function" asp-area="" asp-controller="NavBar" asp-action="ToHome">
@@ -172,7 +194,7 @@
         <div class="display_section hide_upload">
             <div class="display_image"></div>
             <div class="action_section">
-                <input type="button" id="upload" class="btn_upload"/>
+                <input type="button" id="upload" class="btn_upload" onclick="uploadImage()"/>
                 <label for="upload" class="label_upload">Upload</label>
                 <input type="button" id="cancel" class="btn_cancel"/>
                 <label for="cancel" class="label_cancel">Cancel</label>

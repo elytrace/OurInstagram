@@ -38,5 +38,5 @@ public class User
     [StringLength(255)]
     public string? displayedName { get; set; }
     
-    public ICollection<Image> images { get; set; }
+    public ICollection<Image>? images { get; set; }
 }

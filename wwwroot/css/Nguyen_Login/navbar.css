@@ -54,6 +54,7 @@
     padding: 15px;
     font-size: 1.8vh;
     font-weight: bold;
+    user-select: none;
 }
 .navbar_label_login:hover {
     cursor: pointer;
@@ -69,6 +70,7 @@
     padding: 15px;
     font-size: 1.8vh;
     font-weight: bold;
+    user-select: none;
 }
 .navbar_label_signup:hover {
     cursor: pointer;

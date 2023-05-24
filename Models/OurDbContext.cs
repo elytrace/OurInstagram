@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using OurInstagram.Controllers;
 using OurInstagram.Models.Images;
 using OurInstagram.Models.Users;
 
@@ -109,16 +110,6 @@ public class OurDbContext : DbContext
             
         User.currentUser = user;
         return true;
-    }
-    
-    public static List<Image> GetImageList(int userId)
-    {
-        var imageList = context.images
-            .Where(image => image.userId == userId)
-            .OrderBy(image => image.like)
-            .ToList();
-        
-        return imageList;
     }
 
     public static void CreateNewUser(string username, string password)

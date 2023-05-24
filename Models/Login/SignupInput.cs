@@ -18,7 +18,6 @@ public class SignupInput
     
     [Required(ErrorMessage = "Confirm password is required")]
     [DataType(DataType.Password)]
-    [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
     [NotMapped]
     [DisplayName("Confirm Password")]
     public string ConfirmPassword { get; set; }

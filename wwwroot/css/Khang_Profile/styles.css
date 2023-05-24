@@ -22,6 +22,7 @@ h1, h4, a {
     overflow: hidden;
     overflow-y: auto;
     padding: 0 16px 16px 291px;
+    text-align: center;
 }
 
 .profile_section {
@@ -43,6 +44,8 @@ h1, h4, a {
     align-items: flex-start;
     justify-content: flex-start;
     gap: 10px;
+    
+    text-align: start;
     /*border: 1px solid;*/
 }
 .username {
@@ -118,4 +121,15 @@ h1, h4, a {
 .home .post:hover .overlay {
     opacity: 0.6;
     cursor: pointer;
+}
+.placeholder {
+    font-weight: 450;
+    font-size: 2vh;
+    color: var(--text1);
+}
+.hide {
+    display: none;
+}
+.show {
+    display: block;
 }

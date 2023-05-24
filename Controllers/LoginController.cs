@@ -30,27 +30,37 @@ public class LoginController : Controller
     [HttpPost]
     public ActionResult Login(LoginModel model)
     {
+        if (ModelState.ContainsKey("Confirm Password"))
+            ModelState["Confirm Password"].Errors.Clear();
+        
         if (ModelState.IsValid)
         {
             // user = MyDbContext.GetCurrentUser(model.LoginInput.Email, model.LoginInput.Password);
-            var success = OurDbContext.ValidateLogin(model.LoginInput.Email, model.LoginInput.Password);
-            if (success) return RedirectToAction("Index", "Home");
-            return NotFound("Không tồn tại user");
+            var loginState = OurDbContext.ValidateLogin(model.LoginInput.Email, model.LoginInput.Password);
+            if (loginState) 
+                return RedirectToAction("Index", "Home");
+            
+            ModelState.Clear();
+            ModelState.AddModelError("Password", "The user name or password is incorrect");
         }
-
         return View("Index", model);
     }
 
     [HttpPost]
     public ActionResult Signup(LoginModel model)
     {
+        if (ModelState.ContainsKey("Password"))
+            ModelState["Password"].Errors.Clear();
+        
         if (ModelState.IsValid)
         {
-            OurDbContext.CreateNewUser(model.SignupInput.Email, model.SignupInput.Password);
-            return RedirectToAction("Index", "Home");
+            if (model.SignupInput.Password == model.SignupInput.ConfirmPassword)
+            {
+                OurDbContext.CreateNewUser(model.SignupInput.Email, model.SignupInput.Password);
+                return RedirectToAction("Index", "Home");
+            }
+            ModelState.AddModelError("Confirm Password", "The password and confirmation password do not match.");
         }
-
-        // ModelState.Clear();
         return View("Index", model);
     }
     

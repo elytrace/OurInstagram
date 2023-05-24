@@ -19,9 +19,22 @@
         let imageArray = @Html.Raw(JsonConvert.SerializeObject(Model.images));
         images = []
         imageArray.forEach(image => {
-            images.push(image["imagePath"])
+            images.push(image["imagePath"]);
         })
-        loadingImages(images)
+        let placeholder = document.querySelector(".placeholder");
+        if (images.length !== 0) {
+            loadingImages(images);
+            window.addEventListener("DOMContentLoaded", () => {
+                placeholder.classList.remove("show");
+                placeholder.classList.add("hide");
+            });
+        }
+        else {
+            window.addEventListener("DOMContentLoaded", () => {
+                placeholder.classList.remove("hide");
+                placeholder.classList.add("show");
+            });
+        }
     </script>
 }
 
@@ -81,4 +94,5 @@
     </div>
     <div class="separator"></div>
     <div class="homepage_container"></div>
+    <p class="placeholder hide"><em>Uploaded images will be shown below</em></p>
 </main>
