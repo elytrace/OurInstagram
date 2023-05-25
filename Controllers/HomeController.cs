@@ -12,7 +12,7 @@ public class HomeController : Controller
 
     public HomeController(ILogger<HomeController> logger)
     {
-        _logger = logger;
+            _logger = logger;
     }
 
     public IActionResult Index()
@@ -31,17 +31,6 @@ public class HomeController : Controller
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 
-    // public static void UploadImage(string url)
-    // {
-    //     if (url == "none") return;
-    //     var uploadParams = new ImageUploadParams()
-    //     {
-    //         File = new FileDescription(url)
-    //     };
-    //     var uploadResult = new Cloudinary().Upload(uploadParams);
-    //     Console.WriteLine(uploadResult.JsonObj);
-    // }
-
     [HttpPost]
     public ActionResult UploadImage(string imageURL)
     {
@@ -51,6 +40,8 @@ public class HomeController : Controller
         };
         var uploadResult = new Cloudinary().Upload(uploadParams);
         Console.WriteLine(uploadResult.JsonObj);
+        OurDbContext.UploadImage(uploadResult.SecureUrl.ToString(), Models.Users.User.currentUser.userId);
+        // return RedirectToAction("Index", "Profile");
         return View("Index");
     }
 }

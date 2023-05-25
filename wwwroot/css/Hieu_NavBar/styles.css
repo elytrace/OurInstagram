@@ -243,7 +243,7 @@
     -webkit-filter: blur(2px);
     filter: blur(2px);
 }
-.create_panel {
+.create_panel, .image_details_panel {
     position: fixed;
     width: 100%;
     height: 100vh;
@@ -256,7 +256,7 @@
     align-items: center;
     justify-content: center;
 }
-.create_popup {
+.create_popup, .image_popup {
     opacity: 0;
     overflow: hidden;
     background-color: var(--Color1);
@@ -424,4 +424,11 @@
 .hide_upload {
     /*height: 0;*/
     display: none;
+}
+.image_details_panel .image_popup {
+    min-width: 50%;
+    margin: auto;
+    width: 90%;
+    height: 90%;
+    opacity: 1;
 }

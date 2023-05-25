@@ -8,11 +8,14 @@ namespace OurInstagram.Models.Images;
 public class Image
 {
     [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int imageId { get; set; }
     
     [StringLength(255)]
     public string? imagePath { get; set; }
     
+    [StringLength(255)]
+    public string? caption { get; set; }
     public int like { get; set; }
     
     [ForeignKey("users")]

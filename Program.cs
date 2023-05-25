@@ -22,6 +22,7 @@ cloudinary.Api.Secure = true;
 //         builder.Configuration.GetConnectionString("DefaultConnection")
 //     )
 // ));
+
 OurDbContext.DeleteDatabase().Wait();
 OurDbContext.CreateDatabase().Wait();
 OurDbContext.InsertSampleData().Wait();

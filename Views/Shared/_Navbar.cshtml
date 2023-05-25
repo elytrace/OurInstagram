@@ -8,32 +8,17 @@
     <title>@ViewData["Title"] - Our Instagram</title>
     
     <link rel="icon" href="~/Resources/insta_logo.png" type="image/icon type">
-
     
     <link rel="stylesheet" type="text/css"  href="~/css/Hieu_NavBar/color.css"/>
     <link rel="stylesheet" type="text/css"  href="~/css/Hieu_NavBar/styles.css"/>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
     <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
     <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
-    <script src="~/js/Hieu_NavBar/openSubPanel.js" defer></script>
-    <script>
-        function uploadImage() {
-            let displayImage = document.querySelector(".display_image");
-            let image = displayImage.style.backgroundImage;
-            let url = image.slice(5, -2);
-            $.ajax({
-                url: "/Home/UploadImage",
-                type: "POST",
-                data: { "imageURL" : url },
-                success: function (data) {
-                    alert(data)
-                },
-                error: function(error)
-                {
-                    alert(error);
-                }
-            });
-        }
-    </script>
+    <script src="~/js/Hieu_NavBar/index.js" defer></script>
+    <script src="~/js/Hieu_NavBar/openImage.js" defer></script>
+    @* <script> *@
+    @*      *@
+    @* </script> *@
 </head>
 <body>
 <div class="navbar">
@@ -200,6 +185,12 @@
                 <label for="cancel" class="label_cancel">Cancel</label>
             </div>
         </div>
+    </div>
+</div>
+
+<div class="image_details_panel">
+    <div class="image_popup">
+        
     </div>
 </div>
 

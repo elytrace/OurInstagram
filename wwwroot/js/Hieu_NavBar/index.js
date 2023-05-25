@@ -31,7 +31,7 @@ for(let [key, value] of btnMap) {
 
 /************************************************************************************************/
 let btnCreate = document.querySelector(".create");
-let createPanel = document.querySelector(".create_panel");
+let panelPopup = document.querySelector(".create_panel");
 let createPopup = document.querySelector(".create_popup");
 let navbar = document.querySelector(".navbar");
 let main = document.querySelector("main");
@@ -39,7 +39,7 @@ let main = document.querySelector("main");
 btnCreate.addEventListener("click", () => {
     navbar.classList.add("blur");
     main.classList.add("blur");
-    createPanel.classList.add("show_popup");
+    panelPopup.classList.add("show_popup");
 });
 
 /************************************************************************************************/
@@ -82,7 +82,7 @@ imageInput.addEventListener("change", function() {
 function closePopup() {
     navbar.classList.remove("blur");
     main.classList.remove("blur");
-    createPanel.classList.remove("show_popup");
+    panelPopup.classList.remove("show_popup");
 
     imageInput.value = null;
     document.querySelector(".display_image").style.backgroundImage = "unset";
@@ -103,8 +103,8 @@ document.addEventListener("click", e => {
 /************************************************************************************************/
 let btnClose = document.querySelector(".close_img");
 btnClose.addEventListener("click", () => closePopup());
-let btnCancel = document.querySelector(".btn_cancel")
-btnCancel.addEventListener("click", () => closePopup())
+let btnCancel = document.querySelector(".btn_cancel");
+btnCancel.addEventListener("click", () => closePopup());
 
 /************************************************************************************************/
 let blankImageMap = new Map();
@@ -135,3 +135,22 @@ functions.forEach(func => {
         }
     });
 });
+
+function uploadImage() {
+    let displayImage = document.querySelector(".display_image");
+    let image = displayImage.style.backgroundImage;
+    let url = image.slice(5, -2);
+    $.ajax({
+        url: "/Home/UploadImage",
+        type: "POST",
+        data: { "imageURL" : url },
+        success: function (data) {
+            closePopup();
+            alert("Upload successfully");
+        },
+        error: function(error)
+        {
+            alert(error);
+        }
+    });
+}

@@ -55,16 +55,9 @@ body {
     width: 10%;
 }
 
-.login-form {
+.login-form, .signup-form {
     width: 80%;
-    height: 43%;
-    /*background-color: var(--Color2);*/
-    margin: 0 auto;
-}
-.signup-form {
-    width: 80%;
-    height: 52%;
-    /*background-color: #8F8F8FFF;*/
+    height: fit-content;
     margin: 0 auto;
 }
 .login-form label, .signup-form label {
@@ -118,7 +111,7 @@ body {
 .or {
     text-align: center;
     font-weight: 600;
-    margin: 10px auto;
+    margin: 30px auto;
 }
 .facebook_login {
     width: 60%;

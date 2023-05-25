@@ -1,16 +1,16 @@
 <h1 align="center">
   <br>
   <br>
-  Nhóm 6
-  <br>
   Môn học: Công nghệ phần mềm
+  <br>
+  Nhóm 6
   <br>
 </h1>
 
 <p align="center"></p>
 
 <p align="center">
-	<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png" width = "250px" height = "auto">
+	<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png" width = "150px" height = "auto">
 </p>
 
 <p align="center">
@@ -29,11 +29,11 @@
 ## Product
 * Create a program which helps sharing and storing images at ease.
 ## How to use
-<em>In progress...</em>
+Tải XAMPP bản mới nhất, sau đó Start Apache + MySQL
 
 ## Technology in use
 
 * Framework: <a href="https://dotnet.microsoft.com/en-us/apps/aspnet/mvc"> ASP.NET MVC </a> 
-* Database: <a href="https://www.apachefriends.org/download.html"> MySQL </a>
+* Database: <a href="https://www.apachefriends.org/download.html">XAMPP</a>, <a href="https://www.apachefriends.org/download.html"> MySQL </a>
 * HTML, CSS, JAVASCRIPT
 * C#

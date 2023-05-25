@@ -10,6 +10,7 @@ public class User
 {
     public static User currentUser = new User();
     [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int userId { get; set; }
     
     [StringLength(50)]
@@ -25,7 +26,7 @@ public class User
     public string? phone { get; set; }
     
     [DataType(DataType.Date)]
-    public DateOnly dateOfBirth { get; set; }
+    public DateTime dateOfBirth { get; set; }
     
     public byte gender { get; set; }
     
