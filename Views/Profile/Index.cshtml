@@ -80,16 +80,17 @@
 
 <main class="home">
     <div class="profile_section">
-        <div class="avatar" alt="Avatar" style="background-image: url(@Model.avatarPath)"></div>
+        <div class="avatar" alt="Avatar" style="
+            background-image: url('@(Model.avatarPath ?? "../../Resources/default_ava.png")')"></div>
         <div class="info_section">
-            <p class="username">@Model.username</p>
+            <p class="username">@(Model.username ?? "Username : Unknown")</p>
             <div class="counting_section">
-                <p><strong>@Model.images.Count</strong> Posts</p>
+                <p><strong>@(Model.images?.Count ?? 0)</strong> Posts</p>
                 <p><strong>100</strong> Followers</p>
                 <p><strong>50</strong> Followings</p>
             </div>
-            <p class="display_name">@Model.displayedName</p>
-            <p class="bio">@Model.biography</p>
+            <p class="display_name">@(Model.displayedName ?? "Display Name : Unknown")</p>
+            <p class="bio">@(Model.biography ?? "Bio : Unknown")</p>
         </div>
     </div>
     <div class="separator"></div>

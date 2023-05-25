@@ -80,58 +80,31 @@
     </ItemGroup>
 
     <ItemGroup>
-      <None Include="wwwroot\Resources\accept.png" />
-      <None Include="wwwroot\Resources\back.png" />
       <None Include="wwwroot\Resources\bookmark.png" />
-      <None Include="wwwroot\Resources\chat.png" />
       <None Include="wwwroot\Resources\close.png" />
-      <None Include="wwwroot\Resources\comment.png" />
-      <None Include="wwwroot\Resources\comment_home.png" />
-      <None Include="wwwroot\Resources\comment_post.png" />
-      <None Include="wwwroot\Resources\compass-regular.svg" />
-      <None Include="wwwroot\Resources\compass-solid.svg" />
-      <None Include="wwwroot\Resources\create_chat.png" />
-      <None Include="wwwroot\Resources\cross.png" />
-      <None Include="wwwroot\Resources\default_ava.png" />
-      <None Include="wwwroot\Resources\Default_pfp.svg" />
-      <None Include="wwwroot\Resources\ellipsis.png" />
-      <None Include="wwwroot\Resources\facebooklogo.png" />
-      <None Include="wwwroot\Resources\heart.png" />
       <None Include="wwwroot\Resources\heart_fill.png" />
-      <None Include="wwwroot\Resources\heart_liked.png" />
       <None Include="wwwroot\Resources\home.png" />
-      <None Include="wwwroot\Resources\house-solid.svg" />
-      <None Include="wwwroot\Resources\icon_burger.png" />
-      <None Include="wwwroot\Resources\icon_fb_messenger.png" />
       <None Include="wwwroot\Resources\image.png" />
-      <None Include="wwwroot\Resources\instagram-reels-icon.png" />
-      <None Include="wwwroot\Resources\Instagram.drawio" />
       <None Include="wwwroot\Resources\insta_logo.png" />
       <None Include="wwwroot\Resources\insta_logo_frame.png" />
       <None Include="wwwroot\Resources\insta_title.png" />
-      <None Include="wwwroot\Resources\like.png" />
-      <None Include="wwwroot\Resources\like_favorite_heart_5759.png" />
-      <None Include="wwwroot\Resources\login_pic1.png" />
-      <None Include="wwwroot\Resources\love.png" />
-      <None Include="wwwroot\Resources\magnifying-glass-solid.svg" />
-      <None Include="wwwroot\Resources\messenger.png" />
       <None Include="wwwroot\Resources\moon.png" />
       <None Include="wwwroot\Resources\more.png" />
-      <None Include="wwwroot\Resources\navigate_microsoft.png" />
-      <None Include="wwwroot\Resources\photo.png" />
-      <None Include="wwwroot\Resources\plus.png" />
-      <None Include="wwwroot\Resources\post.png" />
-      <None Include="wwwroot\Resources\problem.png" />
-      <None Include="wwwroot\Resources\reel.png" />
-      <None Include="wwwroot\Resources\reply.png" />
       <None Include="wwwroot\Resources\report.png" />
-      <None Include="wwwroot\Resources\screenshot2.png" />
-      <None Include="wwwroot\Resources\screenshot3.png" />
-      <None Include="wwwroot\Resources\screenshot4.png" />
-      <None Include="wwwroot\Resources\send.png" />
-      <None Include="wwwroot\Resources\sendmes.png" />
       <None Include="wwwroot\Resources\tag.png" />
       <None Include="wwwroot\Resources\time.png" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Remove="wwwroot\Resources\bookmark.png" />
+      <Content Remove="wwwroot\Resources\burger.png" />
+      <Content Remove="wwwroot\Resources\close.png" />
+      <Content Remove="wwwroot\Resources\cqExxfut_400x400.jpg" />
+      <Content Remove="wwwroot\Resources\create_blank.png" />
+      <Content Remove="wwwroot\Resources\create_fill.png" />
+      <Content Remove="wwwroot\Resources\explore_blank.png" />
+      <Content Remove="wwwroot\Resources\explore_fill.png" />
+      <Content Remove="wwwroot\Resources\facebook.png" />
     </ItemGroup>
 
 </Project>
