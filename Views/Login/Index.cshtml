@@ -70,8 +70,8 @@
                 </div>
                 @using (Html.BeginForm("Login", "Login", FormMethod.Post, new { @class = "login-form" }))
                 {
-                    @Html.LabelFor(m => m.LoginInput.Email)
-                    @Html.TextBoxFor(m => m.LoginInput.Email, new { placeholder = "Email", @class = "input_email" })
+                    @Html.LabelFor(m => m.LoginInput.Username)
+                    @Html.TextBoxFor(m => m.LoginInput.Username, new { placeholder = "Username", @class = "input_email" })
                     @Html.LabelFor(m => m.LoginInput.Password)
                     @Html.PasswordFor(m => m.LoginInput.Password, new { placeholder = "Password", @class = "input_password" })
                     @Html.ValidationMessage("Password")
@@ -92,8 +92,8 @@
                 </div>
                 @using (Html.BeginForm("Signup", "Login", FormMethod.Post, new { @class = "signup-form"} ))
                 {
-                    @Html.LabelFor(m => m.SignupInput.Email)
-                    @Html.TextBoxFor(m => m.SignupInput.Email, new { placeholder = "Email", @class = "input_email" })
+                    @Html.LabelFor(m => m.SignupInput.Username)
+                    @Html.TextBoxFor(m => m.SignupInput.Username, new { placeholder = "Username", @class = "input_email" })
                     @Html.LabelFor(m => m.SignupInput.Password)
                     @Html.PasswordFor(m => m.SignupInput.Password, new { placeholder = "Password", @class = "input_password" })
                     @Html.LabelFor(m => m.SignupInput.ConfirmPassword)
@@ -122,8 +122,8 @@
             </div>
             @using (Html.BeginForm("Login", "Login", FormMethod.Post, new { @class = "login-form" }))
             {
-                @Html.LabelFor(m => m.LoginInput.Email)
-                @Html.TextBoxFor(m => m.LoginInput.Email, new { placeholder = "Email", @class = "input_email" })
+                @Html.LabelFor(m => m.LoginInput.Username)
+                @Html.TextBoxFor(m => m.LoginInput.Username, new { placeholder = "Username", @class = "input_email" })
                 @Html.LabelFor(m => m.LoginInput.Password)
                 @Html.PasswordFor(m => m.LoginInput.Password, new { placeholder = "Password", @class = "input_password" })
                 @Html.ValidationMessage("Password")
@@ -148,8 +148,8 @@
             </div>
             @using (Html.BeginForm("Signup", "Login", FormMethod.Post, new { @class = "signup-form"} ))
             {
-                @Html.LabelFor(m => m.SignupInput.Email)
-                @Html.TextBoxFor(m => m.SignupInput.Email, new { placeholder = "Email", @class = "input_email" })
+                @Html.LabelFor(m => m.SignupInput.Username)
+                @Html.TextBoxFor(m => m.SignupInput.Username, new { placeholder = "Username", @class = "input_email" })
                 @Html.LabelFor(m => m.SignupInput.Password)
                 @Html.PasswordFor(m => m.SignupInput.Password, new { placeholder = "Password", @class = "input_password" })
                 @Html.LabelFor(m => m.SignupInput.ConfirmPassword)

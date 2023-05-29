@@ -43,7 +43,7 @@ public class OurDbContext : DbContext
         await context.AddRangeAsync(
             new User()
             {
-                username = "hieuhc@falcongames.com",
+                username = "hieuhc",
                 password = "171114",
                 email = "chihieuk50@gmail.com",
                 phone = "0857639199",
@@ -55,7 +55,7 @@ public class OurDbContext : DbContext
             },
             new User()
             {
-                username = "trangdh@gmail.com",
+                username = "trangdh",
                 password = "110402",
                 email = "trangdh@gmail.com",
                 phone = "0982352291",

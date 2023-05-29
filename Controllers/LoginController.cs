@@ -35,8 +35,8 @@ public class LoginController : Controller
         
         if (ModelState.IsValid)
         {
-            // user = MyDbContext.GetCurrentUser(model.LoginInput.Email, model.LoginInput.Password);
-            var loginState = OurDbContext.ValidateLogin(model.LoginInput.Email, model.LoginInput.Password);
+            // user = MyDbContext.GetCurrentUser(model.LoginInput.Username, model.LoginInput.Password);
+            var loginState = OurDbContext.ValidateLogin(model.LoginInput.Username, model.LoginInput.Password);
             if (loginState) 
                 return RedirectToAction("Index", "Home");
             
@@ -56,7 +56,7 @@ public class LoginController : Controller
         {
             if (model.SignupInput.Password == model.SignupInput.ConfirmPassword)
             {
-                OurDbContext.CreateNewUser(model.SignupInput.Email, model.SignupInput.Password);
+                OurDbContext.CreateNewUser(model.SignupInput.Username, model.SignupInput.Password);
                 return RedirectToAction("Index", "Home");
             }
             ModelState.AddModelError("Confirm Password", "The password and confirmation password do not match.");

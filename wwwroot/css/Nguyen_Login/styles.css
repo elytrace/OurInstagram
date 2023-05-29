@@ -20,7 +20,7 @@ body {
     /*center alignment*/
     position: absolute;
     top: 56%;
-    left: 45%;
+    left: 55%;
     transform: translate(-50%, -50%);
     /*dimension*/
     min-width: 350px;

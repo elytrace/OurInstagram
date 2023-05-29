@@ -104,7 +104,7 @@ h1, h4, a {
 
 .post img {
     width: 100%;
-    filter: grayscale(50%);
+    /* filter: grayscale(50%); */
 }
 
 .home .overlay {

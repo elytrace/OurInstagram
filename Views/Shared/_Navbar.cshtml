@@ -15,7 +15,7 @@
     <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
     <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
     <script src="~/js/Hieu_NavBar/index.js" defer></script>
-    <script src="~/js/Hieu_NavBar/openImage.js" defer></script>
+    @* <script src="~/js/Hieu_NavBar/openImage.js" defer></script> *@
     @* <script> *@
     @*      *@
     @* </script> *@
@@ -47,31 +47,6 @@
                 <img alt="Search Icon" src="~/Resources/search_blank.png" class="function_img">
                 <p class="function_name" id="Search">Search</p>
             </div>
-            @* Explore *@
-            <a class="no_underline function" asp-area="" asp-controller="NavBar" asp-action="ToExplore">
-                @if (ViewData["Title"] == "Explore")
-                {
-                    <img alt="Explore Icon" src="~/Resources/explore_fill.png" class="function_img">
-                    <p class="function_name current_function" id="Explore">Explore</p>
-                }
-                else
-                {
-                    <img alt="Explore Icon" src="~/Resources/explore_blank.png" class="function_img">
-                    <p class="function_name" id="Explore">Explore</p>
-                }
-                
-            </a>
-            @* Message *@
-            <div class="function message">
-                <img alt="Message Icon" src="~/Resources/message_blank.png" class="function_img">
-                <p class="function_name" id="Message">Message</p>
-            </div>
-            @* Notification *@
-            <div class="function notify">
-                <img alt="Notification Icon" src="~/Resources/notification_blank.png" class="function_img">
-                <p class="function_name" id="Notification">Notification</p>
-            </div>
-            @* Create *@
             <div class="function create">
                 <img alt="Create Icon" src="~/Resources/create_blank.png" class="function_img">
                 <p class="function_name" id="Create">Create</p>
@@ -144,23 +119,6 @@
             <div class="result_search hide"></div> 
         </div>
     </div>
-    
-    @* MESSAGE PANEL *@
-    <div class="message_panel hide">
-        <div class="sub_panel_header message_header">
-            <p class="sub_panel_title">Message</p>
-        </div>
-    </div>
-    
-    @* NOTIFY PANEL *@
-    <div class="notify_panel hide">
-        <div class="sub_panel_header notify_header">
-            <p class="sub_panel_title">Notifications</p>
-        </div>
-        <div class="notify_list">
-
-        </div>
-    </div>
 </div>
 
 @* CREATE POPUP *@
@@ -190,7 +148,19 @@
 
 <div class="image_details_panel">
     <div class="image_popup">
-        
+        <div class="display_section">
+            @* <div class="display_image"></div> *@
+            @* <div class="action_section"> *@
+            @*     <input type="button" id="upload" class="btn_upload" onclick="uploadImage()"/> *@
+            @*     <label for="upload" class="label_upload">Upload</label> *@
+            @*     <input type="button" id="cancel" class="btn_cancel"/> *@
+            @*     <label for="cancel" class="label_cancel">Cancel</label> *@
+            @* </div> *@
+        </div>
+        <div class="function_section">
+            <img alt="Close" src="~/Resources/close.png" class="close_img"/>
+            
+        </div>
     </div>
 </div>
 
