@@ -67,6 +67,8 @@ public class OurDbContext : DbContext
             return LoginState.WRONG_PASSWORD;
 
         context.Entry(user).Collection(u => u.images).LoadAsync();
+        context.Entry(user).Collection(u => u.followers).LoadAsync();
+        context.Entry(user).Collection(u => u.followings).LoadAsync();
         User.currentUser = user;
         return LoginState.LOGIN_SUCCESS;
     }
