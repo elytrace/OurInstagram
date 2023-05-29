@@ -24,12 +24,6 @@ public class NavBarController : Controller
         return RedirectToAction("Index", "Home");
     }
 
-    public IActionResult ToExplore()
-    {
-        return RedirectToAction("Index", "Home");
-        // return RedirectToAction("Explore", "Home");
-    }
-
     public IActionResult ToProfile()
     {
         return RedirectToAction("Index", "Profile");

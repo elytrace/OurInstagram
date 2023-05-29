@@ -1,9 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Diagnostics.CodeAnalysis;
-using OurInstagram.Models.Images;
 
-namespace OurInstagram.Models.Users;
+namespace OurInstagram.Models.Entities;
 
 [Table("users")]
 public class User
@@ -40,4 +38,7 @@ public class User
     public string? displayedName { get; set; }
     
     public ICollection<Image>? images { get; set; }
+    
+    public ICollection<User>? followers { get; set; }
+    public ICollection<User>? followings { get; set; }
 }

@@ -451,12 +451,23 @@
     justify-content: flex-start;
     position: relative;
 }
+.function_section .image_header {
+    width: 100%;
+    height: fit-content;
+    min-height: 40px;
+}
 .function_section .close_img {
     height: 20px;
     display: block;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 .function_section .close_img:hover {
     cursor: pointer;
     transform: scale(1.05);
+}
+.function_section .image_info {
+    width: 90%;
+    height: 40%;
+    border-radius: 20px;
+    border: 2px solid gray;
 }

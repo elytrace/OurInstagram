@@ -15,7 +15,7 @@ public class ProfileController : Controller
     
     public IActionResult Index()
     {
-        return View(Models.Users.User.currentUser);
+        return View(Models.Entities.User.currentUser);
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

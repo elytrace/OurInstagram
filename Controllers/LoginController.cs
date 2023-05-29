@@ -1,8 +1,8 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using OurInstagram.Enums;
 using OurInstagram.Models;
 using OurInstagram.Models.Login;
-using OurInstagram.Models.Users;
 
 namespace OurInstagram.Controllers;
 
@@ -30,18 +30,24 @@ public class LoginController : Controller
     [HttpPost]
     public ActionResult Login(LoginModel model)
     {
-        if (ModelState.ContainsKey("Confirm Password"))
-            ModelState["Confirm Password"].Errors.Clear();
-        
+        model.SignupInput = null;
+        ModelState["Signup Error"]?.Errors.Clear();
+
         if (ModelState.IsValid)
         {
-            // user = MyDbContext.GetCurrentUser(model.LoginInput.Username, model.LoginInput.Password);
-            var loginState = OurDbContext.ValidateLogin(model.LoginInput.Username, model.LoginInput.Password);
-            if (loginState) 
+            var status = OurDbContext.ValidateLogin(model.LoginInput.Username, model.LoginInput.Password);
+            if (status == LoginState.LOGIN_SUCCESS)
                 return RedirectToAction("Index", "Home");
-            
-            ModelState.Clear();
-            ModelState.AddModelError("Password", "The user name or password is incorrect");
+            if (status == LoginState.WRONG_PASSWORD)
+            {
+                ModelState.Clear();
+                ModelState.AddModelError("Login Error", "The user name or password is incorrect!");
+            }
+            if (status == LoginState.USERNAME_NOT_EXISTED)
+            {
+                ModelState.Clear();
+                ModelState.AddModelError("Login Error", "Username does not existed!");
+            }
         }
         return View("Index", model);
     }
@@ -49,17 +55,27 @@ public class LoginController : Controller
     [HttpPost]
     public ActionResult Signup(LoginModel model)
     {
-        if (ModelState.ContainsKey("Password"))
-            ModelState["Password"].Errors.Clear();
+        model.LoginInput = null;
+        ModelState["Login Error"]?.Errors.Clear();
         
         if (ModelState.IsValid)
         {
-            if (model.SignupInput.Password == model.SignupInput.ConfirmPassword)
+            var status = OurDbContext.ValidateSignup(model.SignupInput.Username, model.SignupInput.Password, model.SignupInput.ConfirmPassword);
+            if (status == LoginState.SIGNUP_SUCCESS)
             {
                 OurDbContext.CreateNewUser(model.SignupInput.Username, model.SignupInput.Password);
                 return RedirectToAction("Index", "Home");
             }
-            ModelState.AddModelError("Confirm Password", "The password and confirmation password do not match.");
+            if (status == LoginState.USERNAME_EXISTED)
+            {
+                ModelState.Clear();
+                ModelState.AddModelError("Signup Error", "Username existed!");
+            }
+            if (status == LoginState.WRONG_CONFIRM_PASSWORD)
+            {
+                ModelState.Clear();
+                ModelState.AddModelError("Signup Error", "The password and confirmation password do not match.");
+            }
         }
         return View("Index", model);
     }

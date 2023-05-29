@@ -1,4 +1,6 @@
-﻿@{
+﻿@using Newtonsoft.Json
+@model List<OurInstagram.Models.Entities.Image>
+@{
     ViewData["Title"] = "Home";
     Layout = "_Navbar";
 }
@@ -9,7 +11,29 @@
 }
 @section Scripts
 { 
-    <script src="~/js/Hiep_Home/index.js"></script>
+    <script src="~/js/Khang_Profile/index.js"></script>
+    @* <script src="~/js/Hiep_Home/index.js"></script> *@
+    <script>
+        let imageArray = @Html.Raw(JsonConvert.SerializeObject(Model));
+        images = []
+        imageArray.forEach(image => {
+            images.push(image["imagePath"]);
+        })
+        // let placeholder = document.querySelector(".placeholder");
+        // if (images.length !== 0) {
+            loadingImages(images);
+        //     window.addEventListener("DOMContentLoaded", () => {
+        //         placeholder.classList.remove("show");
+        //         placeholder.classList.add("hide");
+        //     });
+        // }
+        // else {
+        //     window.addEventListener("DOMContentLoaded", () => {
+        //         placeholder.classList.remove("hide");
+        //         placeholder.classList.add("show");
+        //     });
+        // }
+    </script>
 }
 @* Đây là body *@
 <main class="home">

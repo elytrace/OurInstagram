@@ -1,5 +1,5 @@
 ﻿@using Newtonsoft.Json
-@model OurInstagram.Models.Users.User
+@model OurInstagram.Models.Entities.User
 @{
     ViewData["Title"] = "Profile";
     Layout = "_Navbar";
@@ -86,8 +86,8 @@
             <p class="username">@(Model.username ?? "Username : Unknown")</p>
             <div class="counting_section">
                 <p><strong>@(Model.images?.Count ?? 0)</strong> Posts</p>
-                <p><strong>100</strong> Followers</p>
-                <p><strong>50</strong> Followings</p>
+                <p><strong>@(Model.followers?.Count ?? 0)</strong> Followers</p>
+                <p><strong>@(Model.followings?.Count ?? 0)</strong> Followings</p>
             </div>
             <p class="display_name">@(Model.displayedName ?? "Display Name : Unknown")</p>
             <p class="bio">@(Model.biography ?? "Bio : Unknown")</p>

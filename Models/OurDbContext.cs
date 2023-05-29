@@ -1,7 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using OurInstagram.Controllers;
-using OurInstagram.Models.Images;
-using OurInstagram.Models.Users;
+using OurInstagram.Enums;
+using OurInstagram.Models.Entities;
 
 namespace OurInstagram.Models;
 
@@ -11,7 +12,7 @@ public class OurDbContext : DbContext
     public DbSet<User> users { get; set; }
     public DbSet<Image> images { get; set; }
 
-    private const string connectionString = "server=localhost;userid=root;database=ourinstagram";
+    private const string connectionString = "server=localhost;userid=root;database=ourinstagram;";
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
@@ -40,79 +41,46 @@ public class OurDbContext : DbContext
 
     public static async Task InsertSampleData()
     {
-        await context.AddRangeAsync(
-            new User()
-            {
-                username = "hieuhc",
-                password = "171114",
-                email = "chihieuk50@gmail.com",
-                phone = "0857639199",
-                dateOfBirth = new DateTime(2002, 1, 17),
-                gender = 1,
-                avatarPath = "https://i.pinimg.com/736x/7f/2d/a9/7f2da9cdaaba31c68503277be1ee2d81.jpg",
-                biography = "User test 1",
-                displayedName = "Chí Hiếu"
-            },
-            new User()
-            {
-                username = "trangdh",
-                password = "110402",
-                email = "trangdh@gmail.com",
-                phone = "0982352291",
-                dateOfBirth = new DateTime(2002, 4, 11),
-                gender = 0,
-                avatarPath = "https://i.pinimg.com/736x/7f/2d/a9/7f2da9cdaaba31c68503277be1ee2d81.jpg",
-                biography = "User test 2",
-                displayedName = "Đặng Trang"
-            }
-        );
+        var users = JsonConvert.DeserializeObject<List<User>>(await File.ReadAllTextAsync("./SampleData/users.json"));
+        await context.AddRangeAsync(users);
         await context.SaveChangesAsync();
 
-        await context.AddRangeAsync(
-            new Image()
-            {
-                imagePath = "https://i.pinimg.com/236x/e3/41/4b/e3414b2fcf00375a199ba6964be551af.jpg",
-                caption = "image test 1",
-                like = 0, userId = 1,
-            },
-            new Image()
-            {
-                imagePath = "https://i.pinimg.com/236x/05/65/20/05652045e57af33599557db9f23188c0.jpg",
-                caption = "image test 2",
-                like = 0, userId = 1,
-            },
-            new Image()
-            {
-                imagePath = "https://i.pinimg.com/236x/c5/83/53/c58353e15f32f3cbfc7cdcbcf0dc2f34--mango-coulis-m-sorry.jpg",
-                caption = "image test 3",
-                like = 0, userId = 1,
-            },
-            new Image()
-            {
-                imagePath = "https://i.pinimg.com/564x/94/43/b9/9443b93bd8773fec91bc1837e8424e8e.jpg",
-                caption = "image test 4",
-                like = 0, userId = 1,
-            },
-            new Image()
-            {
-                imagePath = "https://i.pinimg.com/564x/e6/8a/42/e68a42c2e530fbdf6b3ab2f379dcd384.jpg",
-                caption = "image test 5",
-                like = 0, userId = 1,
-            }
-        );
+        var images = JsonConvert.DeserializeObject<List<Image>>(await File.ReadAllTextAsync("./SampleData/images.json"));
+        await context.AddRangeAsync(images);
+        await context.SaveChangesAsync();
+
+        var userList = context.users.ToList();
+        foreach (var user in userList)
+        {
+            user.followers = userList.Where(u => u.userId < user.userId).ToList();
+            user.followings = userList.Where(u => u.userId > user.userId).ToList();
+        }
         await context.SaveChangesAsync();
     }
     
-    public static bool ValidateLogin(string username, string password)
+    public static LoginState ValidateLogin(string username, string password)
     {
         var user = context.users.FirstOrDefault(u => u.username == username);
-        if (user == null) return false;
-        if (password != user.password) return false;
+        if (user == null) 
+            return LoginState.USERNAME_NOT_EXISTED;
+        if (password != user.password) 
+            return LoginState.WRONG_PASSWORD;
 
         context.Entry(user).Collection(u => u.images).LoadAsync();
-            
         User.currentUser = user;
-        return true;
+        return LoginState.LOGIN_SUCCESS;
+    }
+    
+    public static LoginState ValidateSignup(string username, string password, string confirmPassword)
+    {
+        if (password != confirmPassword) 
+            return LoginState.WRONG_CONFIRM_PASSWORD;
+        
+        var user = context.users.FirstOrDefault(u => u.username == username);
+        if (user != null) 
+            return LoginState.USERNAME_EXISTED;
+
+        return LoginState.SIGNUP_SUCCESS;
     }
 
     public static void CreateNewUser(string username, string password)
@@ -136,6 +104,5 @@ public class OurDbContext : DbContext
         context.images.Add(newImage);
         context.SaveChangesAsync();
         context.Entry(User.currentUser).Collection(u => u.images).LoadAsync();
-
     }
 }

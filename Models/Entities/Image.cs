@@ -1,8 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using OurInstagram.Models.Users;
 
-namespace OurInstagram.Models.Images;
+namespace OurInstagram.Models.Entities;
 
 [Table("images")]
 public class Image

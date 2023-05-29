@@ -28,13 +28,12 @@ h1, h4, a {
 
 .profile_section {
     width: 100%;
-    /* min-width: 530px; */
     height: 25%;
+    min-height: 150px;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     justify-content: center;
-    /* padding: 32px; */
     padding-top: 32px;
     padding-bottom: 32px;
     gap: 100px;
