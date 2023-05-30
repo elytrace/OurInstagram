@@ -17,19 +17,19 @@
 ]
 
 // some js
-function loadingImages(images) {
+function loadingImages(imageArray) {
     const posts = []
 
     let imageIndex = 0;
 
-    for (let i = 1; i <= images.length; i++) {
+    for (let i = 1; i <= imageArray.length; i++) {
         let item = {
-            id: i,
-            image: images[imageIndex]
+            id: imageArray[imageIndex]["imageId"],
+            image: imageArray[imageIndex]["imagePath"]
         }
         posts.push(item);
         imageIndex++;
-        if (imageIndex > images.length - 1) imageIndex = 0;
+        if (imageIndex > imageArray.length - 1) imageIndex = 0;
     }
 
 // apps
@@ -58,6 +58,7 @@ function loadingImages(images) {
             columnPosts.forEach(post => {
                 let postDiv = document.createElement('div');
                 postDiv.classList.add('post');
+                postDiv.id = post.id;
                 let image = document.createElement('img');
                 image.src = post.image;
                 let hoverDiv = document.createElement('div');

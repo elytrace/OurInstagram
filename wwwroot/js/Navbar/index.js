@@ -92,8 +92,8 @@ window.addEventListener("DOMContentLoaded", function () {
             navbar.classList.add("blur");
             main.classList.add("blur");
             imageDetailPanel.classList.add("show_popup");
-
-            $(".image_details_panel").load(actionPath, { imageId: i });
+            console.log(postList[i].id);
+            $(".image_details_panel").load(actionPath, { imageId: postList[i].id });
         });
     }
 });

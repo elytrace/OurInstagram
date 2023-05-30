@@ -15,13 +15,13 @@
     @* <script src="~/js/Hiep_Home/index.js"></script> *@
     <script>
         let imageArray = @Html.Raw(JsonConvert.SerializeObject(Model));
-        let images = []
-        imageArray.forEach(image => {
-            images.push(image["imagePath"]);
-        })
+        // let images = []
+        // imageArray.forEach(image => {
+        //     images.push(image["imagePath"]);
+        // })
         // let placeholder = document.querySelector(".placeholder");
         // if (images.length !== 0) {
-            loadingImages(images);
+            loadingImages(imageArray);
         //     window.addEventListener("DOMContentLoaded", () => {
         //         placeholder.classList.remove("show");
         //         placeholder.classList.add("hide");
