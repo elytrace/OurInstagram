@@ -1,0 +1,41 @@
+﻿@model OurInstagram.Models.Entities.Image
+
+<div class="image_popup">
+    <div class="display_section" style="background-image: url('@Model.imagePath')">
+    </div>
+    <div class="function_section">
+        <div class="image_header">
+            <img alt="Close" src="~/Resources/close.png" class="close_img"/>
+        </div>
+        <div class="image_info">
+            <div class="owner_info">
+                <div class="owner_avatar"
+                     style="background-image: url('@(Model.user.avatarPath ?? "../../Resources/default_ava.png")')"></div>
+                <div class="more_info">
+                    <p class="owner_name">@(Model.user.displayedName ?? "Anonymous")</p>
+                    <p class="upload_time">@(Model.uploadTime)</p>
+                </div>
+            </div>
+            <p class="image_caption">@(Model.caption ?? "")</p>
+            <div class="function">
+                <div class="like">
+                    <img src="Resources/notification_blank.png" class="icon" alt=""/>
+                </div>
+                <div class="comment">
+                    <img src="Resources/comment_blank.png" class="icon" alt=""/>
+                </div>
+                <div class="share">
+                    <img src="Resources/share_blank.png" class="icon" alt=""/>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    btnCloseImage = document.querySelector(".image_details_panel").querySelector(".close_img");
+    btnCloseImage.addEventListener("click", () => {
+        closeImagePopup();
+    });
+</script>

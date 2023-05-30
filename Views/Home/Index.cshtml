@@ -7,15 +7,15 @@
 
 @section Stylesheets
 { 
-    <link rel="stylesheet" type="text/css"  href="~/css/Hiep_Home/styles.css"/>
+    <link rel="stylesheet" type="text/css"  href="~/css/Home/styles.css"/>
 }
 @section Scripts
 { 
-    <script src="~/js/Khang_Profile/index.js"></script>
+    <script src="~/js/Home/index.js"></script>
     @* <script src="~/js/Hiep_Home/index.js"></script> *@
     <script>
         let imageArray = @Html.Raw(JsonConvert.SerializeObject(Model));
-        images = []
+        let images = []
         imageArray.forEach(image => {
             images.push(image["imagePath"]);
         })

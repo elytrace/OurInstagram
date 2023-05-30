@@ -56,6 +56,13 @@ public class OurDbContext : DbContext
             user.followings = userList.Where(u => u.userId > user.userId).ToList();
         }
         await context.SaveChangesAsync();
+
+        var imageList = context.images;
+        foreach (var image in imageList)
+        {
+            await context.Entry(image).Reference(i => i.user).LoadAsync();
+        }
+        await context.SaveChangesAsync();
     }
     
     public static LoginState ValidateLogin(string username, string password)
@@ -100,8 +107,10 @@ public class OurDbContext : DbContext
         var newImage = new Image()
         {
             imagePath = url,
+            caption = "Not yet implemented",
             like = 0,
-            userId = userID
+            userId = userID,
+            uploadTime = DateTime.Now
         };
         context.images.Add(newImage);
         context.SaveChangesAsync();

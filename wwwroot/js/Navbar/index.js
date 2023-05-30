@@ -81,26 +81,21 @@ imageInput.addEventListener("change", function() {
 
 /************************************************************************************************/
 let imageDetailPanel = document.querySelector(".image_details_panel");
-// var postList;
-let isImageShowing = false;
+
 window.addEventListener("DOMContentLoaded", function () {
     let postList = document.querySelectorAll(".post");
     console.log(postList.length);
-    postList.forEach(post => {
+    for(let i = 0; i < postList.length; i++) {
+        let post = postList[i];
+
         post.addEventListener("click", function () {
             navbar.classList.add("blur");
-            console.log(navbar.classList);
             main.classList.add("blur");
             imageDetailPanel.classList.add("show_popup");
 
-            isImageShowing = true;
-            
-            let image = post.querySelector("img").src;
-            let displayImage = document.querySelector(".image_popup").querySelector(".display_section");
-            displayImage.style.backgroundImage = `url(${image})`;
+            $(".image_details_panel").load(actionPath, { imageId: i });
         });
-
-    });
+    }
 });
 
 /************************************************************************************************/
@@ -123,29 +118,13 @@ function closeImagePopup() {
     navbar.classList.remove("blur");
     main.classList.remove("blur");
     imageDetailPanel.classList.remove("show_popup");
-    
-    isImageShowing = false;
 }
 
-let imagePopup = document.querySelector(".image_popup");
 document.addEventListener("click", e => {
-    console.log(!createPopup.contains(e.target) + " " + !btnCreate.contains(e.target) + " " + panelPopup.classList.contains("show_popup"));
-    console.log(!imagePopup.contains(e.target) + " " + isImageShowing);
     if (!createPopup.contains(e.target) && !btnCreate.contains(e.target) && panelPopup.classList.contains("show_popup")) {
         closeCreatePopup();
     }
-    // if (!imagePopup.contains(e.target) && isImageShowing && imageDetailPanel.classList.contains("show_popup")) {
-    //     closeImagePopup();
-    //     console.log("jump here");
-    // }
 });
-
-let btnCloseImage = document.querySelector(".image_details_panel")
-                            .querySelector(".image_popup")
-                            .querySelector(".function_section").querySelector(".close_img")
-btnCloseImage.addEventListener("click", () => {
-    closeImagePopup();
-})
 
 /************************************************************************************************/
 let btnClose = document.querySelector(".close_img");

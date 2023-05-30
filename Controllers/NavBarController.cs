@@ -26,6 +26,13 @@ public class NavBarController : Controller
 
     public IActionResult ToProfile()
     {
-        return RedirectToAction("Index", "Profile");
+        return RedirectToAction("Index", "Profile", new { Models.Entities.User.currentUser.username});
+    }
+    
+    [HttpPost]
+    public ActionResult DisplayImage(int imageId)
+    {
+        var image = OurDbContext.context.images.FirstOrDefault(image => image.imageId == imageId);
+        return PartialView(image);
     }
 }

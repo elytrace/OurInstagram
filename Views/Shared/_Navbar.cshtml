@@ -9,16 +9,17 @@
     
     <link rel="icon" href="~/Resources/insta_logo.png" type="image/icon type">
     
-    <link rel="stylesheet" type="text/css"  href="~/css/Hieu_NavBar/color.css"/>
-    <link rel="stylesheet" type="text/css"  href="~/css/Hieu_NavBar/styles.css"/>
+    <link rel="stylesheet" type="text/css"  href="~/css/NavBar/color.css"/>
+    <link rel="stylesheet" type="text/css"  href="~/css/NavBar/styles.css"/>
     <script src="~/lib/jquery/dist/jquery.js"></script>
     <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
     <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
-    <script src="~/js/Hieu_NavBar/index.js" defer></script>
-    @* <script src="~/js/Hieu_NavBar/openImage.js" defer></script> *@
-    @* <script> *@
-    @*      *@
-    @* </script> *@
+    <script src="~/js/NavBar/index.js" defer></script>
+    @* <script src="~/js/NavBar/openImage.js" defer></script> *@
+    <script>
+        let actionPath = '@Url.Action("DisplayImage", "Navbar")';
+        let btnCloseImage = null;
+    </script>
 </head>
 <body>
 <div class="navbar">
@@ -78,7 +79,7 @@
                     </div>
                     <div class="sub_function">
                         <p class="sub_function_name">Saved</p>
-                        <img alt="Settings Icon" src="~/Resources/bookmark.png" class="sub_function_img"/>
+                        <img alt="Settings Icon" src="~/Resources/bookmark_blank.png" class="sub_function_img"/>
                     </div>
                     <div class="sub_function">
                         <p class="sub_function_name">Switch Appearance</p>
@@ -147,25 +148,7 @@
 </div>
 
 <div class="image_details_panel">
-    <div class="image_popup">
-        <div class="display_section">
-            @* <div class="display_image"></div> *@
-            @* <div class="action_section"> *@
-            @*     <input type="button" id="upload" class="btn_upload" onclick="uploadImage()"/> *@
-            @*     <label for="upload" class="label_upload">Upload</label> *@
-            @*     <input type="button" id="cancel" class="btn_cancel"/> *@
-            @*     <label for="cancel" class="label_cancel">Cancel</label> *@
-            @* </div> *@
-        </div>
-        <div class="function_section">
-            <div class="image_header">
-                <img alt="Close" src="~/Resources/close.png" class="close_img"/>
-            </div>
-            <div class="image_info">
-                
-            </div>
-        </div>
-    </div>
+    
 </div>
 
 @RenderBody()
