@@ -6,7 +6,7 @@
     "phone": "0857639199",
     "dateOfBirth": "2000-1-17",
     "gender": 1,
-    "avatarPath": "https://i.pinimg.com/736x/7f/2d/a9/7f2da9cdaaba31c68503277be1ee2d81.jpg",
+    "avatarPath": "https://res.cloudinary.com/dy7yri3d9/image/upload/v1685526646/download_nzrik1.jpg",
     "biography": "User test 1",
     "displayedName": "Chí Hiếu"
   },
@@ -17,7 +17,7 @@
     "phone": "0982352291",
     "dateOfBirth": "2002-4-11",
     "gender": 0,
-    "avatarPath": "https://i.pinimg.com/736x/7f/2d/a9/7f2da9cdaaba31c68503277be1ee2d81.jpg",
+    "avatarPath": "https://res.cloudinary.com/dy7yri3d9/image/upload/v1685526476/IMG_1676389941508_1676389988433_s9gzdb.jpg",
     "biography": "User test 2",
     "displayedName": "Đặng Trang"
   },
@@ -50,7 +50,7 @@
     "phone": "0123456789",
     "dateOfBirth": "2002-1-1",
     "gender": 1,
-    "avatarPath": "https://res.cloudinary.com/dy7yri3d9/image/upload/v1685348870/logo_clbzep.jpg",
+    "avatarPath": "https://i.pinimg.com/736x/7f/2d/a9/7f2da9cdaaba31c68503277be1ee2d81.jpg",
     "biography": "User test 5",
     "displayedName": "Hiệp Đỗ"
   }

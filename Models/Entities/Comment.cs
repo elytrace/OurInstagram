@@ -3,13 +3,15 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace OurInstagram.Models.Entities;
 
-[Table("likes")]
-public class Like
+[Table("comments")]
+public class Comment
 {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public int likeId { get; set; }
+    public int commentId { get; set; }
     
+    [StringLength(500)]
+    public string? comment { get; set; }
     public int userId { get; set; }
     public int imageId { get; set; }
     

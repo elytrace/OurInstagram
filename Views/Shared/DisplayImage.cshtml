@@ -9,10 +9,14 @@
         </div>
         <div class="image_info">
             <div class="owner_info">
-                <div class="owner_avatar"
-                     style="background-image: url('@(Model.user.avatarPath ?? "../../Resources/default_ava.png")')"></div>
+                <a class="avatar_link" href="@Url.Action("Index", "Profile", new { Model.user.username })">
+                    <div class="owner_avatar"
+                         style="background-image: url('@(Model.user.avatarPath ?? "../../Resources/default_ava.png")')"></div>
+                </a>
                 <div class="more_info">
-                    <p class="owner_name">@(Model.user.displayedName ?? "Anonymous")</p>
+                    <a href="@Url.Action("Index", "Profile", new { Model.user.username })">
+                        <p class="owner_name">@(Model.user.displayedName ?? "Anonymous")</p>
+                    </a>
                     <p class="upload_time">@(Model.uploadTime)</p>
                 </div>
             </div>
@@ -44,18 +48,44 @@
                 }
             </div>
             <p class="total_like">@(Model.likes?.Count == 0 ? "0 Like" : Model.likes?.Count + " Likes") </p>
-            @* @Html.HiddenFor(model => model.like) *@
+            <div class="comment_section">
+                <input class="comment_input" placeholder="Comment..."/>
+                <img class="comment_send" alt="" src="Resources/share_blank.png"/>
+            </div>
+            <div class="comment_list">
+                @{
+                    foreach (var comment in Model.comments)
+                    {
+                        var user = OurDbContext.context.users.FirstOrDefault(u => u.userId == comment.userId);
+                        <div class="comment_item">
+                            <a class="avatar_link" href="@Url.Action("Index", "Profile", new { Model.user.username })">
+                                <div class="owner_avatar"
+                                     style="background-image: url('@(user.avatarPath ?? "../../Resources/default_ava.png")')"></div>
+                            </a>
+                            <div class="more_info">
+                                <p style="margin-bottom: 2px;">
+                                    <a href="@Url.Action("Index", "Profile", new { Model.user.username })">
+                                        <span class="owner_name">@(user.displayedName ?? "Anonymous")</span>
+                                    </a>
+                                    <span class="owner_comment">@(comment.comment)</span>
+                                </p>
+                                <p class="upload_time">@(comment.timeStamp)</p>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
         </div>
     </div>
 </div>
 
-<script>
+<script> // close image
     btnCloseImage = document.querySelector(".image_details_panel").querySelector(".close_img");
     btnCloseImage.addEventListener("click", () => {
         closeImagePopup();
     });
 </script>
-<script>
+<script> // like image
     likeIcon = document.querySelector(".image_function").querySelector(".like");
     unlikeBtn = likeIcon.querySelector("#unlike_btn");
     likeBtn = likeIcon.querySelector("#like_btn");
@@ -86,4 +116,7 @@
             }
         });
     })
+</script>
+<script> // comment image
+
 </script>

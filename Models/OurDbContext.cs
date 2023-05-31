@@ -12,6 +12,7 @@ public class OurDbContext : DbContext
     public DbSet<User> users { get; set; }
     public DbSet<Image> images { get; set; }
     public DbSet<Like> likes { get; set; }
+    public DbSet<Comment> comments { get; set; }
 
     private const string connectionString = "server=localhost;userid=root;database=ourinstagram;";
 
@@ -84,7 +85,7 @@ public class OurDbContext : DbContext
             int end = gen.Next(start + 1, imageList.Count());
             for (int j = start; j < end; j++)
             {
-                likeList.Add(new Like { userId = i+1, imageId = j+1 });
+                likeList.Add(new Like { userId = i+1, imageId = j+1, timeStamp = DateTime.Now });
             }
         }
         await context.AddRangeAsync(likeList);
@@ -93,6 +94,31 @@ public class OurDbContext : DbContext
         foreach (var image in imageList)
         {
             context.Entry(image).Collection(i => i.likes).LoadAsync();
+        }
+        await context.SaveChangesAsync();
+        
+        // image comments for each user
+        var commentList = new List<Comment>();
+        for (int i = 0; i < userList.Count(); i++)
+        {
+            int start = gen.Next(imageList.Count() / 2);
+            int end = gen.Next(start + 1, imageList.Count());
+            for (int j = start; j < end; j++)
+            {
+                commentList.Add(new Comment { 
+                    comment = gen.Next(2) == 1 ? "Tương tác." : "Ông đi qua bà đi lại con xin 1 follow please", 
+                    userId = i+1, 
+                    imageId = j+1, 
+                    timeStamp = DateTime.Now 
+                });
+            }
+        }
+        await context.AddRangeAsync(commentList);
+        await context.SaveChangesAsync();
+
+        foreach (var image in imageList)
+        {
+            context.Entry(image).Collection(i => i.comments).LoadAsync();
         }
         await context.SaveChangesAsync();
     }

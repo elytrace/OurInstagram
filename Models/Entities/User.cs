@@ -41,4 +41,6 @@ public class User
     public ICollection<User>? followers { get; set; }
     public ICollection<User>? followings { get; set; }
     public ICollection<Like>? likes { get; set; }
+    
+    public ICollection<Comment>? comments { get; set; }
 }

@@ -24,6 +24,7 @@ public class Image
     public int userId { get; set; }
     public User? user { get; set; }
     public ICollection<Like>? likes { get; set; }
+    public ICollection<Comment>? comments { get; set; }
     
     [NotMapped]
     public bool isLiked { get; set; }
