@@ -93,18 +93,18 @@
       <None Include="wwwroot\Resources\report.png" />
       <None Include="wwwroot\Resources\tag.png" />
       <None Include="wwwroot\Resources\time.png" />
+      <None Include="wwwroot\Resources\bookmark.png" />
+      <None Include="wwwroot\Resources\burger.png" />
+      <None Include="wwwroot\Resources\close.png" />
+      <None Include="wwwroot\Resources\cqExxfut_400x400.jpg" />
+      <None Include="wwwroot\Resources\create_blank.png" />
+      <None Include="wwwroot\Resources\create_fill.png" />
+      <None Include="wwwroot\Resources\explore_blank.png" />
+      <None Include="wwwroot\Resources\explore_fill.png" />
+      <None Include="wwwroot\Resources\facebook.png" />
     </ItemGroup>
 
     <ItemGroup>
-      <Content Remove="wwwroot\Resources\bookmark.png" />
-      <Content Remove="wwwroot\Resources\burger.png" />
-      <Content Remove="wwwroot\Resources\close.png" />
-      <Content Remove="wwwroot\Resources\cqExxfut_400x400.jpg" />
-      <Content Remove="wwwroot\Resources\create_blank.png" />
-      <Content Remove="wwwroot\Resources\create_fill.png" />
-      <Content Remove="wwwroot\Resources\explore_blank.png" />
-      <Content Remove="wwwroot\Resources\explore_fill.png" />
-      <Content Remove="wwwroot\Resources\facebook.png" />
     </ItemGroup>
 
 </Project>

@@ -38,7 +38,7 @@ public class User
     public string? displayedName { get; set; }
     
     public ICollection<Image>? images { get; set; }
-    
     public ICollection<User>? followers { get; set; }
     public ICollection<User>? followings { get; set; }
+    public ICollection<Like>? likes { get; set; }
 }

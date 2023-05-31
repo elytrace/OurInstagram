@@ -525,13 +525,28 @@
     justify-content: flex-start;
     border-bottom: 1px solid var(--text1);
     gap: 10px;
+    padding-bottom: 5px;
 }
-.function_section .like, .function_section .comment, .function_section .share {
+.function_section .like, .function_section .comment, .function_section .share, .function_section .more {
     height: 100%;
     width: fit-content;
     margin-bottom: 2px;
+    cursor: pointer;
 }
 .function_section .icon {
-    display: block;
+    /*display: block;*/
     height: 25px;
+}
+.function_section .icon:hover {
+    transform: scale(1.05);
+}
+.function_section .more {
+    margin-left: auto;
+}
+.function_section .total_like {
+    width: 50%;
+    height: 10%;
+    font-size: 2vh;
+    font-weight: 500;
+    margin-top: 5px;
 }

@@ -11,6 +11,7 @@ public class OurDbContext : DbContext
     public static readonly OurDbContext context = new OurDbContext();
     public DbSet<User> users { get; set; }
     public DbSet<Image> images { get; set; }
+    public DbSet<Like> likes { get; set; }
 
     private const string connectionString = "server=localhost;userid=root;database=ourinstagram;";
 
@@ -19,23 +20,31 @@ public class OurDbContext : DbContext
         base.OnConfiguring(optionsBuilder);
         optionsBuilder.UseMySQL(connectionString);
     }
-    
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<User>()
+            .HasMany(left => left.followers)
+            .WithMany(right => right.followings)
+            .UsingEntity(join => join.ToTable("follows"));
+    }
+
     public static async Task CreateDatabase()
     {
         string databasename = context.Database.GetDbConnection().Database;
 
-        Console.WriteLine("Tạo " + databasename);
+        Console.WriteLine("Creating " + databasename + "...");
 
         bool result = await context.Database.EnsureCreatedAsync();
-        string resultstring = result ? "tạo  thành  công" : "đã có trước đó";
-        Console.WriteLine($"CSDL {databasename} : {resultstring}");
+        string resultstring = result ? " created succesfully!" : " has already existed!";
+        Console.WriteLine($"Database {databasename}: {resultstring}");
     }
     
     public static async Task DeleteDatabase()
     {
         string databasename = context.Database.GetDbConnection().Database;
         bool deleted = await context.Database.EnsureDeletedAsync();
-        string deletionInfo = deleted ? "đã xóa" : "không xóa được";
+        string deletionInfo = deleted ? "has been removed!" : "cannot be removed!";
         Console.WriteLine($"{databasename} {deletionInfo}");
     }
 
@@ -49,6 +58,7 @@ public class OurDbContext : DbContext
         await context.AddRangeAsync(images);
         await context.SaveChangesAsync();
 
+        // follow
         var userList = context.users.ToList();
         foreach (var user in userList)
         {
@@ -57,10 +67,32 @@ public class OurDbContext : DbContext
         }
         await context.SaveChangesAsync();
 
+        // image uploaded for each user
         var imageList = context.images;
         foreach (var image in imageList)
         {
             await context.Entry(image).Reference(i => i.user).LoadAsync();
+        }
+        await context.SaveChangesAsync();
+        
+        // image liked for each user
+        Random gen = new Random();
+        var likeList = new List<Like>();
+        for (int i = 0; i < userList.Count(); i++)
+        {
+            int start = gen.Next(imageList.Count() / 2);
+            int end = gen.Next(start + 1, imageList.Count());
+            for (int j = start; j < end; j++)
+            {
+                likeList.Add(new Like { userId = i+1, imageId = j+1 });
+            }
+        }
+        await context.AddRangeAsync(likeList);
+        await context.SaveChangesAsync();
+
+        foreach (var image in imageList)
+        {
+            context.Entry(image).Collection(i => i.likes).LoadAsync();
         }
         await context.SaveChangesAsync();
     }
@@ -108,7 +140,6 @@ public class OurDbContext : DbContext
         {
             imagePath = url,
             caption = "Not yet implemented",
-            like = 0,
             userId = userID,
             uploadTime = DateTime.Now
         };

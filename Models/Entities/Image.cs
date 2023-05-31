@@ -15,12 +15,16 @@ public class Image
     
     [StringLength(255)]
     public string? caption { get; set; }
-    public int like { get; set; }
     
     [DataType(DataType.DateTime)]
     public DateTime uploadTime { get; set; }
     
-    [ForeignKey("users")]
+    // owner
+    [ForeignKey("userId")]
     public int userId { get; set; }
     public User? user { get; set; }
+    public ICollection<Like>? likes { get; set; }
+    
+    [NotMapped]
+    public bool isLiked { get; set; }
 }
