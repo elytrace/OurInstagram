@@ -22,59 +22,62 @@
             </div>
             <p class="image_caption">@(Model.caption ?? "")</p>
             <div class="image_function">
-                <div class="like">
-                    @if (!Model.isLiked)
-                    {
-                        <img id="like_btn" src="Resources/notification_blank.png" class="icon show" alt=""/>
-                        <img id="unlike_btn" src="Resources/notification_fill.png" class="icon hide" alt=""/>
-                    }
-                    else
-                    {
-                        <img id="like_btn" src="Resources/notification_blank.png" class="icon hide" alt=""/>
-                        <img id="unlike_btn" src="Resources/notification_fill.png" class="icon show" alt=""/>
-                    }
-                </div>
-                <div class="comment">
-                    <img src="Resources/comment_blank.png" class="icon show" alt=""/>
-                </div>
-                <div class="share">
-                    <img src="Resources/share_blank.png" class="icon show" alt=""/>
-                </div>
-                @if (Model.userId == OurInstagram.Models.Entities.User.currentUser.userId)
+            <div class="like">
+                @if (!Model.isLiked)
                 {
-                    <div class="more">
-                        <img src="Resources/ellipsis.png" class="icon show" alt=""/>
+                    <img id="like_btn" src="Resources/notification_blank.png" class="icon show" alt=""/>
+                    <img id="unlike_btn" src="Resources/notification_fill.png" class="icon hide" alt=""/>
+                }
+                else
+                {
+                    <img id="like_btn" src="Resources/notification_blank.png" class="icon hide" alt=""/>
+                    <img id="unlike_btn" src="Resources/notification_fill.png" class="icon show" alt=""/>
+                }
+            </div>
+            <div class="comment">
+                <img src="Resources/comment_blank.png" class="icon show" alt=""/>
+            </div>
+            <div class="share">
+                <img src="Resources/share_blank.png" class="icon show" alt=""/>
+            </div>
+            @if (Model.userId == OurInstagram.Models.Entities.User.currentUser.userId)
+            {
+                <div class="more">
+                    <img src="Resources/ellipsis.png" class="icon show" alt=""/>
+                </div>
+            }
+        </div>
+        </div>
+        
+        <div style="width: 90%; height: 50px; line-height: 50px">
+            <p class="total_like">@(Model.likes?.Count == 0 ? "0 Like" : Model.likes?.Count + " Likes") </p>
+        </div>
+        <div class="comment_section">
+            <input class="comment_input" placeholder="Comment..."/>
+            <img class="comment_send" alt="" src="Resources/share_blank.png"/>
+        </div>
+        <div class="comment_list">
+            @{
+                foreach (var comment in Model.comments)
+                {
+                    var user = OurDbContext.context.users.FirstOrDefault(u => u.userId == comment.userId);
+                    <div class="comment_item">
+                        <a class="avatar_link" href="@Url.Action("Index", "Profile", new { user.username })">
+                            <div class="owner_avatar"
+                                 style="background-image: url('@(user.avatarPath ?? "../../Resources/default_ava.png")')"></div>
+                        </a>
+                        <div class="more_info">
+                            <p style="margin-bottom: 2px; margin-right: 5%;">
+                                <a href="@Url.Action("Index", "Profile", new { user.username })">
+                                    <span class="owner_name">@(user.displayedName ?? "Anonymous")</span>
+                                </a>
+                                <span class="owner_comment">@(comment.comment)</span>
+                            </p>
+                            <p class="upload_time">@(comment.timeStamp)</p>
+                        </div>
                     </div>
                 }
-            </div>
-            <p class="total_like">@(Model.likes?.Count == 0 ? "0 Like" : Model.likes?.Count + " Likes") </p>
-            <div class="comment_section">
-                <input class="comment_input" placeholder="Comment..."/>
-                <img class="comment_send" alt="" src="Resources/share_blank.png"/>
-            </div>
-            <div class="comment_list">
-                @{
-                    foreach (var comment in Model.comments)
-                    {
-                        var user = OurDbContext.context.users.FirstOrDefault(u => u.userId == comment.userId);
-                        <div class="comment_item">
-                            <a class="avatar_link" href="@Url.Action("Index", "Profile", new { Model.user.username })">
-                                <div class="owner_avatar"
-                                     style="background-image: url('@(user.avatarPath ?? "../../Resources/default_ava.png")')"></div>
-                            </a>
-                            <div class="more_info">
-                                <p style="margin-bottom: 2px;">
-                                    <a href="@Url.Action("Index", "Profile", new { Model.user.username })">
-                                        <span class="owner_name">@(user.displayedName ?? "Anonymous")</span>
-                                    </a>
-                                    <span class="owner_comment">@(comment.comment)</span>
-                                </p>
-                                <p class="upload_time">@(comment.timeStamp)</p>
-                            </div>
-                        </div>
-                    }
-                }
-            </div>
+            }
         </div>
     </div>
 </div>

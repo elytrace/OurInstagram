@@ -14,7 +14,7 @@ public class Comment
     public string? comment { get; set; }
     public int userId { get; set; }
     public int imageId { get; set; }
-    
+
     [DataType(DataType.DateTime)]
     public DateTime timeStamp { get; set; }
 }

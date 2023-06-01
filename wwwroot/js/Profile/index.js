@@ -77,3 +77,22 @@ function loadingImages(imageArray) {
     })
 }
 
+function changeFollowState() {
+    let labelFollow = document.querySelector(".label_follow");
+    let labelUnfollow = document.querySelector(".label_unfollow");
+    if(labelFollow.classList.contains("show")) {
+        labelFollow.classList.remove("show");
+        labelUnfollow.classList.remove("hide");
+
+        labelFollow.classList.add("hide");
+        labelUnfollow.classList.add("show");
+    }
+    else {
+        labelFollow.classList.remove("hide");
+        labelUnfollow.classList.remove("show");
+
+        labelFollow.classList.add("show");
+        labelUnfollow.classList.add("hide");
+    }
+}
+

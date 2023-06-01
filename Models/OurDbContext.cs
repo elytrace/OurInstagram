@@ -8,7 +8,7 @@ namespace OurInstagram.Models;
 
 public class OurDbContext : DbContext
 {
-    public static readonly OurDbContext context = new OurDbContext();
+    public static OurDbContext context;
     public DbSet<User> users { get; set; }
     public DbSet<Image> images { get; set; }
     public DbSet<Like> likes { get; set; }
@@ -32,17 +32,19 @@ public class OurDbContext : DbContext
 
     public static async Task CreateDatabase()
     {
+        // context = new OurDbContext();
         string databasename = context.Database.GetDbConnection().Database;
 
         Console.WriteLine("Creating " + databasename + "...");
 
         bool result = await context.Database.EnsureCreatedAsync();
-        string resultstring = result ? " created succesfully!" : " has already existed!";
+        string resultstring = result ? "created succesfully!" : "has already existed!";
         Console.WriteLine($"Database {databasename}: {resultstring}");
     }
     
     public static async Task DeleteDatabase()
     {
+        context = new OurDbContext();
         string databasename = context.Database.GetDbConnection().Database;
         bool deleted = await context.Database.EnsureDeletedAsync();
         string deletionInfo = deleted ? "has been removed!" : "cannot be removed!";
@@ -157,6 +159,7 @@ public class OurDbContext : DbContext
             username = username, password = password
         };
         context.users.AddAsync(newUser);
+        User.currentUser = newUser;
         context.SaveChangesAsync();
     }
 

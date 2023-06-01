@@ -50,19 +50,29 @@ h1, h4, a {
     text-align: start;
     /*border: 1px solid;*/
 }
+.user_section {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 25%;
+}
 .username {
     font-weight: 450;
     font-size: 2.3vh;
+    height: 100%;
+    line-height: 40px;
 }
 .counting_section {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    gap: 30px;
 }
 .counting_section p {
     font-size: 2vh;
-    padding-right: 25px;
     word-break: break-word;
     white-space: normal;
 }
@@ -134,4 +144,40 @@ h1, h4, a {
 }
 .show {
     display: block;
+}
+.btn_follow {
+     width: 0.1px;
+     height: 0.1px;
+     opacity: 0;
+     overflow: hidden;
+     position: absolute;
+     z-index: -1;
+}
+.label_follow, .label_unfollow {
+    white-space: nowrap;
+    background-color: var(--Color3);
+    color: var(--text1);
+    border-radius: 15px;
+    padding: 10px 45px;
+    font-size: 1.8vh;
+    font-weight: bold;
+
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+.label_unfollow {
+    background-color: var(--button2);
+    color: var(--Color1);
+}
+.label_follow:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    background-color: #8a8a8a;
+}
+.label_unfollow:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    background-color: #256686;
 }
