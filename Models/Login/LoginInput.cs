@@ -6,9 +6,9 @@ namespace OurInstagram.Models.Login;
 public class LoginInput
 {
     [Required]
-    [EmailAddress]
-    [DisplayName("Email")]
-    public string Email { get; set; }
+    [StringLength(50)]
+    [DisplayName("Username")]
+    public string Username { get; set; }
 
     [Required(ErrorMessage = "Password is required")] 
     [DataType(DataType.Password)]

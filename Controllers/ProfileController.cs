@@ -13,9 +13,15 @@ public class ProfileController : Controller
         _logger = logger;
     }
     
-    public IActionResult Index()
+    // public IActionResult Index()
+    // {
+    //     return View(Models.Entities.User.currentUser);
+    // }
+    
+    public IActionResult Index(string username)
     {
-        return View(Models.Users.User.currentUser);
+        var user = OurDbContext.context.users.FirstOrDefault(u => u.username == username);
+        return View(user);
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

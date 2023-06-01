@@ -1,7 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using OurInstagram.Controllers;
-using OurInstagram.Models.Images;
-using OurInstagram.Models.Users;
+using OurInstagram.Enums;
+using OurInstagram.Models.Entities;
 
 namespace OurInstagram.Models;
 
@@ -10,109 +11,143 @@ public class OurDbContext : DbContext
     public static readonly OurDbContext context = new OurDbContext();
     public DbSet<User> users { get; set; }
     public DbSet<Image> images { get; set; }
+    public DbSet<Like> likes { get; set; }
+    public DbSet<Comment> comments { get; set; }
 
-    private const string connectionString = "server=localhost;userid=root;database=ourinstagram";
+    private const string connectionString = "server=localhost;userid=root;database=ourinstagram;";
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         base.OnConfiguring(optionsBuilder);
         optionsBuilder.UseMySQL(connectionString);
     }
-    
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<User>()
+            .HasMany(left => left.followers)
+            .WithMany(right => right.followings)
+            .UsingEntity(join => join.ToTable("follows"));
+    }
+
     public static async Task CreateDatabase()
     {
         string databasename = context.Database.GetDbConnection().Database;
 
-        Console.WriteLine("Tạo " + databasename);
+        Console.WriteLine("Creating " + databasename + "...");
 
         bool result = await context.Database.EnsureCreatedAsync();
-        string resultstring = result ? "tạo  thành  công" : "đã có trước đó";
-        Console.WriteLine($"CSDL {databasename} : {resultstring}");
+        string resultstring = result ? " created succesfully!" : " has already existed!";
+        Console.WriteLine($"Database {databasename}: {resultstring}");
     }
     
     public static async Task DeleteDatabase()
     {
         string databasename = context.Database.GetDbConnection().Database;
         bool deleted = await context.Database.EnsureDeletedAsync();
-        string deletionInfo = deleted ? "đã xóa" : "không xóa được";
+        string deletionInfo = deleted ? "has been removed!" : "cannot be removed!";
         Console.WriteLine($"{databasename} {deletionInfo}");
     }
 
     public static async Task InsertSampleData()
     {
-        await context.AddRangeAsync(
-            new User()
-            {
-                username = "hieuhc@falcongames.com",
-                password = "171114",
-                email = "chihieuk50@gmail.com",
-                phone = "0857639199",
-                dateOfBirth = new DateTime(2002, 1, 17),
-                gender = 1,
-                avatarPath = "https://i.pinimg.com/736x/7f/2d/a9/7f2da9cdaaba31c68503277be1ee2d81.jpg",
-                biography = "User test 1",
-                displayedName = "Chí Hiếu"
-            },
-            new User()
-            {
-                username = "trangdh@gmail.com",
-                password = "110402",
-                email = "trangdh@gmail.com",
-                phone = "0982352291",
-                dateOfBirth = new DateTime(2002, 4, 11),
-                gender = 0,
-                avatarPath = "https://i.pinimg.com/736x/7f/2d/a9/7f2da9cdaaba31c68503277be1ee2d81.jpg",
-                biography = "User test 2",
-                displayedName = "Đặng Trang"
-            }
-        );
+        var users = JsonConvert.DeserializeObject<List<User>>(await File.ReadAllTextAsync("./SampleData/users.json"));
+        await context.AddRangeAsync(users);
         await context.SaveChangesAsync();
 
-        await context.AddRangeAsync(
-            new Image()
+        var images = JsonConvert.DeserializeObject<List<Image>>(await File.ReadAllTextAsync("./SampleData/images.json"));
+        await context.AddRangeAsync(images);
+        await context.SaveChangesAsync();
+
+        // follow
+        var userList = context.users.ToList();
+        foreach (var user in userList)
+        {
+            user.followers = userList.Where(u => u.userId < user.userId).ToList();
+            user.followings = userList.Where(u => u.userId > user.userId).ToList();
+        }
+        await context.SaveChangesAsync();
+
+        // image uploaded for each user
+        var imageList = context.images;
+        foreach (var image in imageList)
+        {
+            await context.Entry(image).Reference(i => i.user).LoadAsync();
+        }
+        await context.SaveChangesAsync();
+        
+        // image liked for each user
+        Random gen = new Random();
+        var likeList = new List<Like>();
+        for (int i = 0; i < userList.Count(); i++)
+        {
+            int start = gen.Next(imageList.Count() / 2);
+            int end = gen.Next(start + 1, imageList.Count());
+            for (int j = start; j < end; j++)
             {
-                imagePath = "https://i.pinimg.com/236x/e3/41/4b/e3414b2fcf00375a199ba6964be551af.jpg",
-                caption = "image test 1",
-                like = 0, userId = 1,
-            },
-            new Image()
-            {
-                imagePath = "https://i.pinimg.com/236x/05/65/20/05652045e57af33599557db9f23188c0.jpg",
-                caption = "image test 2",
-                like = 0, userId = 1,
-            },
-            new Image()
-            {
-                imagePath = "https://i.pinimg.com/236x/c5/83/53/c58353e15f32f3cbfc7cdcbcf0dc2f34--mango-coulis-m-sorry.jpg",
-                caption = "image test 3",
-                like = 0, userId = 1,
-            },
-            new Image()
-            {
-                imagePath = "https://i.pinimg.com/564x/94/43/b9/9443b93bd8773fec91bc1837e8424e8e.jpg",
-                caption = "image test 4",
-                like = 0, userId = 1,
-            },
-            new Image()
-            {
-                imagePath = "https://i.pinimg.com/564x/e6/8a/42/e68a42c2e530fbdf6b3ab2f379dcd384.jpg",
-                caption = "image test 5",
-                like = 0, userId = 1,
+                likeList.Add(new Like { userId = i+1, imageId = j+1, timeStamp = DateTime.Now });
             }
-        );
+        }
+        await context.AddRangeAsync(likeList);
+        await context.SaveChangesAsync();
+
+        foreach (var image in imageList)
+        {
+            context.Entry(image).Collection(i => i.likes).LoadAsync();
+        }
+        await context.SaveChangesAsync();
+        
+        // image comments for each user
+        var commentList = new List<Comment>();
+        for (int i = 0; i < userList.Count(); i++)
+        {
+            int start = gen.Next(imageList.Count() / 2);
+            int end = gen.Next(start + 1, imageList.Count());
+            for (int j = start; j < end; j++)
+            {
+                commentList.Add(new Comment { 
+                    comment = gen.Next(2) == 1 ? "Tương tác." : "Ông đi qua bà đi lại con xin 1 follow please", 
+                    userId = i+1, 
+                    imageId = j+1, 
+                    timeStamp = DateTime.Now 
+                });
+            }
+        }
+        await context.AddRangeAsync(commentList);
+        await context.SaveChangesAsync();
+
+        foreach (var image in imageList)
+        {
+            context.Entry(image).Collection(i => i.comments).LoadAsync();
+        }
         await context.SaveChangesAsync();
     }
     
-    public static bool ValidateLogin(string username, string password)
+    public static LoginState ValidateLogin(string username, string password)
     {
         var user = context.users.FirstOrDefault(u => u.username == username);
-        if (user == null) return false;
-        if (password != user.password) return false;
+        if (user == null) 
+            return LoginState.USERNAME_NOT_EXISTED;
+        if (password != user.password) 
+            return LoginState.WRONG_PASSWORD;
 
         context.Entry(user).Collection(u => u.images).LoadAsync();
-            
+        context.Entry(user).Collection(u => u.followers).LoadAsync();
+        context.Entry(user).Collection(u => u.followings).LoadAsync();
         User.currentUser = user;
-        return true;
+        return LoginState.LOGIN_SUCCESS;
+    }
+    
+    public static LoginState ValidateSignup(string username, string password, string confirmPassword)
+    {
+        if (password != confirmPassword) 
+            return LoginState.WRONG_CONFIRM_PASSWORD;
+        
+        var user = context.users.FirstOrDefault(u => u.username == username);
+        if (user != null) 
+            return LoginState.USERNAME_EXISTED;
+
+        return LoginState.SIGNUP_SUCCESS;
     }
 
     public static void CreateNewUser(string username, string password)
@@ -130,12 +165,12 @@ public class OurDbContext : DbContext
         var newImage = new Image()
         {
             imagePath = url,
-            like = 0,
-            userId = userID
+            caption = "Not yet implemented",
+            userId = userID,
+            uploadTime = DateTime.Now
         };
         context.images.Add(newImage);
         context.SaveChangesAsync();
         context.Entry(User.currentUser).Collection(u => u.images).LoadAsync();
-
     }
 }

@@ -1,0 +1,57 @@
+[
+  {
+    "username": "hieuhc",
+    "password": "171114",
+    "email": "chihieuk50@gmail.com",
+    "phone": "0857639199",
+    "dateOfBirth": "2000-1-17",
+    "gender": 1,
+    "avatarPath": "https://res.cloudinary.com/dy7yri3d9/image/upload/v1685526646/download_nzrik1.jpg",
+    "biography": "User test 1",
+    "displayedName": "Chí Hiếu"
+  },
+  {
+    "username": "trangdh",
+    "password": "110402",
+    "email": "trangdh@gmail.com",
+    "phone": "0982352291",
+    "dateOfBirth": "2002-4-11",
+    "gender": 0,
+    "avatarPath": "https://res.cloudinary.com/dy7yri3d9/image/upload/v1685526476/IMG_1676389941508_1676389988433_s9gzdb.jpg",
+    "biography": "User test 2",
+    "displayedName": "Đặng Trang"
+  },
+  {
+    "username": "nguyenpt",
+    "password": "123",
+    "email": "nguyenpt@gmail.com",
+    "phone": "0123456789",
+    "dateOfBirth": "2002-1-1",
+    "gender": 1,
+    "avatarPath": "https://res.cloudinary.com/dy7yri3d9/image/upload/v1685348870/logo_clbzep.jpg",
+    "biography": "User test 3",
+    "displayedName": "Phạm Nguyên"
+  },
+  {
+    "username": "khangdt",
+    "password": "123",
+    "email": "khangdt@gmail.com",
+    "phone": "0123456789",
+    "dateOfBirth": "2002-1-1",
+    "gender": 1,
+    "avatarPath": "https://res.cloudinary.com/dy7yri3d9/image/upload/v1685348828/cqExxfut_400x400_sf3ics.jpg",
+    "biography": "User test 4",
+    "displayedName": "Tuấn Khang"
+  },
+  {
+    "username": "hiepdn",
+    "password": "123",
+    "email": "hiepdn@gmail.com",
+    "phone": "0123456789",
+    "dateOfBirth": "2002-1-1",
+    "gender": 1,
+    "avatarPath": "https://i.pinimg.com/736x/7f/2d/a9/7f2da9cdaaba31c68503277be1ee2d81.jpg",
+    "biography": "User test 5",
+    "displayedName": "Hiệp Đỗ"
+  }
+]

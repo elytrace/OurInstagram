@@ -3,6 +3,7 @@ using CloudinaryDotNet;
 using CloudinaryDotNet.Actions;
 using Microsoft.AspNetCore.Mvc;
 using OurInstagram.Models;
+using OurInstagram.Models.Login;
 
 namespace OurInstagram.Controllers;
 
@@ -12,17 +13,16 @@ public class HomeController : Controller
 
     public HomeController(ILogger<HomeController> logger)
     {
-            _logger = logger;
+        _logger = logger;
     }
 
     public IActionResult Index()
-    {      
-        return View();
-    }
-
-    public IActionResult Explore()
     {
-        return NotFound("Chức năng đang được thực hiện");
+        var followings = Models.Entities.User.currentUser.followings.Select(user => user.userId);
+        var imageList = OurDbContext.context.images
+            .Where(user => followings.Contains(user.userId)).ToList();
+        
+        return View(imageList);
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
@@ -40,8 +40,7 @@ public class HomeController : Controller
         };
         var uploadResult = new Cloudinary().Upload(uploadParams);
         Console.WriteLine(uploadResult.JsonObj);
-        OurDbContext.UploadImage(uploadResult.SecureUrl.ToString(), Models.Users.User.currentUser.userId);
-        // return RedirectToAction("Index", "Profile");
+        OurDbContext.UploadImage(uploadResult.SecureUrl.ToString(), Models.Entities.User.currentUser.userId);
         return View("Index");
     }
 }

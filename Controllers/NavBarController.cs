@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using OurInstagram.Models;
+using OurInstagram.Models.Entities;
 
 namespace OurInstagram.Controllers;
 
@@ -24,14 +25,39 @@ public class NavBarController : Controller
         return RedirectToAction("Index", "Home");
     }
 
-    public IActionResult ToExplore()
-    {
-        return RedirectToAction("Index", "Home");
-        // return RedirectToAction("Explore", "Home");
-    }
-
     public IActionResult ToProfile()
     {
-        return RedirectToAction("Index", "Profile");
+        return RedirectToAction("Index", "Profile", new { Models.Entities.User.currentUser.username});
     }
+    
+    [HttpPost]
+    public ActionResult DisplayImage(int imageId)
+    {
+        var image = OurDbContext.context.images.FirstOrDefault(image => image.imageId == imageId);
+        image.isLiked = image.likes.Select(like => like.userId).Contains(Models.Entities.User.currentUser.userId);
+        return PartialView(image);
+    }
+    
+    [HttpPost]
+    public ActionResult LikeImage(int imageId)
+    {
+        var image = OurDbContext.context.images.FirstOrDefault(image => image.imageId == imageId);
+        if (!image.isLiked)
+        {
+            image.likes.Add(new Like { imageId = image.imageId, userId = Models.Entities.User.currentUser.userId});
+        }
+        else
+        {
+            var itemToRemove = image.likes.FirstOrDefault(u => u.userId == Models.Entities.User.currentUser.userId);
+            if (itemToRemove != null) image.likes.Remove(itemToRemove);
+        }
+        image.isLiked = !image.isLiked;
+        OurDbContext.context.SaveChangesAsync();
+        
+        return Json(image.likes.Count);
+    }
+    //
+    // model.Integer++;
+    // UpdateModel(model);
+    //     return Json(model.Integer.ToString());
 }

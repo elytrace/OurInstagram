@@ -1,0 +1,122 @@
+﻿@model OurInstagram.Models.Entities.Image
+
+<div class="image_popup">
+    <div class="display_section" style="background-image: url('@Model.imagePath')">
+    </div>
+    <div class="function_section">
+        <div class="image_header">
+            <img alt="Close" src="~/Resources/close.png" class="close_img"/>
+        </div>
+        <div class="image_info">
+            <div class="owner_info">
+                <a class="avatar_link" href="@Url.Action("Index", "Profile", new { Model.user.username })">
+                    <div class="owner_avatar"
+                         style="background-image: url('@(Model.user.avatarPath ?? "../../Resources/default_ava.png")')"></div>
+                </a>
+                <div class="more_info">
+                    <a href="@Url.Action("Index", "Profile", new { Model.user.username })">
+                        <p class="owner_name">@(Model.user.displayedName ?? "Anonymous")</p>
+                    </a>
+                    <p class="upload_time">@(Model.uploadTime)</p>
+                </div>
+            </div>
+            <p class="image_caption">@(Model.caption ?? "")</p>
+            <div class="image_function">
+                <div class="like">
+                    @if (!Model.isLiked)
+                    {
+                        <img id="like_btn" src="Resources/notification_blank.png" class="icon show" alt=""/>
+                        <img id="unlike_btn" src="Resources/notification_fill.png" class="icon hide" alt=""/>
+                    }
+                    else
+                    {
+                        <img id="like_btn" src="Resources/notification_blank.png" class="icon hide" alt=""/>
+                        <img id="unlike_btn" src="Resources/notification_fill.png" class="icon show" alt=""/>
+                    }
+                </div>
+                <div class="comment">
+                    <img src="Resources/comment_blank.png" class="icon show" alt=""/>
+                </div>
+                <div class="share">
+                    <img src="Resources/share_blank.png" class="icon show" alt=""/>
+                </div>
+                @if (Model.userId == OurInstagram.Models.Entities.User.currentUser.userId)
+                {
+                    <div class="more">
+                        <img src="Resources/ellipsis.png" class="icon show" alt=""/>
+                    </div>
+                }
+            </div>
+            <p class="total_like">@(Model.likes?.Count == 0 ? "0 Like" : Model.likes?.Count + " Likes") </p>
+            <div class="comment_section">
+                <input class="comment_input" placeholder="Comment..."/>
+                <img class="comment_send" alt="" src="Resources/share_blank.png"/>
+            </div>
+            <div class="comment_list">
+                @{
+                    foreach (var comment in Model.comments)
+                    {
+                        var user = OurDbContext.context.users.FirstOrDefault(u => u.userId == comment.userId);
+                        <div class="comment_item">
+                            <a class="avatar_link" href="@Url.Action("Index", "Profile", new { Model.user.username })">
+                                <div class="owner_avatar"
+                                     style="background-image: url('@(user.avatarPath ?? "../../Resources/default_ava.png")')"></div>
+                            </a>
+                            <div class="more_info">
+                                <p style="margin-bottom: 2px;">
+                                    <a href="@Url.Action("Index", "Profile", new { Model.user.username })">
+                                        <span class="owner_name">@(user.displayedName ?? "Anonymous")</span>
+                                    </a>
+                                    <span class="owner_comment">@(comment.comment)</span>
+                                </p>
+                                <p class="upload_time">@(comment.timeStamp)</p>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<script> // close image
+    btnCloseImage = document.querySelector(".image_details_panel").querySelector(".close_img");
+    btnCloseImage.addEventListener("click", () => {
+        closeImagePopup();
+    });
+</script>
+<script> // like image
+    likeIcon = document.querySelector(".image_function").querySelector(".like");
+    unlikeBtn = likeIcon.querySelector("#unlike_btn");
+    likeBtn = likeIcon.querySelector("#like_btn");
+    likeIcon.addEventListener("click", function () {
+        if (unlikeBtn.classList.contains("show")) {
+            unlikeBtn.classList.remove("show");
+            unlikeBtn.classList.add("hide");
+            likeBtn.classList.add("show");
+            likeBtn.classList.remove("hide");
+        }
+        else {
+            unlikeBtn.classList.remove("hide");
+            unlikeBtn.classList.add("show");
+            likeBtn.classList.add("hide");
+            likeBtn.classList.remove("show");
+        }
+        $.ajax({
+            url: "/Navbar/LikeImage",
+            type: "POST",
+            data: { "imageId": @Model.imageId },
+            success: function (data) {
+                let total_like = document.querySelector(".total_like");
+                total_like.innerHTML = data === "0" ? data + " Like" : data + " Likes";
+            },
+            error: function(error)
+            {
+                alert(error);
+            }
+        });
+    })
+</script>
+<script> // comment image
+
+</script>
