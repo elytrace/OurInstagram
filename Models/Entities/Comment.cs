@@ -13,6 +13,8 @@ public class Comment
     [StringLength(500)]
     public string? comment { get; set; }
     public int userId { get; set; }
+    [NotMapped]
+    public User user { get; set; }
     public int imageId { get; set; }
 
     [DataType(DataType.DateTime)]

@@ -163,6 +163,7 @@ functions.forEach(func => {
 });
 
 function uploadImage() {
+    triggerNotification('submit', 'The process will take some minutes...');
     let displayImage = document.querySelector(".display_image");
     let image = displayImage.style.backgroundImage;
     let url = image.slice(5, -2);
@@ -171,12 +172,28 @@ function uploadImage() {
         type: "POST",
         data: { "imageURL" : url },
         success: function (data) {
-            closeCreatePopup();
-            alert("Upload successfully");
+            triggerNotification('done', 'Image has been uploaded!');
         },
         error: function(error)
         {
-            alert(error);
+            triggerNotification('error', error);
         }
     });
+    closeCreatePopup();
+}
+
+function triggerNotification(type, message) {
+    console.log((type === 'submit') + " " + message + " " + jQuery('#notification').length);
+    if(jQuery('#notification').length) 
+        jQuery('#notification').remove();
+    
+    jQuery(document.body).append("<div class='push-notification hide push-"+type+"' id='notification'>"+message+"</div>");
+    if(type === 'submit') {
+        jQuery('#notification').show();
+    }
+    else {
+        jQuery('#notification').show().fadeOut(3000, function () {
+            jQuery('#notification').remove();
+        });
+    }
 }

@@ -34,12 +34,12 @@ public class HomeController : Controller
     [HttpPost]
     public ActionResult UploadImage(string imageURL)
     {
-        var uploadParams = new ImageUploadParams()
+        var uploadParams = new ImageUploadParams
         {
             File = new FileDescription(imageURL)
         };
         var uploadResult = new Cloudinary().Upload(uploadParams);
-        Console.WriteLine(uploadResult.JsonObj);
+        Console.WriteLine("Upload OK. Result: " + uploadResult.JsonObj);
         OurDbContext.UploadImage(uploadResult.SecureUrl.ToString(), Models.Entities.User.currentUser.userId);
         return View("Index");
     }

@@ -144,7 +144,7 @@
 }
 .search_input::-webkit-search-cancel-button {
     margin-left: 10px;
-    background-image: url("Resources/close.png");
+    background-image: url("../../Resources/close.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 7px;
@@ -556,11 +556,27 @@
 .function_section .more {
     margin-left: auto;
 }
+.function_section .total_like_comment {
+    width: 90%;
+    height: 50px;
+    line-height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
 .function_section .total_like {
-    width: 100%;
+    width: 50%;
     height: 100%;
     font-size: 2vh;
     font-weight: 500;
+}
+.function_section .total_comment {
+    width: 50%;
+    height: 100%;
+    font-size: 2vh;
+    font-weight: 500;
+    text-align: end;
 }
 .function_section .comment_section {
     width: 90%;
@@ -586,6 +602,10 @@
     height: 100%;
     width: auto;
     margin-right: 10px;
+}
+.function_section .comment_send:hover {
+    transform: scale(1.05);
+    cursor: pointer;
 }
 .function_section .comment_list {
     height: 50%;
@@ -617,4 +637,32 @@
 .function_section .comment_item .more_info {
     margin-top: 0;
     justify-content: flex-start;
+}
+.push-notification {
+    background-color: #000;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    color: #fff;
+    padding: 15px 15px 15px 30px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-repeat: no-repeat;
+    background-position: 7px center;
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+    vertical-align: middle;
+    box-shadow: 4px 4px 4px #000;
+    -webkit-box-shadow: 4px 4px 4px #000;
+    -moz-box-shadow: 4px 4px 4px #000;
+}
+.push-submit {
+    /*background-image: url("../../Resources/loading.gif");*/
+}
+.push-done {
+    background-image: url("../../Resources/check.png");
+}
+.push-error {
+    background-image: url("../../Resources/error.png");
 }

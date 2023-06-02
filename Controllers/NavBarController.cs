@@ -44,7 +44,12 @@ public class NavBarController : Controller
         var image = OurDbContext.context.images.FirstOrDefault(image => image.imageId == imageId);
         if (!image.isLiked)
         {
-            image.likes.Add(new Like { imageId = image.imageId, userId = Models.Entities.User.currentUser.userId});
+            image.likes.Add(new Like
+            {
+                imageId = imageId, 
+                userId = Models.Entities.User.currentUser.userId, 
+                timeStamp = DateTime.Now
+            });
         }
         else
         {
@@ -56,8 +61,21 @@ public class NavBarController : Controller
         
         return Json(image.likes.Count);
     }
-    //
-    // model.Integer++;
-    // UpdateModel(model);
-    //     return Json(model.Integer.ToString());
+    
+    [HttpPost]
+    public ActionResult CommentImage(string comment, int imageId)
+    {
+        var image = OurDbContext.context.images.FirstOrDefault(image => image.imageId == imageId);
+        var newComment = new Comment
+        {
+            imageId = imageId,
+            userId = Models.Entities.User.currentUser.userId,
+            comment = comment,
+            timeStamp = DateTime.Now
+        };
+        image.comments.Add(newComment);
+        OurDbContext.context.SaveChangesAsync();
+        
+        return Json(newComment);
+    }
 }

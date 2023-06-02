@@ -49,8 +49,9 @@
         </div>
         </div>
         
-        <div style="width: 90%; height: 50px; line-height: 50px">
+        <div class="total_like_comment">
             <p class="total_like">@(Model.likes?.Count == 0 ? "0 Like" : Model.likes?.Count + " Likes") </p>
+            <p class="total_comment">@(Model.comments?.Count == 0 ? "0 Comment" : Model.comments?.Count + " Comments") </p>
         </div>
         <div class="comment_section">
             <input class="comment_input" placeholder="Comment..."/>
@@ -121,5 +122,42 @@
     })
 </script>
 <script> // comment image
+    let commentInput = document.querySelector(".comment_input");
+    let commentSend = document.querySelector(".comment_send");
+    commentSend.addEventListener('click', function() {
+        console.log(commentInput.value);
 
+        if (commentInput.value !== "") {
+            let comment = commentInput.value;
+            commentInput.value = "";
+            let avatarPath = '@(OurInstagram.Models.Entities.User.currentUser.avatarPath ?? "../../Resources/default_ava.png")';
+            $.ajax({
+                url: "/Navbar/CommentImage",
+                type: "POST",
+                data: { "comment": comment.toString(), "imageId": @Model.imageId },
+                success: function (newComment) {
+                    $('.comment_list').prepend(
+                        "<div class='comment_item'>" +
+                            "<a class='avatar_link' href='@Url.Action("Index", "Profile", new { OurInstagram.Models.Entities.User.currentUser.username })'>" +
+                                "<div class='owner_avatar' style='background-image: url('" + avatarPath + "')'></div>" +
+                            "</a>" +
+                            "<div class='more_info'>" +
+                                "<p style='margin-bottom: 2px; margin-right: 5%;'>" +
+                                    "<a href='@Url.Action("Index", "Profile", new { OurInstagram.Models.Entities.User.currentUser.username })'>" + 
+                                        "<span class='owner_name'>@(OurInstagram.Models.Entities.User.currentUser.displayedName ?? "Anonymous")</span>" +
+                                    "</a>" +
+                                    "<span class='owner_comment'>" + newComment['comment'] + "</span>" +
+                                "</p>" +
+                                "<p class='upload_time'>" + '@DateTime.Now.ToString()' + "</p>" +
+                            "</div>" +
+                        "</div>"
+                    );
+                },
+                error: function(error)
+                {
+                    triggerNotification('error', error);
+                }
+            });
+        }
+    });
 </script>
