@@ -21,32 +21,41 @@
                 </div>
             </div>
             <p class="image_caption">@(Model.caption ?? "")</p>
-            <div class="image_function">
-            <div class="like">
-                @if (!Model.isLiked)
-                {
-                    <img id="like_btn" src="Resources/notification_blank.png" class="icon show" alt=""/>
-                    <img id="unlike_btn" src="Resources/notification_fill.png" class="icon hide" alt=""/>
-                }
-                else
-                {
-                    <img id="like_btn" src="Resources/notification_blank.png" class="icon hide" alt=""/>
-                    <img id="unlike_btn" src="Resources/notification_fill.png" class="icon show" alt=""/>
-                }
-            </div>
-            <div class="comment">
-                <img src="Resources/comment_blank.png" class="icon show" alt=""/>
-            </div>
-            <div class="share">
-                <img src="Resources/share_blank.png" class="icon show" alt=""/>
-            </div>
-            @if (Model.userId == OurInstagram.Models.Entities.User.currentUser.userId)
-            {
-                <div class="more">
-                    <img src="Resources/ellipsis.png" class="icon show" alt=""/>
+            <div class="edit_delete hide">
+                <div class="sub_function edit">
+                    <p class="sub_function_name">Edit</p>
                 </div>
-            }
-        </div>
+                <div class="sub_function delete">
+                    <p class="sub_function_name">Delete</p>
+                </div>
+            </div>
+            <div class="image_function">
+                <div class="like">
+                    @if (!Model.isLiked)
+                    {
+                        <img id="like_btn" src="Resources/notification_blank.png" class="icon show" alt=""/>
+                        <img id="unlike_btn" src="Resources/notification_fill.png" class="icon hide" alt=""/>
+                    }
+                    else
+                    {
+                        <img id="like_btn" src="Resources/notification_blank.png" class="icon hide" alt=""/>
+                        <img id="unlike_btn" src="Resources/notification_fill.png" class="icon show" alt=""/>
+                    }
+                </div>
+                <div class="comment">
+                    <img src="Resources/comment_blank.png" class="icon show" alt=""/>
+                </div>
+                <div class="share">
+                    <img src="Resources/share_blank.png" class="icon show" alt=""/>
+                </div>
+                @if (Model.userId == OurInstagram.Models.Entities.User.currentUser.userId)
+                {
+                    <div class="more" onclick="selectEditDelete()">
+                        <img src="Resources/ellipsis.png" class="icon show" alt=""/>
+                    </div>
+                    
+                }
+            </div>
         </div>
         
         <div class="total_like_comment">
@@ -125,18 +134,27 @@
     commentInput = document.querySelector(".comment_input");
     commentSend = document.querySelector(".comment_send");
     commentSend.addEventListener('click', function() {
-        console.log(commentInput.value);
-
+        comment();
+    });
+    
+    commentInput.addEventListener('keydown', e => {
+        console.log(e);
+        if (e.key === 'Enter') {
+            comment();
+        }
+    });
+    
+    function comment() {
         if (commentInput.value !== "") {
             let comment = commentInput.value;
             commentInput.value = "";
             let avatarPath = '@(OurInstagram.Models.Entities.User.currentUser.avatarPath ?? "../../Resources/default_ava.png")';
-            console.log(avatarPath);
+            // console.log(avatarPath);
             $.ajax({
                 url: "/Navbar/CommentImage",
                 type: "POST",
                 data: { "comment": comment.toString(), "imageId": @Model.imageId },
-                success: function (newComment) {
+                success: function (totalComment) {
                     $('.comment_list').prepend(
                         "<div class='comment_item'>" +
                             "<a class='avatar_link' href='@Url.Action("Index", "Profile", new { OurInstagram.Models.Entities.User.currentUser.username })'>" +
@@ -147,12 +165,13 @@
                                     "<a href='@Url.Action("Index", "Profile", new { OurInstagram.Models.Entities.User.currentUser.username })'>" + 
                                         "<span class='owner_name'>@(OurInstagram.Models.Entities.User.currentUser.displayedName ?? "Anonymous")</span>" +
                                     "</a>" + "<span> </span>" +
-                                    "<span class='owner_comment'>" + newComment['comment'] + "</span>" +
+                                    "<span class='owner_comment'>" + comment + "</span>" +
                                 "</p>" +
                                 "<p class='upload_time'>" + '@DateTime.Now.ToString()' + "</p>" +
                             "</div>" +
                         "</div>"
                     );
+                    document.querySelector(".total_comment").innerHTML = totalComment + " Comments";
                 },
                 error: function(error)
                 {
@@ -160,5 +179,28 @@
                 }
             });
         }
+    }
+</script>
+<script> // delete
+    deleteBtn = document.querySelector(".edit_delete").querySelector(".delete");
+    deleteBtn.addEventListener("click", function () {
+        deleteImage();
     });
+
+    function deleteImage() {
+        triggerNotification('submit', 'The process will take some minutes...');
+        $.ajax({
+            url: "/NavBar/DeleteImage/",
+            type: "POST",
+            data: { "imageId" : @Model.imageId },
+            success: function (data) {
+                triggerNotification('done', 'Image has been deleted!');
+            },
+            error: function(error)
+            {
+                triggerNotification('error', error);
+            }
+        });
+        closeImagePopup();
+    }
 </script>

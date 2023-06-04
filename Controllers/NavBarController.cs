@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json.Linq;
 using OurInstagram.Models;
 using OurInstagram.Models.Entities;
 
@@ -76,6 +77,17 @@ public class NavBarController : Controller
         image.comments.Add(newComment);
         OurDbContext.context.SaveChangesAsync();
         
-        return Json(newComment);
+        return Json(image.comments.Count);
+    }
+    
+    [HttpPost]
+    public ActionResult DeleteImage(int imageId)
+    {
+        var imageToDelete = OurDbContext.context.images.FirstOrDefault(image => image.imageId == imageId);
+        OurDbContext.context.Remove(imageToDelete);
+        OurDbContext.context.SaveChangesAsync();
+        OurDbContext.context.Entry(Models.Entities.User.currentUser).Collection(u => u.images).LoadAsync();
+
+        return RedirectToAction("Index", "Profile", new { Models.Entities.User.currentUser.username });
     }
 }

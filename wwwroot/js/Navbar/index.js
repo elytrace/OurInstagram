@@ -187,13 +187,32 @@ function triggerNotification(type, message) {
     if(jQuery('#notification').length) 
         jQuery('#notification').remove();
     
-    jQuery(document.body).append("<div class='push-notification hide push-"+type+"' id='notification'>"+message+"</div>");
+    jQuery(document.body).append(
+        "<div class='push-notification' id='notification'>"+
+            "<div class='push_icon push-"+type+"'></div>" +
+            "<p class='push_message'>"+message+"</p>" +
+        "</div>"
+    );
     if(type === 'submit') {
         jQuery('#notification').show();
     }
     else {
-        jQuery('#notification').show().fadeOut(3000, function () {
+        jQuery('#notification').show()
+            .fadeOut(3000, function () {
             jQuery('#notification').remove();
         });
+    }
+}
+
+function selectEditDelete() {
+    let menuEditDelete = document.querySelector(".edit_delete");
+    
+    if(menuEditDelete.classList.contains("show")) {
+        menuEditDelete.classList.remove("show");
+        menuEditDelete.classList.add("hide");
+    }
+    else {
+        menuEditDelete.classList.remove("hide");
+        menuEditDelete.classList.add("show");
     }
 }
