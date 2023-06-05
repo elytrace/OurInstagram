@@ -1,4 +1,4 @@
-const filterOptions = document.querySelectorAll(".filter button"),
+﻿const filterOptions = document.querySelectorAll(".filter button"),
     filterName = document.querySelector(".filter-info .name"),
     filterValue = document.querySelector(".filter-info .value"),
     filterSlider = document.querySelector(".slider input"),

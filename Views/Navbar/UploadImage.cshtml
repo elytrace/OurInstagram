@@ -1,4 +1,7 @@
-﻿<div class="create_panel">
+﻿<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+<link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css">
+
+<div class="create_panel">
     <div class="create_popup show_upload">
         <div class="create_header">
             <p class="create_title">Upload new image</p>
@@ -20,14 +23,7 @@
             </div>
         </div>
     </div>
-    
-    @* <div class="edit_popup hide_upload"> *@
-    @*     <input type="button" id="upload" class="btn_upload" onclick="uploadImage()"/> *@
-    @*     <label for="upload" class="label_upload">Upload</label> *@
-    @*     <input type="button" id="cancel" class="btn_cancel"/> *@
-    @*     <label for="cancel" class="label_cancel">Cancel</label> *@
-    @* </div> *@
-    
+
     <div class="edit_popup hide_upload">
         <div class="wrapper">
             <div class="editor-panel">
@@ -51,16 +47,16 @@
                     <label class="title">Rotate & Flip</label>
                     <div class="options">
                         <button id="left">
-                            @* <i class="fa-solid fa-rotate-left"></i> *@
+                            <i class="fa-solid fa-rotate-left"></i>
                         </button>
                         <button id="right">
-                            @* <i class="fa-solid fa-rotate-right"></i> *@
+                            <i class="fa-solid fa-rotate-right"></i>
                         </button>
                         <button id="horizontal">
-                            @* <i class='bx bx-reflect-vertical'></i> *@
+                            <i class='bx bx-reflect-vertical'></i>
                         </button>
                         <button id="vertical">
-                            @* <i class='bx bx-reflect-horizontal'></i> *@
+                            <i class='bx bx-reflect-horizontal'></i>
                         </button>
                     </div>
                 </div>
@@ -70,7 +66,9 @@
             </div>
         </div>
         <div class="controls">
-            <button class="reset-filter">Reset Filters</button>
+            <button class="reset-filter label_cancel">Reset Filters</button>
+            @* <input type="button" id="reset" class="reset-filter"/> *@
+            @* <label for="reset" class="label_cancel">Reset Filters</label> *@
             <div class="row">
                 <input type="button" id="upload" class="btn_upload" onclick="saveImage()"/>
                 <label for="upload" class="label_upload">Upload</label>
@@ -81,4 +79,5 @@
     </div>
     
     <script src="~/js/NavBar/edit.js"></script>
+    <script src="~/js/NavBar/create.js" defer></script>
 </div>

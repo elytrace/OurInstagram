@@ -15,7 +15,7 @@ public class NavBarController : Controller
         _logger = logger;
     }
 
-    public PartialViewResult CreatePanel()
+    public PartialViewResult UploadImage()
     {
         return PartialView();
     }
