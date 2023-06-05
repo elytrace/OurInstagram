@@ -2,7 +2,7 @@
 @model OurInstagram.Models.Entities.User
 @{
     ViewData["Title"] = "Profile";
-    Layout = "_Navbar";
+    Layout = "_MainNavbar";
 }
 
 @* Đây là body *@
@@ -15,10 +15,6 @@
     <script src="~/js/Profile/index.js" type="text/javascript"></script>
     <script>
         let imageArray = @Html.Raw(JsonConvert.SerializeObject(Model.images));
-        // let images = []
-        // imageArray.forEach(image => {
-        //     images.push(image["imagePath"]);
-        // })
         let placeholder = document.querySelector(".placeholder");
         if (imageArray.length !== 0) {
             loadingImages(imageArray);
@@ -38,20 +34,64 @@
 
 <main class="home">
     <div class="profile_section">
-        <div class="avatar" alt="Avatar" style="
-            background-image: url('@(Model.avatarPath ?? "../../Resources/default_ava.png")')"></div>
+        <div class="avatar_section">
+            <img class="avatar" alt="" src='@(Model.avatarPath ?? "../../Resources/default_ava.png")'/>
+            <div class="avatar_overlay"></div>
+        </div>
+        @* <div class="avatar" alt="Avatar" style="background-image: url('@(Model.avatarPath ?? "../../Resources/default_ava.png")')"></div> *@
         <div class="info_section">
-            <p class="username">@(Model.username ?? "Username : Unknown")</p>
+            <div class="user_section">
+                <p class="username">@(Model.username ?? "Username : Unknown")</p>
+                @{
+                    if (OurInstagram.Models.Entities.User.currentUser.username != Model.username)
+                    {
+                        <input type="button" id="follow" class="btn_follow"/>
+                        if (OurInstagram.Models.Entities.User.currentUser.followings.Contains(Model))
+                        {
+                            <label for="follow" class="label_follow show">Following</label>
+                            <label for="follow" class="label_unfollow hide">Follow</label>
+                        }
+                        else
+                        {
+                            <label for="follow" class="label_follow hide">Following</label>
+                            <label for="follow" class="label_unfollow show">Follow</label>
+                        }
+                    }
+                }
+            </div>
             <div class="counting_section">
                 <p><strong>@(Model.images?.Count ?? 0)</strong> Posts</p>
-                <p><strong>@(Model.followers?.Count ?? 0)</strong> Followers</p>
+                <p class="total_followers"><strong>@(Model.followers?.Count ?? 0)</strong> Followers</p>
                 <p><strong>@(Model.followings?.Count ?? 0)</strong> Followings</p>
             </div>
-            <p class="display_name">@(Model.displayedName ?? "Display Name : Unknown")</p>
-            <p class="bio">@(Model.biography ?? "Bio : Unknown")</p>
+            <p class="display_name">@(Model.displayedName ?? "Unknown")</p>
+            <p class="bio">@(Model.biography ?? "Unknown")</p>
         </div>
     </div>
     <div class="separator"></div>
     <div class="homepage_container"></div>
     <p class="placeholder hide"><em>Uploaded images will be shown below</em></p>
 </main>
+
+@if (OurInstagram.Models.Entities.User.currentUser.username != Model.username)
+{
+    <script>
+        let btnFollow = document.querySelector(".btn_follow");
+        btnFollow.addEventListener("click", function () {
+           changeFollowState();
+           $.ajax({
+              url: "/Profile/Follow",
+              type: "POST",
+              data: { "userId": @Model.userId },
+              success: function (data) {
+                  let total_followers = document.querySelector(".total_followers");
+                  total_followers.innerHTML = '<strong>' + data + '</strong>' + " Follower" + (data === 0 ? "" : "s");
+              },
+              error: function(error)
+              {
+                  triggerNotification('error', error);
+              }
+           });
+        });
+    </script>
+}

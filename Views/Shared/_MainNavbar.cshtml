@@ -1,0 +1,95 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>@ViewData["Title"] - Our Instagram</title>
+    
+    <link rel="icon" href="~/Resources/insta_logo.png" type="image/icon type">
+    
+    <link rel="stylesheet" type="text/css"  href="~/css/NavBar/color.css"/>
+    <link rel="stylesheet" type="text/css"  href="~/css/NavBar/styles.css"/>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    <script src="~/js/NavBar/index.js" defer></script>
+    <script>
+        let actionPath = '@Url.Action("DisplayImage", "Navbar")';
+        let btnCloseImage = null;
+        let likeIcon = null;
+        let unlikeBtn = null;
+        let likeBtn = null;
+        let commentInput = null;
+        let commentSend = null;
+        let deleteBtn = null;
+    </script>
+</head>
+<body>
+<div class="navbar">
+    <div class="main_panel">
+        <div class="section_logo">
+            <img class="title" alt="Instagram Title" src="~/Resources/insta_title.png"/>
+            <img class="logo" alt="Instagram Logo" src="~/Resources/insta_logo_frame.png"/>
+        </div>
+
+        <div class="section_function">
+            @* Home *@
+            <a class="no_underline function" asp-area="" asp-controller="NavBar" asp-action="ToHome">
+                @if (ViewData["Title"] == "Home")
+                {
+                    <img alt="Home Icon" src="~/Resources/home_fill.png" class="function_img">
+                    <p class="function_name current_function" id="Home">Home</p>
+                }
+                else
+                {
+                    <img alt="Home Icon" src="~/Resources/home_blank.png" class="function_img">
+                    <p class="function_name" id="Home">Home</p>
+                }
+            </a>
+            @* Search *@
+            <div class="function search">
+                <img alt="Search Icon" src="~/Resources/search_blank.png" class="function_img">
+                <p class="function_name" id="Search">Search</p>
+            </div>
+            <div class="function create">
+                <img alt="Create Icon" src="~/Resources/create_blank.png" class="function_img">
+                <p class="function_name" id="Create">Create</p>
+            </div>
+            @* Profile *@
+            <a class="no_underline function" asp-area="" asp-controller="NavBar" asp-action="ToProfile">
+                @if (ViewData["Title"] == "Profile")
+                {
+                    <img alt="Profile Icon" src="~/Resources/profile_fill.png" class="function_img">
+                    <p class="function_name current_function" id="Profile">Profile</p>
+                }
+                else
+                {
+                    <img alt="Profile Icon" src="~/Resources/profile_blank.png" class="function_img">
+                    <p class="function_name" id="Profile">Profile</p>
+                }
+            </a>
+        </div>
+        
+        @* Section 'More' *@
+        @{ await Html.RenderPartialAsync("~/Views/Navbar/MorePanel.cshtml"); }
+    </div>
+    
+    @* SEARCH PANEL *@
+    @{ await Html.RenderPartialAsync("~/Views/Navbar/SearchPanel.cshtml"); }
+</div>
+
+@* CREATE POPUP *@
+@{ await Html.RenderPartialAsync("~/Views/Navbar/CreatePanel.cshtml"); }
+
+<div class="image_details_panel">
+    
+</div>
+
+@RenderBody()
+
+@await RenderSectionAsync("Stylesheets", required: false)
+@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

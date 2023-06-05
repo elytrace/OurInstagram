@@ -1,0 +1,148 @@
+﻿@model OurInstagram.Models.Entities.Image
+
+<script src="~/js/Navbar/imageInteraction.js"></script>
+
+<div class="image_popup">
+    <div class="display_section" style="background-image: url('@Model.imagePath')">
+    </div>
+    <div class="function_section">
+        <div class="image_header">
+            <img alt="Close" src="~/Resources/close.png" class="close_img" onclick="closeImagePopup()"/>
+        </div>
+        <div class="image_info">
+            <div class="owner_info">
+                <a class="avatar_link" href="@Url.Action("Index", "Profile", new { Model.user.username })">
+                    <div class="owner_avatar"
+                         style="background-image: url('@(Model.user.avatarPath ?? "../../Resources/default_ava.png")')"></div>
+                </a>
+                <div class="more_info">
+                    <a href="@Url.Action("Index", "Profile", new { Model.user.username })">
+                        <p class="owner_name">@(Model.user.displayedName ?? "Anonymous")</p>
+                    </a>
+                    <p class="upload_time">@(Model.uploadTime)</p>
+                </div>
+            </div>
+            <p class="image_caption">@(Model.caption ?? "")</p>
+            
+            <div class="edit_delete hide">
+                <div class="sub_function edit">
+                    <p class="sub_function_name">Edit</p>
+                </div>
+                <div class="sub_function delete" onclick="deleteImage(@Model.imageId)">
+                    <p class="sub_function_name">Delete</p>
+                </div>
+            </div>
+            <div class="image_function">
+                <div class="like" onclick="likeImage(@Model.imageId)">
+                    @if (!Model.isLiked)
+                    {
+                        <img id="like_btn" src="Resources/notification_blank.png" class="icon show" alt=""/>
+                        <img id="unlike_btn" src="Resources/notification_fill.png" class="icon hide" alt=""/>
+                    }
+                    else
+                    {
+                        <img id="like_btn" src="Resources/notification_blank.png" class="icon hide" alt=""/>
+                        <img id="unlike_btn" src="Resources/notification_fill.png" class="icon show" alt=""/>
+                    }
+                </div>
+                <div class="comment">
+                    <img src="Resources/comment_blank.png" class="icon show" alt=""/>
+                </div>
+                <div class="share">
+                    <img src="Resources/share_blank.png" class="icon show" alt=""/>
+                </div>
+                @if (Model.userId == OurInstagram.Models.Entities.User.currentUser.userId)
+                {
+                    <div class="more" onclick="selectEditDelete()">
+                        <img src="Resources/ellipsis.png" class="icon show" alt=""/>
+                    </div>
+                    
+                }
+            </div>
+        </div>
+        
+        <div class="total_like_comment">
+            <p class="total_like">@(Model.likes?.Count == 0 ? "0 Like" : Model.likes?.Count + " Likes") </p>
+            <p class="total_comment">@(Model.comments?.Count == 0 ? "0 Comment" : Model.comments?.Count + " Comments") </p>
+        </div>
+        <div class="comment_section">
+            <input class="comment_input" placeholder="Comment..."/>
+            <img class="comment_send" alt="" src="Resources/share_blank.png"/>
+        </div>
+        <div class="comment_list">
+            @{
+                foreach (var comment in Model.comments.OrderByDescending(c => c.timeStamp))
+                {
+                    var user = OurDbContext.context.users.FirstOrDefault(u => u.userId == comment.userId);
+                    <div class="comment_item">
+                        <a class="avatar_link" href="@Url.Action("Index", "Profile", new { user.username })">
+                            <div class="owner_avatar"
+                                 style="background-image: url('@(user.avatarPath ?? "../../Resources/default_ava.png")')"></div>
+                        </a>
+                        <div class="more_info">
+                            <p style="margin-bottom: 2px; margin-right: 5%;">
+                                <a href="@Url.Action("Index", "Profile", new { user.username })">
+                                    <span class="owner_name">@(user.displayedName ?? "Anonymous")</span>
+                                </a>
+                                <span class="owner_comment">@(comment.comment)</span>
+                            </p>
+                            <p class="upload_time">@(comment.timeStamp)</p>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+<script> // comment image
+    commentInput = document.querySelector(".comment_input");
+    commentSend = document.querySelector(".comment_send");
+    commentSend.addEventListener('click', function() {
+        comment();
+    });
+    
+    commentInput.addEventListener('keydown', e => {
+        console.log(e);
+        if (e.key === 'Enter') {
+            comment();
+        }
+    });
+    
+    function comment() {
+        if (commentInput.value !== "") {
+            let comment = commentInput.value;
+            commentInput.value = "";
+            let avatarPath = '@(OurInstagram.Models.Entities.User.currentUser.avatarPath ?? "../../Resources/default_ava.png")';
+            // console.log(avatarPath);
+            $.ajax({
+                url: "/Navbar/CommentImage",
+                type: "POST",
+                data: { "comment": comment.toString(), "imageId": @Model.imageId },
+                success: function (totalComment) {
+                    $('.comment_list').prepend(
+                        "<div class='comment_item'>" +
+                            "<a class='avatar_link' href='@Url.Action("Index", "Profile", new { OurInstagram.Models.Entities.User.currentUser.username })'>" +
+                                "<div class='owner_avatar' style='background-image: url(" + avatarPath + ")'></div>" +
+                            "</a>" +
+                            "<div class='more_info'>" +
+                                "<p style='margin-bottom: 2px; margin-right: 5%;'>" +
+                                    "<a href='@Url.Action("Index", "Profile", new { OurInstagram.Models.Entities.User.currentUser.username })'>" + 
+                                        "<span class='owner_name'>@(OurInstagram.Models.Entities.User.currentUser.displayedName ?? "Anonymous")</span>" +
+                                    "</a>" + "<span> </span>" +
+                                    "<span class='owner_comment'>" + comment + "</span>" +
+                                "</p>" +
+                                "<p class='upload_time'>" + '@DateTime.Now.ToString()' + "</p>" +
+                            "</div>" +
+                        "</div>"
+                    );
+                    document.querySelector(".total_comment").innerHTML = totalComment + " Comments";
+                },
+                error: function(error)
+                {
+                    triggerNotification('error', error);
+                }
+            });
+        }
+    }
+</script>

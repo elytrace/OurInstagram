@@ -24,9 +24,19 @@ public class ProfileController : Controller
         return View(user);
     }
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
+    [HttpPost]
+    public ActionResult Follow(int userId)
     {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        var userToFollow = OurDbContext.context.users.FirstOrDefault(u => u.userId == userId);
+        if (userToFollow.followers.Contains(Models.Entities.User.currentUser))
+        {
+            userToFollow.followers.Remove(Models.Entities.User.currentUser);
+        }
+        else
+        {
+            userToFollow.followers.Add(Models.Entities.User.currentUser);
+        }
+        OurDbContext.context.SaveChangesAsync();
+        return Json(userToFollow.followers.Count);
     }
 }

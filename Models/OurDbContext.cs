@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Data.Common;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using OurInstagram.Controllers;
 using OurInstagram.Enums;
@@ -8,18 +9,27 @@ namespace OurInstagram.Models;
 
 public class OurDbContext : DbContext
 {
-    public static readonly OurDbContext context = new OurDbContext();
+    public static OurDbContext context;
     public DbSet<User> users { get; set; }
     public DbSet<Image> images { get; set; }
     public DbSet<Like> likes { get; set; }
     public DbSet<Comment> comments { get; set; }
 
-    private const string connectionString = "server=localhost;userid=root;database=ourinstagram;";
+    private const string connectionString = "server='localhost';userid=root;database=ourinstagram;";
+    // private const string connectionString = "server='85.10.205.173';userid=admincnpm;password=admincnpm;database=ourpinsta;";
+    // private const string connectionString = "server='sql12.freemysqlhosting.net';userid=sql12623727;password=pCa1QB9GjA;database='sql12623727';";
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         base.OnConfiguring(optionsBuilder);
-        optionsBuilder.UseMySQL(connectionString);
+        optionsBuilder.UseMySQL(
+            connectionString, 
+            mySqlOptions => mySqlOptions.EnableRetryOnFailure(
+                maxRetryCount: 10,
+                maxRetryDelay: TimeSpan.FromSeconds(30),
+                errorNumbersToAdd: null
+            )
+        );
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -32,17 +42,19 @@ public class OurDbContext : DbContext
 
     public static async Task CreateDatabase()
     {
+        // context = new OurDbContext();
         string databasename = context.Database.GetDbConnection().Database;
 
         Console.WriteLine("Creating " + databasename + "...");
 
         bool result = await context.Database.EnsureCreatedAsync();
-        string resultstring = result ? " created succesfully!" : " has already existed!";
+        string resultstring = result ? "created succesfully!" : "has already existed!";
         Console.WriteLine($"Database {databasename}: {resultstring}");
     }
     
     public static async Task DeleteDatabase()
     {
+        context = new OurDbContext();
         string databasename = context.Database.GetDbConnection().Database;
         bool deleted = await context.Database.EnsureDeletedAsync();
         string deletionInfo = deleted ? "has been removed!" : "cannot be removed!";
@@ -93,7 +105,7 @@ public class OurDbContext : DbContext
 
         foreach (var image in imageList)
         {
-            context.Entry(image).Collection(i => i.likes).LoadAsync();
+            await context.Entry(image).Collection(i => i.likes).LoadAsync();
         }
         await context.SaveChangesAsync();
         
@@ -118,7 +130,7 @@ public class OurDbContext : DbContext
 
         foreach (var image in imageList)
         {
-            context.Entry(image).Collection(i => i.comments).LoadAsync();
+            await context.Entry(image).Collection(i => i.comments).LoadAsync();
         }
         await context.SaveChangesAsync();
     }
@@ -157,6 +169,7 @@ public class OurDbContext : DbContext
             username = username, password = password
         };
         context.users.AddAsync(newUser);
+        User.currentUser = newUser;
         context.SaveChangesAsync();
     }
 

@@ -25,21 +25,15 @@ public class HomeController : Controller
         return View(imageList);
     }
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-    }
-
     [HttpPost]
     public ActionResult UploadImage(string imageURL)
     {
-        var uploadParams = new ImageUploadParams()
+        var uploadParams = new ImageUploadParams
         {
             File = new FileDescription(imageURL)
         };
         var uploadResult = new Cloudinary().Upload(uploadParams);
-        Console.WriteLine(uploadResult.JsonObj);
+        Console.WriteLine("Upload OK. Result: " + uploadResult.JsonObj);
         OurDbContext.UploadImage(uploadResult.SecureUrl.ToString(), Models.Entities.User.currentUser.userId);
         return View("Index");
     }

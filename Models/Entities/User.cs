@@ -7,6 +7,16 @@ namespace OurInstagram.Models.Entities;
 public class User
 {
     public static User currentUser = new User();
+
+    public User()
+    {
+        images = new List<Image>();
+        followers = new List<User>();
+        followings = new List<User>();
+        likes = new List<Like>();
+        comments = new List<Comment>();
+    }
+
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int userId { get; set; }
@@ -37,10 +47,10 @@ public class User
     [StringLength(255)]
     public string? displayedName { get; set; }
     
-    public ICollection<Image>? images { get; set; }
-    public ICollection<User>? followers { get; set; }
-    public ICollection<User>? followings { get; set; }
-    public ICollection<Like>? likes { get; set; }
+    public ICollection<Image> images { get; set; }
+    public ICollection<User> followers { get; set; }
+    public ICollection<User> followings { get; set; }
+    public ICollection<Like> likes { get; set; }
     
-    public ICollection<Comment>? comments { get; set; }
+    public ICollection<Comment> comments { get; set; }
 }
