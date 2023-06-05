@@ -2,7 +2,7 @@
 @model OurInstagram.Models.Entities.User
 @{
     ViewData["Title"] = "Profile";
-    Layout = "_Navbar";
+    Layout = "_MainNavbar";
 }
 
 @* Đây là body *@
@@ -34,8 +34,11 @@
 
 <main class="home">
     <div class="profile_section">
-        <div class="avatar" alt="Avatar" style="
-            background-image: url('@(Model.avatarPath ?? "../../Resources/default_ava.png")')"></div>
+        <div class="avatar_section">
+            <img class="avatar" alt="" src='@(Model.avatarPath ?? "../../Resources/default_ava.png")'/>
+            <div class="avatar_overlay"></div>
+        </div>
+        @* <div class="avatar" alt="Avatar" style="background-image: url('@(Model.avatarPath ?? "../../Resources/default_ava.png")')"></div> *@
         <div class="info_section">
             <div class="user_section">
                 <p class="username">@(Model.username ?? "Username : Unknown")</p>

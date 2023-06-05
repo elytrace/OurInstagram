@@ -1,5 +1,4 @@
-﻿@using OurInstagram.Enums
-@model OurInstagram.Models.Login.LoginModel
+﻿@model OurInstagram.Models.Login.LoginModel
 @{
     Layout = "_LoginNavbar";
     ViewData["Title"] = "Login";
@@ -27,49 +26,7 @@
 
 <div id="fullpage" class="main">
     <div class="section">
-        <div class="navbar">
-            <div class="section_logo">
-                <img class="title" alt="Instagram Title" src="~/Resources/insta_title.png"/>
-                @* <img class="logo" alt="Instagram Logo" src="Resources/insta_logo_frame.png"/> *@
-            </div>
-            <div class="section_function">
-                <input type="button" id="login" class="btn btn_login"/>
-                <label for="login" class="navbar_label_login">Log in</label>
-                <input type="button" id="signup" class="btn btn_signup"/>
-                <label for="signup" class="navbar_label_signup">Sign up</label>
-            </div>
-        </div>
-        <div class="section_title">
-            <div class="title_head">
-                Get your next
-            </div>
-            <div class="title_tail color1 show">weeknight dinner idea</div>
-            <div class="title_tail color2 hide">home decor idea</div>
-            <div class="title_tail color3 hide">new look outfit</div>
-            <div class="title_tail color4 hide">green thumb idea</div>
-        </div>
-        <div class="section_image">
-            <div class="column1">
-                <img alt="Image" src="" class="column_image image1 show"/>
-                <img alt="Image" src="" class="column_image image7 hide"/>
-            </div>
-            <div class="column2">
-                <img alt="Image" src="" class="column_image image2 show"/>
-                <img alt="Image" src="" class="column_image image8 hide"/>
-            </div>
-            <div class="column3">
-                <img alt="Image" src="" class="column_image image3 show"/>
-                <img alt="Image" src="" class="column_image image9 hide"/>
-            </div>
-            <div class="column4">
-                <img alt="Image" src="" class="column_image image4 show"/>
-                <img alt="Image" src="" class="column_image image0 hide"/>
-            </div>
-            <div class="column5">
-                <img alt="Image" src="" class="column_image image5 show"/>
-                <img alt="Image" src="" class="column_image image6 hide"/>
-            </div>
-        </div>
+        @{ await Html.RenderPartialAsync("LandingPage"); }
     </div>
     <div class="section">
         <p class="section2_text">Hình ảnh minh hoạ (sẽ có trong tương lai)</p>
@@ -78,105 +35,32 @@
     <div class="section">
         <div class="login-section">
             <div class="login-box @(ViewData.ModelState.ContainsKey("Login Error") ? "hide_panel" : "show_panel")">
-                <div class="login_logo">
-                    <img class="logo" alt="Instagram Logo" src="~/Resources/insta_logo_frame.png"/>
-                    <p class="title">Welcome To Instagram</p>
-                </div>
-                @using (Html.BeginForm("Login", "Login", FormMethod.Post, new { @class = "login-form" }))
-                {
-                    @Html.LabelFor(m => m.LoginInput.Username)
-                    @Html.TextBoxFor(m => m.LoginInput.Username, new { placeholder = "Username", @class = "input_email" })
-                    @Html.LabelFor(m => m.LoginInput.Password)
-                    @Html.PasswordFor(m => m.LoginInput.Password, new { placeholder = "Password", @class = "input_password" })
-                    @Html.ValidationMessage("Login Error")
-                    <input class="btn_submit" type="submit" value="Log in"/>
-                }
-                <p class="or">OR</p>
-                <button class="facebook_login">
-                    <span class="facebook_logo"></span>
-                    Continue with facebook
-                </button>
+                @{ await Html.RenderPartialAsync("LoginForm"); }
                 <p class="to_signup">Not on Instagram yet? Sign up</p>
             </div>
 
             <div class="signup-box @(ViewData.ModelState.ContainsKey("Signup Error") ? "show_panel" : "hide_panel")">
-                <div class="login_logo">
-                    <img class="logo" alt="Instagram Logo" src="~/Resources/insta_logo_frame.png"/>
-                    <p class="title">Welcome To Instagram</p>
-                </div>
-                @using (Html.BeginForm("Signup", "Login", FormMethod.Post, new { @class = "signup-form"} ))
-                {
-                    @Html.LabelFor(m => m.SignupInput.Username)
-                    @Html.TextBoxFor(m => m.SignupInput.Username, new { placeholder = "Username", @class = "input_email" })
-                    @Html.LabelFor(m => m.SignupInput.Password)
-                    @Html.PasswordFor(m => m.SignupInput.Password, new { placeholder = "Password", @class = "input_password" })
-                    @Html.LabelFor(m => m.SignupInput.ConfirmPassword)
-                    @Html.PasswordFor(m => m.SignupInput.ConfirmPassword, new { placeholder = "Confirm password", @class = "input_password" })
-                    @Html.ValidationMessage("Signup Error")
-                    <input class="btn_submit" type="submit" value="Sign up"/>
-                }
-                <p class="or">OR</p>
-                <button class="facebook_login">
-                    <span class="facebook_logo"></span>
-                    Continue with facebook
-                </button>
+                @{ await Html.RenderPartialAsync("SignupForm"); }
                 <p class="to_login">Already a member? Login</p>
             </div>
         </div>
     </div>
 </div>
 
-@* CREATE POPUP *@
+@* LOGIN POPUP *@
 <div class="panel_login @(ViewData.ModelState.ContainsKey("Login Error") ? "show_popup" : "")">
     <div class="login-section">
         <div class="login-box login_popup">
-            <div class="login_logo">
-                <img class="logo" alt="Instagram Logo" src="~/Resources/insta_logo_frame.png"/>
-                <p class="title">Welcome To Instagram</p>
-            </div>
-            @using (Html.BeginForm("Login", "Login", FormMethod.Post, new { @class = "login-form" }))
-            {
-                @Html.LabelFor(m => m.LoginInput.Username)
-                @Html.TextBoxFor(m => m.LoginInput.Username, new { placeholder = "Username", @class = "input_email" })
-                @Html.LabelFor(m => m.LoginInput.Password)
-                @Html.PasswordFor(m => m.LoginInput.Password, new { placeholder = "Password", @class = "input_password" })
-                @Html.ValidationMessage("Login Error")
-                <input class="btn_submit" type="submit" value="Log in"/>
-            }
-            <p class="or">OR</p>
-            <button class="facebook_login">
-                <span class="facebook_logo"></span>
-                Continue with facebook
-            </button>
-            @* <p class="to_signup">Not on Instagram yet? Sign up</p> *@
+            @{ await Html.RenderPartialAsync("LoginForm"); }
         </div>
     </div>
 </div>
 
+@* SIGNUP POPUP *@
 <div class="panel_signup @(ViewData.ModelState.ContainsKey("Signup Error") ? "show_popup" : "")">
     <div class="login-section">
         <div class="signup-box signup_popup">
-            <div class="login_logo">
-                <img class="logo" alt="Instagram Logo" src="~/Resources/insta_logo_frame.png"/>
-                <p class="title">Welcome To Instagram</p>
-            </div>
-            @using (Html.BeginForm("Signup", "Login", FormMethod.Post, new { @class = "signup-form"} ))
-            {
-                @Html.LabelFor(m => m.SignupInput.Username)
-                @Html.TextBoxFor(m => m.SignupInput.Username, new { placeholder = "Username", @class = "input_email" })
-                @Html.LabelFor(m => m.SignupInput.Password)
-                @Html.PasswordFor(m => m.SignupInput.Password, new { placeholder = "Password", @class = "input_password" })
-                @Html.LabelFor(m => m.SignupInput.ConfirmPassword)
-                @Html.PasswordFor(m => m.SignupInput.ConfirmPassword, new { placeholder = "Confirm password", @class = "input_password" })
-                @Html.ValidationMessage("Signup Error")
-                <input class="btn_submit" type="submit" value="Sign up"/>
-            }
-            <p class="or">OR</p>
-            <button class="facebook_login">
-                <span class="facebook_logo"></span>
-                Continue with facebook
-            </button>
-            @* <p class="to_login">Already a member? Login</p> *@
+            @{ await Html.RenderPartialAsync("SignupForm"); }
         </div>
     </div>
 </div>

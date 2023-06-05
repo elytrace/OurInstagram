@@ -1,11 +1,13 @@
 ﻿@model OurInstagram.Models.Entities.Image
 
+<script src="~/js/Navbar/imageInteraction.js"></script>
+
 <div class="image_popup">
     <div class="display_section" style="background-image: url('@Model.imagePath')">
     </div>
     <div class="function_section">
         <div class="image_header">
-            <img alt="Close" src="~/Resources/close.png" class="close_img"/>
+            <img alt="Close" src="~/Resources/close.png" class="close_img" onclick="closeImagePopup()"/>
         </div>
         <div class="image_info">
             <div class="owner_info">
@@ -21,16 +23,17 @@
                 </div>
             </div>
             <p class="image_caption">@(Model.caption ?? "")</p>
+            
             <div class="edit_delete hide">
                 <div class="sub_function edit">
                     <p class="sub_function_name">Edit</p>
                 </div>
-                <div class="sub_function delete">
+                <div class="sub_function delete" onclick="deleteImage(@Model.imageId)">
                     <p class="sub_function_name">Delete</p>
                 </div>
             </div>
             <div class="image_function">
-                <div class="like">
+                <div class="like" onclick="likeImage(@Model.imageId)">
                     @if (!Model.isLiked)
                     {
                         <img id="like_btn" src="Resources/notification_blank.png" class="icon show" alt=""/>
@@ -92,44 +95,6 @@
     </div>
 </div>
 
-<script> // close image
-    btnCloseImage = document.querySelector(".image_details_panel").querySelector(".close_img");
-    btnCloseImage.addEventListener("click", () => {
-        closeImagePopup();
-    });
-</script>
-<script> // like image
-    likeIcon = document.querySelector(".image_function").querySelector(".like");
-    unlikeBtn = likeIcon.querySelector("#unlike_btn");
-    likeBtn = likeIcon.querySelector("#like_btn");
-    likeIcon.addEventListener("click", function () {
-        if (unlikeBtn.classList.contains("show")) {
-            unlikeBtn.classList.remove("show");
-            unlikeBtn.classList.add("hide");
-            likeBtn.classList.add("show");
-            likeBtn.classList.remove("hide");
-        }
-        else {
-            unlikeBtn.classList.remove("hide");
-            unlikeBtn.classList.add("show");
-            likeBtn.classList.add("hide");
-            likeBtn.classList.remove("show");
-        }
-        $.ajax({
-            url: "/Navbar/LikeImage",
-            type: "POST",
-            data: { "imageId": @Model.imageId },
-            success: function (data) {
-                let total_like = document.querySelector(".total_like");
-                total_like.innerHTML = data === "0" ? data + " Like" : data + " Likes";
-            },
-            error: function(error)
-            {
-                alert(error);
-            }
-        });
-    })
-</script>
 <script> // comment image
     commentInput = document.querySelector(".comment_input");
     commentSend = document.querySelector(".comment_send");
@@ -179,28 +144,5 @@
                 }
             });
         }
-    }
-</script>
-<script> // delete
-    deleteBtn = document.querySelector(".edit_delete").querySelector(".delete");
-    deleteBtn.addEventListener("click", function () {
-        deleteImage();
-    });
-
-    function deleteImage() {
-        triggerNotification('submit', 'The process will take some minutes...');
-        $.ajax({
-            url: "/NavBar/DeleteImage/",
-            type: "POST",
-            data: { "imageId" : @Model.imageId },
-            success: function (data) {
-                triggerNotification('done', 'Image has been deleted!');
-            },
-            error: function(error)
-            {
-                triggerNotification('error', error);
-            }
-        });
-        closeImagePopup();
     }
 </script>

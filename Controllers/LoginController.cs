@@ -17,14 +17,19 @@ public class LoginController : Controller
     
     public ActionResult Index()
     {
-        // ModelState.Clear();
         return View();
     }
-
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public ActionResult Error()
+    public PartialViewResult LandingPage()
     {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        return PartialView();
+    }
+    public PartialViewResult LoginForm()
+    {
+        return PartialView();
+    }
+    public PartialViewResult SignupForm()
+    {
+        return PartialView();
     }
 
     [HttpPost]
@@ -79,6 +84,4 @@ public class LoginController : Controller
         }
         return View("Index", model);
     }
-    
-    
 }

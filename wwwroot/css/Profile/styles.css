@@ -1,12 +1,37 @@
 /*some css*/
-.avatar {
+.avatar_section {
     height: 150px;
     width: 150px;
+    position: relative;
+    overflow: hidden;
     border-radius: 50%;
-    background-size: cover;
+    border: 1px solid var(--text1);
+}
+.avatar {
+    width: 100%;
+    height: 100%;
+}
+.avatar_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: 0.5s;
+    background-size: 50%;
+    background-color: #505050;
+    background-image: url("../../Resources/camera.png");
     background-repeat: no-repeat;
     background-position: center;
-    border: 1px solid var(--text1);
+}
+
+.avatar_overlay:hover {
+    opacity: 0.8;
+    cursor: pointer;
 }
 
 h1, h4, a {
@@ -96,7 +121,7 @@ h1, h4, a {
     gap: 16px;
 }
 
-.home .column {
+.homepage_container .column {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -104,7 +129,7 @@ h1, h4, a {
     margin-top: 5%;
 }
 
-.home .post {
+.homepage_container .post {
     position: relative;
     overflow: hidden;
     /* background: #131313; */
@@ -116,7 +141,7 @@ h1, h4, a {
     /* filter: grayscale(50%); */
 }
 
-.home .overlay {
+.homepage_container .overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -130,7 +155,7 @@ h1, h4, a {
     transition: 0.5s;
 }
 
-.home .post:hover .overlay {
+.homepage_container .post:hover .overlay {
     opacity: 0.6;
     cursor: pointer;
 }

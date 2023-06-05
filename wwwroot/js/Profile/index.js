@@ -1,4 +1,4 @@
-﻿// some js
+﻿// display images in profile page
 function loadingImages(imageArray) {
     const posts = []
 
@@ -14,7 +14,6 @@ function loadingImages(imageArray) {
         if (imageIndex > imageArray.length - 1) imageIndex = 0;
     }
 
-// apps
     const container = document.querySelector('.homepage_container');
 
     function generateMasonryGrid(columns, posts) {
@@ -54,15 +53,14 @@ function loadingImages(imageArray) {
     }
 
     let previousScreenSize = window.innerWidth;
-
-
+    
     window.addEventListener("DOMContentLoaded", () => {
         imageIndex = 0;
         generateMasonryGrid(4, posts);
         previousScreenSize = window.innerWidth;
     })
 
-// Responsive
+    // Responsive
     window.addEventListener('resize', () => {
         imageIndex = 0;
         if (window.innerWidth < 600 && previousScreenSize >= 600) {
@@ -77,6 +75,7 @@ function loadingImages(imageArray) {
     })
 }
 
+// follow or unfollow other people
 function changeFollowState() {
     let labelFollow = document.querySelector(".label_follow");
     let labelUnfollow = document.querySelector(".label_unfollow");

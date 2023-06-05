@@ -1,0 +1,20 @@
+﻿@model OurInstagram.Models.Login.LoginModel
+<div class="login_logo">
+    <img class="logo" alt="Instagram Logo" src="~/Resources/insta_logo_frame.png"/>
+    <p class="title">Welcome To Instagram</p>
+</div>
+@using (Html.BeginForm("Login", "Login", FormMethod.Post, new { @class = "login-form" }))
+{
+    @Html.LabelFor(m => m.LoginInput.Username)
+    @Html.TextBoxFor(m => m.LoginInput.Username, new { placeholder = "Username", @class = "input_email" })
+    @Html.LabelFor(m => m.LoginInput.Password)
+    @Html.PasswordFor(m => m.LoginInput.Password, new { placeholder = "Password", @class = "input_password" })
+    @Html.ValidationMessage("Login Error")
+    <input class="btn_submit" type="submit" value="Log in"/>
+}
+<p class="or">OR</p>
+<button class="facebook_login">
+    <span class="facebook_logo"></span>
+    Continue with facebook
+</button>
+@* <p class="to_signup">Not on Instagram yet? Sign up</p> *@

@@ -15,12 +15,21 @@ public class NavBarController : Controller
         _logger = logger;
     }
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
+    public PartialViewResult CreatePanel()
     {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        return PartialView();
+    }
+    
+    public PartialViewResult SearchPanel()
+    {
+        return PartialView();
     }
 
+    public PartialViewResult MorePanel()
+    {
+        return PartialView();
+    }
+    
     public IActionResult ToHome()
     {
         return RedirectToAction("Index", "Home");
@@ -84,10 +93,14 @@ public class NavBarController : Controller
     public ActionResult DeleteImage(int imageId)
     {
         var imageToDelete = OurDbContext.context.images.FirstOrDefault(image => image.imageId == imageId);
+        Models.Entities.User.currentUser.images.Remove(imageToDelete);
         OurDbContext.context.Remove(imageToDelete);
         OurDbContext.context.SaveChangesAsync();
-        OurDbContext.context.Entry(Models.Entities.User.currentUser).Collection(u => u.images).LoadAsync();
-
-        return RedirectToAction("Index", "Profile", new { Models.Entities.User.currentUser.username });
+        
+        // return RedirectToAction("Index", "Profile", new { Models.Entities.User.currentUser.username });
+        return Json(new
+        {
+            Success = true
+        });
     }
 }

@@ -694,3 +694,10 @@
     line-height: 25px;
     vertical-align: middle;
 }
+.edit_delete .edit, .edit_delete .delete {
+    font-weight: 500;
+}
+.edit_delete .edit:hover, .edit_delete .delete:hover {
+    cursor: pointer;
+    user-select: none;
+}

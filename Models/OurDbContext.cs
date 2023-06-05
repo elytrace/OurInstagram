@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Data.Common;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using OurInstagram.Controllers;
 using OurInstagram.Enums;
@@ -14,12 +15,21 @@ public class OurDbContext : DbContext
     public DbSet<Like> likes { get; set; }
     public DbSet<Comment> comments { get; set; }
 
-    private const string connectionString = "server=localhost;userid=root;database=ourinstagram;";
+    private const string connectionString = "server='localhost';userid=root;database=ourinstagram;";
+    // private const string connectionString = "server='85.10.205.173';userid=admincnpm;password=admincnpm;database=ourpinsta;";
+    // private const string connectionString = "server='sql12.freemysqlhosting.net';userid=sql12623727;password=pCa1QB9GjA;database='sql12623727';";
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         base.OnConfiguring(optionsBuilder);
-        optionsBuilder.UseMySQL(connectionString);
+        optionsBuilder.UseMySQL(
+            connectionString, 
+            mySqlOptions => mySqlOptions.EnableRetryOnFailure(
+                maxRetryCount: 10,
+                maxRetryDelay: TimeSpan.FromSeconds(30),
+                errorNumbersToAdd: null
+            )
+        );
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -95,7 +105,7 @@ public class OurDbContext : DbContext
 
         foreach (var image in imageList)
         {
-            context.Entry(image).Collection(i => i.likes).LoadAsync();
+            await context.Entry(image).Collection(i => i.likes).LoadAsync();
         }
         await context.SaveChangesAsync();
         
@@ -120,7 +130,7 @@ public class OurDbContext : DbContext
 
         foreach (var image in imageList)
         {
-            context.Entry(image).Collection(i => i.comments).LoadAsync();
+            await context.Entry(image).Collection(i => i.comments).LoadAsync();
         }
         await context.SaveChangesAsync();
     }
