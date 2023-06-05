@@ -282,6 +282,7 @@
     height: 80%;
     opacity: 1;
 }
+
 .create_header {
     min-width: 50%;
     width: 100%;
@@ -381,7 +382,7 @@
     flex-direction: row;
     justify-content: space-between;
 }
-.btn_upload, .btn_cancel {
+.btn_upload, .btn_cancel, .btn_edit {
     width: 0.1px;
     height: 0.1px;
     opacity: 0;
@@ -389,7 +390,7 @@
     position: absolute;
     z-index: -1;
 }
-.label_upload {
+.label_upload, .label_edit {
     white-space: nowrap;
     display: inline-block;
     background-color: indianred;
@@ -399,7 +400,7 @@
     font-size: 1.8vh;
     font-weight: bold;
 }
-.label_upload:hover {
+.label_upload:hover, .label_edit:hover {
     cursor: pointer;
     transform: scale(1.05);
     background-color: darkred;
@@ -419,8 +420,11 @@
     transform: scale(1.05);
     background-color: #8a8a8a;
 }
-.show_upload {
+.show_upload_flex {
     display: flex;
+}
+.show_upload_block {
+    display: block;
 }
 .hide_upload {
     display: none;

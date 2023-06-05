@@ -11,10 +11,18 @@
     
     <link rel="stylesheet" type="text/css"  href="~/css/NavBar/color.css"/>
     <link rel="stylesheet" type="text/css"  href="~/css/NavBar/styles.css"/>
+    <link rel="stylesheet" type="text/css"  href="~/css/NavBar/edit.css"/>
+    
     <script src="~/lib/jquery/dist/jquery.js"></script>
     <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
     <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    
     <script src="~/js/NavBar/index.js" defer></script>
+    <script src="~/js/NavBar/navbar.js" defer></script>
+    <script src="~/js/NavBar/search.js" defer></script>
+    <script src="~/js/NavBar/create.js" defer></script>
+    <script src="~/js/NavBar/more.js" defer></script>
+    
     <script>
         let actionPath = '@Url.Action("DisplayImage", "Navbar")';
         let btnCloseImage = null;
@@ -81,7 +89,7 @@
 </div>
 
 @* CREATE POPUP *@
-@{ await Html.RenderPartialAsync("~/Views/Navbar/CreatePanel.cshtml"); }
+@{ await Html.RenderPartialAsync("~/Views/Navbar/UploadImage.cshtml"); }
 
 <div class="image_details_panel">
     

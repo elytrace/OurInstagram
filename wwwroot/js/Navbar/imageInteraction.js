@@ -1,3 +1,23 @@
+/************************************************************************************************/
+let imageDetailPanel = document.querySelector(".image_details_panel");
+
+window.addEventListener("DOMContentLoaded", function () {
+    let postList = document.querySelectorAll(".post");
+    console.log(postList.length);
+    for(let i = 0; i < postList.length; i++) {
+        let post = postList[i];
+
+        post.addEventListener("click", function () {
+            navbar.classList.add("blur");
+            main.classList.add("blur");
+            imageDetailPanel.classList.add("show_popup");
+            console.log(postList[i].id);
+            $(".image_details_panel").load(actionPath, { imageId: postList[i].id });
+        });
+    }
+});
+
+/************************************************************************************************/
 likeIcon = document.querySelector(".image_function").querySelector(".like");
 unlikeBtn = likeIcon.querySelector("#unlike_btn");
 likeBtn = likeIcon.querySelector("#like_btn");
@@ -48,4 +68,18 @@ function deleteImage(imageId) {
         }
     });
     closeImagePopup();
+}
+
+/************************************************************************************************/
+function selectEditDelete() {
+    let menuEditDelete = document.querySelector(".edit_delete");
+
+    if(menuEditDelete.classList.contains("show")) {
+        menuEditDelete.classList.remove("show");
+        menuEditDelete.classList.add("hide");
+    }
+    else {
+        menuEditDelete.classList.remove("hide");
+        menuEditDelete.classList.add("show");
+    }
 }

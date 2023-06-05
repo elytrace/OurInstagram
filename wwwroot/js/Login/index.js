@@ -5,16 +5,6 @@ let myFullpage = new fullpage('#fullpage', {
     sectionsColor: ['#f2f2f2', 
                     '#4BBFC3',
                     'whitesmoke'],
-    // afterLoad: function (origin, destination, direction) {
-    //     clearInterval(g_interval);
-    //     const lapse = 2000;
-    //
-    //     if(destination.item.querySelectorAll('.fp-slides').length){
-    //         g_interval = setInterval(function () {
-    //             fullpage_api.moveSlideRight();
-    //         }, lapse);
-    //     }
-    // }
 });
 
 const listTitle = document.querySelectorAll(".title_tail");
