@@ -1,8 +1,8 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using OurInstagram.Models;
+using Pinsta.Models;
 
-namespace OurInstagram.Controllers;
+namespace Pinsta.Controllers;
 
 public class ProfileController : Controller
 {

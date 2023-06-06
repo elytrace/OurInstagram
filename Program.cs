@@ -1,7 +1,7 @@
 using CloudinaryDotNet;
 using dotenv.net;
 using Newtonsoft.Json;
-using OurInstagram.Models;
+using Pinsta.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 

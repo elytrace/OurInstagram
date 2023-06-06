@@ -1,4 +1,4 @@
-﻿@model OurInstagram.Models.Entities.Image
+﻿@model Pinsta.Models.Entities.Image
 
 <div class="image_popup">
     <div class="display_section" style="background-image: url('@Model.imagePath')">
@@ -40,7 +40,7 @@
                 <div class="share">
                     <img src="Resources/share_blank.png" class="icon show" alt=""/>
                 </div>
-                @if (Model.userId == OurInstagram.Models.Entities.User.currentUser.userId)
+                @if (Model.userId == Pinsta.Models.Entities.User.currentUser.userId)
                 {
                     <div class="more">
                         <img src="Resources/ellipsis.png" class="icon show" alt=""/>

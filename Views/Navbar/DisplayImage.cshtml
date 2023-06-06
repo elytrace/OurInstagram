@@ -1,4 +1,4 @@
-﻿@model OurInstagram.Models.Entities.Image
+﻿@model Pinsta.Models.Entities.Image
 
 <script src="~/js/Navbar/imageInteraction.js"></script>
 
@@ -51,7 +51,7 @@
                 <div class="share">
                     <img src="Resources/share_blank.png" class="icon show" alt=""/>
                 </div>
-                @if (Model.userId == OurInstagram.Models.Entities.User.currentUser.userId)
+                @if (Model.userId == Pinsta.Models.Entities.User.currentUser.userId)
                 {
                     <div class="more" onclick="selectEditDelete()">
                         <img src="Resources/ellipsis.png" class="icon show" alt=""/>
@@ -113,7 +113,7 @@
         if (commentInput.value !== "") {
             let comment = commentInput.value;
             commentInput.value = "";
-            let avatarPath = '@(OurInstagram.Models.Entities.User.currentUser.avatarPath ?? "../../Resources/default_ava.png")';
+            let avatarPath = '@(Pinsta.Models.Entities.User.currentUser.avatarPath ?? "../../Resources/default_ava.png")';
             // console.log(avatarPath);
             $.ajax({
                 url: "/Navbar/CommentImage",
@@ -122,13 +122,13 @@
                 success: function (totalComment) {
                     $('.comment_list').prepend(
                         "<div class='comment_item'>" +
-                            "<a class='avatar_link' href='@Url.Action("Index", "Profile", new { OurInstagram.Models.Entities.User.currentUser.username })'>" +
+                            "<a class='avatar_link' href='@Url.Action("Index", "Profile", new { Pinsta.Models.Entities.User.currentUser.username })'>" +
                                 "<div class='owner_avatar' style='background-image: url(" + avatarPath + ")'></div>" +
                             "</a>" +
                             "<div class='more_info'>" +
                                 "<p style='margin-bottom: 2px; margin-right: 5%;'>" +
-                                    "<a href='@Url.Action("Index", "Profile", new { OurInstagram.Models.Entities.User.currentUser.username })'>" + 
-                                        "<span class='owner_name'>@(OurInstagram.Models.Entities.User.currentUser.displayedName ?? "Anonymous")</span>" +
+                                    "<a href='@Url.Action("Index", "Profile", new { Pinsta.Models.Entities.User.currentUser.username })'>" + 
+                                        "<span class='owner_name'>@(Pinsta.Models.Entities.User.currentUser.displayedName ?? "Anonymous")</span>" +
                                     "</a>" + "<span> </span>" +
                                     "<span class='owner_comment'>" + comment + "</span>" +
                                 "</p>" +

@@ -1,11 +1,11 @@
 ﻿using System.Data.Common;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
-using OurInstagram.Controllers;
-using OurInstagram.Enums;
-using OurInstagram.Models.Entities;
+using Pinsta.Controllers;
+using Pinsta.Enums;
+using Pinsta.Models.Entities;
 
-namespace OurInstagram.Models;
+namespace Pinsta.Models;
 
 public class OurDbContext : DbContext
 {
@@ -15,7 +15,7 @@ public class OurDbContext : DbContext
     public DbSet<Like> likes { get; set; }
     public DbSet<Comment> comments { get; set; }
 
-    private const string connectionString = "server='localhost';userid=root;database=ourinstagram;";
+    private const string connectionString = "server='localhost';userid=root;database=Pinsta;";
     // private const string connectionString = "server='85.10.205.173';userid=admincnpm;password=admincnpm;database=ourpinsta;";
     // private const string connectionString = "server='sql12.freemysqlhosting.net';userid=sql12623727;password=pCa1QB9GjA;database='sql12623727';";
 

@@ -1,10 +1,10 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Linq;
-using OurInstagram.Models;
-using OurInstagram.Models.Entities;
+using Pinsta.Models;
+using Pinsta.Models.Entities;
 
-namespace OurInstagram.Controllers;
+namespace Pinsta.Controllers;
 
 public class NavBarController : Controller
 {

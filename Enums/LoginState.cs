@@ -1,4 +1,4 @@
-﻿namespace OurInstagram.Enums;
+﻿namespace Pinsta.Enums;
 
 public enum LoginState
 {

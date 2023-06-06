@@ -1,5 +1,5 @@
 ﻿@using Newtonsoft.Json
-@model OurInstagram.Models.Entities.User
+@model Pinsta.Models.Entities.User
 @{
     ViewData["Title"] = "Profile";
     Layout = "_MainNavbar";
@@ -43,10 +43,10 @@
             <div class="user_section">
                 <p class="username">@(Model.username ?? "Username : Unknown")</p>
                 @{
-                    if (OurInstagram.Models.Entities.User.currentUser.username != Model.username)
+                    if (Pinsta.Models.Entities.User.currentUser.username != Model.username)
                     {
                         <input type="button" id="follow" class="btn_follow"/>
-                        if (OurInstagram.Models.Entities.User.currentUser.followings.Contains(Model))
+                        if (Pinsta.Models.Entities.User.currentUser.followings.Contains(Model))
                         {
                             <label for="follow" class="label_follow show">Following</label>
                             <label for="follow" class="label_unfollow hide">Follow</label>
@@ -73,7 +73,7 @@
     <p class="placeholder hide"><em>Uploaded images will be shown below</em></p>
 </main>
 
-@if (OurInstagram.Models.Entities.User.currentUser.username != Model.username)
+@if (Pinsta.Models.Entities.User.currentUser.username != Model.username)
 {
     <script>
         let btnFollow = document.querySelector(".btn_follow");

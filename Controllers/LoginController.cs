@@ -1,10 +1,10 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using OurInstagram.Enums;
-using OurInstagram.Models;
-using OurInstagram.Models.Login;
+using Pinsta.Enums;
+using Pinsta.Models;
+using Pinsta.Models.Login;
 
-namespace OurInstagram.Controllers;
+namespace Pinsta.Controllers;
 
 public class LoginController : Controller
 {

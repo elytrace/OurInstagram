@@ -39,7 +39,7 @@
 ## Getting Started
 1. Tải thư mục Project hoặc Clone Project
 ````
-https://github.com/elytrace/OurInstagram.git
+https://github.com/elytrace/Pinsta.git
 ````
 2. Tải <a href="https://www.apachefriends.org/download.html">XAMPP</a> bản mới nhất, sau đó cài đặt và bật <strong>XAMPP Control Panel</strong>.
 <br><br>
@@ -55,7 +55,7 @@ Listen 8080
 <br><br>
 6. Mở Project bằng cách chọn file <strong>.sln</strong> trong cây thư mục:<br>
 ````
-OurInstagram.sln
+Pinsta.sln
 ````
 <strong>Lưu ý:</strong>
 <br>

@@ -1,4 +1,4 @@
-﻿namespace OurInstagram.Models.Login;
+﻿namespace Pinsta.Models.Login;
 
 public class LoginModel
 {

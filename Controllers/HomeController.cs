@@ -2,10 +2,10 @@
 using CloudinaryDotNet;
 using CloudinaryDotNet.Actions;
 using Microsoft.AspNetCore.Mvc;
-using OurInstagram.Models;
-using OurInstagram.Models.Login;
+using Pinsta.Models;
+using Pinsta.Models.Login;
 
-namespace OurInstagram.Controllers;
+namespace Pinsta.Controllers;
 
 public class HomeController : Controller
 {

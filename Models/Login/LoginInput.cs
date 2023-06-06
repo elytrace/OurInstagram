@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace OurInstagram.Models.Login;
+namespace Pinsta.Models.Login;
 
 public class LoginInput
 {

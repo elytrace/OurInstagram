@@ -1,6 +1,6 @@
 // IGNORED
 
-namespace OurInstagram.Models;
+namespace Pinsta.Models;
 
 public class ErrorViewModel
 {

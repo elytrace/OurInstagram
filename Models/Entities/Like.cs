@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace OurInstagram.Models.Entities;
+namespace Pinsta.Models.Entities;
 
 [Table("likes")]
 public class Like
