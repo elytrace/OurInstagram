@@ -19,7 +19,7 @@
                     <a href="@Url.Action("Index", "Profile", new { Model.user.username })">
                         <p class="owner_name">@(Model.user.displayedName ?? "Anonymous")</p>
                     </a>
-                    <p class="upload_time">@(Model.uploadTime)</p>
+                    <p class="upload_time">@(Model.uploadTime.ToString("MM/dd/yyyy h:mm tt"))</p>
                 </div>
             </div>
             <p class="image_caption">@(Model.caption ?? "")</p>
@@ -86,7 +86,7 @@
                                 </a>
                                 <span class="owner_comment">@(comment.comment)</span>
                             </p>
-                            <p class="upload_time">@(comment.timeStamp)</p>
+                            <p class="upload_time">@(comment.timeStamp.ToString("MM/dd/yyyy h:mm tt"))</p>
                         </div>
                     </div>
                 }
@@ -132,7 +132,7 @@
                                     "</a>" + "<span> </span>" +
                                     "<span class='owner_comment'>" + comment + "</span>" +
                                 "</p>" +
-                                "<p class='upload_time'>" + '@DateTime.Now.ToString()' + "</p>" +
+                                "<p class='upload_time'>" + '@DateTime.Now.ToString("MM/dd/yyyy h:mm tt")' + "</p>" +
                             "</div>" +
                         "</div>"
                     );

@@ -27,6 +27,12 @@ body {
     padding: 0 16px 16px 291px;
 }
 
+@media screen and (max-width: 1000px) {
+    .home {
+        padding-left: 91px;
+    }
+}
+
 .home .homepage_container {
     position: relative;
     width: 100%;

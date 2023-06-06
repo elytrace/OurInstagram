@@ -36,7 +36,7 @@
         <div class="login-section">
             <div class="login-box @(ViewData.ModelState.ContainsKey("Login Error") ? "hide_panel" : "show_panel")">
                 @{ await Html.RenderPartialAsync("LoginForm"); }
-                <p class="to_signup">Not on Instagram yet? Sign up</p>
+                <p class="to_signup">Not on Pinsta yet? Sign up</p>
             </div>
 
             <div class="signup-box @(ViewData.ModelState.ContainsKey("Signup Error") ? "show_panel" : "hide_panel")">

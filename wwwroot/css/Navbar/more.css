@@ -1,0 +1,52 @@
+/************************************ MORE ************************************/
+.section_more {
+    height: 10%;
+}
+.more_menu {
+    position: absolute;
+    height: fit-content;
+    width: fit-content;
+    border-radius: 10px;
+
+    top: 0;
+    transform: translate(0, -97%);
+}
+.more_first_part, .more_second_part {
+    background-color: var(--Color1);
+    border-radius: 10px;
+    display: inline-block;
+    overflow: hidden;
+    height: fit-content;
+    width: 230px;
+    box-shadow: 0 0 20px var(--Color3);
+}
+.more_first_part {
+    margin-bottom: 3px;
+}
+.sub_function {
+    position: relative;
+    border-bottom: 1px solid var(--Color3);
+    transition-duration: 0.2s;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    color: var(--text1);
+}
+.sub_function:hover {
+    background-color: var(--Color3);
+}
+.sub_function:hover .sub_function_img {
+    transform: scale(1.05) rotate(180deg);
+}
+.sub_function_name {
+    height: 20px;
+    display: flex;
+    align-items: center;
+}
+.sub_function_img {
+    height: 22px;
+    transition-duration: 0.5s;
+}

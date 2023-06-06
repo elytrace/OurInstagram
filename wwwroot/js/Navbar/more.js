@@ -13,3 +13,10 @@ btnMore.addEventListener("click", () => {
         sectionMore.classList.add("hide");
     }
 });
+
+document.addEventListener("click", e => {
+   if(sectionMore.classList.contains("show") && !sectionMore.contains(e.target) && !btnMore.contains(e.target)) {
+       sectionMore.classList.remove("show");
+       sectionMore.classList.add("hide");
+   }
+});
