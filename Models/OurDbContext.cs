@@ -83,7 +83,7 @@ public class OurDbContext : DbContext
         var imageList = context.images;
         foreach (var image in imageList)
         {
-            await context.Entry(image).Reference(i => i.user).LoadAsync();
+            image.user = userList.FirstOrDefault(u => u.userId == image.userId);
         }
         await context.SaveChangesAsync();
         

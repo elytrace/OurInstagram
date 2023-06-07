@@ -26,8 +26,9 @@ public class Image
     public DateTime uploadTime { get; set; }
     
     // owner
-    public int userId { get; set; }
     [ForeignKey("userId")]
+    public int userId { get; set; }
+    [NotMapped]
     public User user { get; set; }
     public virtual ICollection<Like> likes { get; set; }
     public virtual ICollection<Comment> comments { get; set; }

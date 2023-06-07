@@ -8,15 +8,6 @@ public class User
 {
     public static User currentUser = new User();
 
-    public User()
-    {
-        images = new List<Image>();
-        followers = new List<User>();
-        followings = new List<User>();
-        likes = new List<Like>();
-        comments = new List<Comment>();
-    }
-
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int userId { get; set; }

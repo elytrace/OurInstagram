@@ -44,7 +44,7 @@ https://github.com/elytrace/Pinsta.git
 2. Tải <a href="https://www.apachefriends.org/download.html">XAMPP</a> bản mới nhất, sau đó cài đặt và bật <strong>XAMPP Control Panel</strong>.
 <br><br>
 3. Start <strong>Apache</strong> và <strong>MySQL</strong>.
-<img src="xampp.png">
+<img src="Readme_materials/xampp.png">
 <br><br>
 4. Nếu ko bật được 1 trong 2 Module trên thì chọn <em>Apache -> Config -> Apache (httpd.conf) -> Đổi các cổng 80 thành cổng khác.</em> Ví dụ:
 ````
@@ -61,4 +61,4 @@ Pinsta.sln
 <br>
 Nếu sử dụng <strong>Visual Studio</strong> thì thay đổi <strong>.Net SDK Version</strong> thành 7.0.0 trong file <strong>global.json</strong>.
 7. Ở góc trên màn hình, thay đổi <strong>Run Configuration</strong> thành <strong>IIS Express</strong> sau đó <strong>Run</strong>.
-<img src="configuration.png">
+<img src="Readme_materials/configuration.png">
