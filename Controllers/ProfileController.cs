@@ -1,4 +1,6 @@
 ﻿using System.Diagnostics;
+using CloudinaryDotNet;
+using CloudinaryDotNet.Actions;
 using Microsoft.AspNetCore.Mvc;
 using Pinsta.Models;
 
@@ -17,11 +19,38 @@ public class ProfileController : Controller
     // {
     //     return View(Models.Entities.User.currentUser);
     // }
-    
+
     public IActionResult Index(string username)
     {
         var user = OurDbContext.context.users.FirstOrDefault(u => u.username == username);
         return View(user);
+    }
+
+    [HttpPost]
+    public ActionResult ConfirmEditImage(int imageId, string imageUrl)
+    {
+        var uploadParams = new ImageUploadParams
+        {
+            File = new FileDescription(imageUrl)
+        };
+        var uploadResult = new Cloudinary().Upload(uploadParams);
+        Console.WriteLine("ImageID: " + imageId + ". Upload OK. Result: " + uploadResult.JsonObj);
+        if (imageId == -1)
+        {
+            Models.Entities.User.currentUser.avatarPath = uploadResult.SecureUrl.ToString();
+        }
+        else if (imageId == -2)
+        {
+            OurDbContext.UploadImage(uploadResult.SecureUrl.ToString(), Models.Entities.User.currentUser.userId);
+        }
+        else
+        {
+            OurDbContext.context.images
+                .FirstOrDefault(i => i.imageId == imageId)!.imagePath = uploadResult.SecureUrl.ToString();
+        }
+
+        OurDbContext.context.SaveChangesAsync();
+        return Json(uploadResult.SecureUrl.ToString());
     }
 
     [HttpPost]

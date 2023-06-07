@@ -25,7 +25,8 @@
             <p class="image_caption">@(Model.caption ?? "")</p>
             
             <div class="edit_delete hide">
-                <div class="sub_function edit">
+                @* <div class="sub_function edit" onclick="openEditPanel(@(Model.imageId), '@(Model.imagePath)')"> *@
+                <div class="sub_function edit" onclick="triggerNotification('error', 'Cannot edit image right now!')">
                     <p class="sub_function_name">Edit</p>
                 </div>
                 <div class="sub_function delete" onclick="deleteImage(@Model.imageId)">

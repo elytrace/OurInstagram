@@ -28,13 +28,13 @@
     background-image: url("../../Resources/camera.png");
     background-repeat: no-repeat;
     background-position: center;
+    overflow: hidden;
+    border-radius: 50%;
 }
-
 .avatar_overlay:hover {
     opacity: 0.8;
     cursor: pointer;
 }
-
 h1, h4, a {
     color: #fff;
 }

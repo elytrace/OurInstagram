@@ -78,7 +78,29 @@ const resetFilter = () => {
     applyFilter();
 }
 
-const saveImage = () => {
+filterSlider.addEventListener("input", updateFilter);
+resetFilterBtn.addEventListener("click", resetFilter);
+
+let editPanel = document.querySelector(".edit_panel");
+let currentImage;
+function openEditPanel(imageId, imageSrc) {
+    currentImage = imageId;
+    navbar.classList.add("blur");
+    main.classList.add("blur");
+    editPanel.classList.add("show_popup");
+    let imageDetailPanel = document.querySelector(".image_details_panel");
+    imageDetailPanel.classList.remove("show_popup");
+
+    if(imageId !== -1) {
+        previewImg.setAttribute("src", imageSrc); 
+    }
+    else {
+        previewImg.classList.add("hide");
+    }
+    // console.log(editPanel.querySelector(".preview-img").querySelector("img").src);   
+}
+
+function saveEditImage() {
     const canvas = document.createElement("canvas");
     const ctx = canvas.getContext("2d");
     canvas.width = previewImg.naturalWidth;
@@ -91,9 +113,40 @@ const saveImage = () => {
     }
     ctx.scale(flipHorizontal, flipVertical);
     ctx.drawImage(previewImg, -canvas.width / 2, -canvas.height / 2, canvas.width, canvas.height);
-
-    uploadImage(canvas.toDataURL());
+    
+    triggerNotification('submit', 'The process will take some minutes...');
+    $.ajax({
+        url: "/Profile/ConfirmEditImage/",
+        type: "POST",
+        data: { "imageId" : currentImage, "imageURL" : canvas.toDataURL() },
+        success: function (data) {
+            if(currentImage === -1) {
+                document.querySelector(".avatar_section .avatar").src = data;
+            }
+            triggerNotification('done', 'Image has been uploaded!');
+        },
+        error: function(error)
+        {
+            triggerNotification('error', error);
+        }
+    });
+    resetFilter();
+    closeEditPanel();
 }
 
-filterSlider.addEventListener("input", updateFilter);
-resetFilterBtn.addEventListener("click", resetFilter);
+function closeEditPanel() {
+    navbar.classList.remove("blur");
+    main.classList.remove("blur");
+    editPanel.classList.remove("show_popup");
+}
+
+let btnUpload = document.querySelector(".preview-img").querySelectorAll("label, input");
+$("#file").change(function() {
+    const file_reader = new FileReader();
+    file_reader.addEventListener("load", () => {
+        previewImg.classList.remove("hide");
+        previewImg.src = file_reader.result;
+        btnUpload.forEach(ele => ele.classList.add("hide"));
+    });
+    file_reader.readAsDataURL(this.files[0]);
+});

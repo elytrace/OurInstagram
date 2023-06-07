@@ -7,7 +7,7 @@ function closeImagePopup() {
 }
 
 document.addEventListener("click", e => {
-    if (!createPopup.contains(e.target) && !editPopup.contains(e.target) && !btnCreate.contains(e.target) && createPanel.classList.contains("show_popup")) {
+    if (!createPopup.contains(e.target) && !btnCreate.contains(e.target) && createPanel.classList.contains("show_popup")) {
         closeCreatePopup();
     }
 });

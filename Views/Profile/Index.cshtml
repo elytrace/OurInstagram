@@ -37,9 +37,11 @@
     <div class="profile_section">
         <div class="avatar_section">
             <img class="avatar" alt="" src='@(Model.avatarPath ?? "../../Resources/default_ava.png")'/>
-            <label for="file" class="avatar_overlay" title="Change Avatar"></label>
-            <input type="file" id="file" accept="image/png, image/jpg, image/jpeg" style="opacity: 0;" required/>
-        </div>
+            @* <label for="file" class="avatar_overlay" title="Change Avatar"></label> *@
+            @* <input class="file_chooser" type="file" id="file" accept="image/png, image/jpg, image/jpeg" required/> *@
+            <label class="avatar_overlay" title="Edit Avatar" onclick="openEditPanel(-1, '@(Model.avatarPath)')"></label>
+                        
+            </div>
         <div class="info_section">
             <div class="user_section">
                 <p class="username">@(Model.username ?? "Username : Unknown")</p>

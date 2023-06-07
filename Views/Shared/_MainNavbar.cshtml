@@ -25,6 +25,8 @@
     <script src="~/js/NavBar/navbar.js" defer></script>
     <script src="~/js/NavBar/search.js" defer></script>
     <script src="~/js/NavBar/more.js" defer></script>
+    <script src="~/js/NavBar/upload.js" defer></script>
+    <script src="~/js/NavBar/edit.js" defer></script>
     
     <script>
         let actionPath = '@Url.Action("DisplayImage", "Navbar")';
@@ -93,6 +95,9 @@
 
 @* CREATE POPUP *@
 @{ await Html.RenderPartialAsync("~/Views/Navbar/UploadImage.cshtml"); }
+
+@* EDIT POPUP *@
+@{ await Html.RenderPartialAsync("~/Views/Navbar/EditImage.cshtml"); }
 
 <div class="image_details_panel">
     

@@ -2,7 +2,6 @@
 let btnCreate = document.querySelector(".create");
 let createPanel = document.querySelector(".create_panel");
 let createPopup = document.querySelector(".create_popup");
-let editPopup = document.querySelector(".edit_popup");
 let navbar = document.querySelector(".navbar");
 let main = document.querySelector("main");
 
@@ -33,24 +32,6 @@ imageInput.addEventListener("change", function() {
 });
 
 /************************************************************************************************/
-function uploadImage(url) {
-    triggerNotification('submit', 'The process will take some minutes...');
-    $.ajax({
-        url: "/Home/UploadImage",
-        type: "POST",
-        data: { "imageURL" : url },
-        success: function (data) {
-            triggerNotification('done', 'Image has been uploaded!');
-        },
-        error: function(error)
-        {
-            triggerNotification('error', error);
-        }
-    });
-    closeCreatePopup();
-}
-
-/************************************************************************************************/
 function closeCreatePopup() {
     navbar.classList.remove("blur");
     main.classList.remove("blur");
@@ -67,20 +48,14 @@ function closeCreatePopup() {
     
     createPopup.classList.add("show_upload_flex");
     createPopup.classList.remove("hide_upload");
-
-    editPopup.classList.add("hide_upload");
-    editPopup.classList.remove("show_upload_block");
 }
 
 /************************************************************************************************/
 function toEditPanel() {
-    document.querySelector(".preview-img").querySelector("img").src = uploaded_image;
+    // document.querySelector(".preview-img").querySelector("img").src = uploaded_image;
 
-    createPopup.classList.add("hide_upload");
-    createPopup.classList.remove("show_upload_flex");
-    
-    editPopup.classList.add("show_upload_block");
-    editPopup.classList.remove("hide_upload");
+    closeCreatePopup();
+    openEditPanel(-2, uploaded_image);
 }
 
 /************************************************************************************************/
