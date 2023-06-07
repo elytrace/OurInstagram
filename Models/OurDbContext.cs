@@ -12,8 +12,6 @@ public class OurDbContext : DbContext
     public static OurDbContext context;
     public DbSet<User> users { get; set; }
     public DbSet<Image> images { get; set; }
-    public DbSet<Like> likes { get; set; }
-    public DbSet<Comment> comments { get; set; }
 
     private const string connectionString = "server='localhost';userid=root;database=Pinsta;";
     // private const string connectionString = "server='85.10.205.173';userid=admincnpm;password=admincnpm;database=ourpinsta;";
@@ -34,6 +32,7 @@ public class OurDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        base.OnModelCreating(modelBuilder);
         modelBuilder.Entity<User>()
             .HasMany(left => left.followers)
             .WithMany(right => right.followings)

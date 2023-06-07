@@ -13,9 +13,12 @@ public class Comment
     [StringLength(500)]
     public string? comment { get; set; }
     public int userId { get; set; }
-    [NotMapped]
+    [ForeignKey("userId")]
     public User user { get; set; }
+    
+    [ForeignKey("imageId")]
     public int imageId { get; set; }
+    public Image image { get; set; }
 
     [DataType(DataType.DateTime)]
     public DateTime timeStamp { get; set; }
