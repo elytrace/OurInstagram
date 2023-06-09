@@ -29,7 +29,7 @@
 .message_header, .notify_header {
     height: 10%;
 }
-.sub_panel_title, .search_input {
+.sub_panel_title {
     padding: 0 20px;
 }
 .sub_panel_title {
@@ -42,6 +42,7 @@
     margin: 10px 15px;
     width: 80%;
     height: 40px;
+    padding: 0 10px;
 
     border: 1px solid var(--Color2);
     background-color: var(--Color4);
@@ -51,11 +52,11 @@
     outline: none;
 }
 .search_input::-webkit-search-cancel-button {
-    margin-left: 10px;
+    /*margin-left: 10px;*/
     background-image: url("../../Resources/close.png");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 7px;
+    background-size: cover;
     cursor: pointer;
 }
 .search_input::placeholder {
@@ -67,9 +68,52 @@
     height: 87%;
     width: 100%;
 }
-.recent_search, .result_search{
+.recent_search, .result_search {
     width: 100%;
+    height: fit-content;
+}
+.recent_list, .result_list {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.recent_item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /*height: 10%;*/
+    height: 40px;
+    width: 90%;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 25px;
+    text-decoration: none;
+    color: unset;
+}
+.recent_item:hover {
+    cursor: pointer;
+    border: 1px solid var(--text1);
+}
+.recent_item:hover .name {
+    cursor: pointer;
+    font-weight: 600;
+}
+.recent_item .avatar {
+    display: block;
     height: 100%;
+    width: auto;
+    aspect-ratio: 1/1;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+.recent_item .name {
+    width: auto;
+    font-weight: 450;
+    font-size: 2.3vh;
+    margin-left: 10px;
 }
 .show {
     display: block;

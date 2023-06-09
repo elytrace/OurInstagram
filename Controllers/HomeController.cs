@@ -3,6 +3,7 @@ using CloudinaryDotNet;
 using CloudinaryDotNet.Actions;
 using Microsoft.AspNetCore.Mvc;
 using Pinsta.Models;
+using Pinsta.Models.Entities;
 using Pinsta.Models.Login;
 
 namespace Pinsta.Controllers;
@@ -37,4 +38,11 @@ public class HomeController : Controller
         OurDbContext.UploadImage(uploadResult.SecureUrl.ToString(), Models.Entities.User.currentUser.userId);
         return View("Index");
     }
+
+    [HttpPost]
+    public PartialViewResult Search()
+    {
+        var recentSearch = Models.Entities.User.currentUser.searchs.ToList();
+        return PartialView("~/Views/Navbar/SearchPanel.cshtml", recentSearch);
+    } 
 }

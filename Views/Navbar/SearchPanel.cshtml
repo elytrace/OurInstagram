@@ -1,13 +1,27 @@
-﻿<div class="search_panel hide">
+﻿@model List<Pinsta.Models.Entities.SearchRecent>
+<div class="search_panel hide">
     <div class="sub_panel_header search_header">
         <p class="sub_panel_title">Search</p>
-        <input type="text" placeholder="Search" class="search_input">
+        <input type="search" placeholder="Search" class="search_input">
     </div>
     <div class="section_result">
         <div class="recent_search show" >
             <p class="sub_panel_title">Recent</p>
-            <div class="recent_result"></div>
+            <div class="recent_list">
+
+                @foreach (var item in Model.Select(result => OurDbContext.context.users.FirstOrDefault(u => u.userId == result.resultId)))
+                {
+                    <a class="recent_item" href="@Url.Action("Index", "Profile", new { item.username })">
+                        <img class="avatar" src="@item.avatarPath" alt=""/>
+                        <label class="name">@item.username</label>
+                    </a>
+                }
+
+            </div>
         </div>
-        <div class="result_search hide"></div> 
+        <div class="result_search hide">
+            <p class="sub_panel_title">Recent</p>
+            <div class="result_list"></div>
+        </div> 
     </div>
 </div>

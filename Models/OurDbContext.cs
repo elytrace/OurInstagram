@@ -132,6 +132,31 @@ public class OurDbContext : DbContext
             await context.Entry(image).Collection(i => i.comments).LoadAsync();
         }
         await context.SaveChangesAsync();
+        
+        
+        // search recent for each user
+        var searchRecentList = new List<SearchRecent>();
+        for (int i = 0; i < userList.Count(); i++)
+        {
+            int start = gen.Next(userList.Count() / 2);
+            int end = gen.Next(start + 1, userList.Count());
+            for (int j = start; j < end; j++)
+            {
+                searchRecentList.Add(new SearchRecent() {
+                    userId = i+1,
+                    resultId = j+1,
+                    timeStamp = DateTime.Now
+                });
+            }
+        }
+        await context.AddRangeAsync(searchRecentList);
+        await context.SaveChangesAsync();
+
+        foreach (var user in userList)
+        {
+            await context.Entry(user).Collection(u => u.searchs).LoadAsync();
+        }
+        await context.SaveChangesAsync();
     }
     
     public static LoginState ValidateLogin(string username, string password)

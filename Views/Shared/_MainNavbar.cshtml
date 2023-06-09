@@ -90,7 +90,7 @@
     </div>
     
     @* SEARCH PANEL *@
-    @{ await Html.RenderPartialAsync("~/Views/Navbar/SearchPanel.cshtml"); }
+    @{ await Html.RenderPartialAsync("~/Views/Navbar/SearchPanel.cshtml", Pinsta.Models.Entities.User.currentUser.searchs.ToList()); }
 </div>
 
 @* CREATE POPUP *@

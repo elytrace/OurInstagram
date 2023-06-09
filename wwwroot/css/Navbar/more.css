@@ -1,6 +1,7 @@
 /************************************ MORE ************************************/
 .section_more {
     height: 10%;
+    z-index: 999;
 }
 .more_menu {
     position: absolute;

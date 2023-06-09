@@ -10,6 +10,7 @@ public class Image
     {
         likes = new List<Like>();
         comments = new List<Comment>();
+        guid = Guid.NewGuid();
     }
 
     [Key]
@@ -35,4 +36,6 @@ public class Image
     
     [NotMapped]
     public bool isLiked { get; set; }
+    
+    public Guid guid { get; set; }
 }

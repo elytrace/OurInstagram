@@ -6,6 +6,7 @@ namespace Pinsta.Models.Entities;
 [Table("users")]
 public class User
 {
+    [NotMapped]
     public static User currentUser = new User();
 
     [Key]
@@ -41,7 +42,8 @@ public class User
     public virtual ICollection<Image> images { get; set; }
     public virtual ICollection<User> followers { get; set; }
     public virtual ICollection<User> followings { get; set; }
-    public virtual ICollection<Like> likes { get; set; }
     
+    public virtual ICollection<Like> likes { get; set; }
     public virtual ICollection<Comment> comments { get; set; }
+    public virtual ICollection<SearchRecent> searchs { get; set; }
 }
