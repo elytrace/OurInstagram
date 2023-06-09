@@ -89,13 +89,14 @@
     width: 90%;
     margin-bottom: 20px;
     border: none;
-    border-radius: 25px;
+    border-radius: 25px 15px 15px 25px;
     text-decoration: none;
     color: unset;
 }
 .recent_item:hover {
     cursor: pointer;
-    border: 1px solid var(--text1);
+    /*border: 1px solid var(--text1);*/
+    background-color: lightgray;
 }
 .recent_item:hover .name {
     cursor: pointer;
