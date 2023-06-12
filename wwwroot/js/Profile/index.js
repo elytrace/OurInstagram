@@ -95,3 +95,33 @@ function changeFollowState() {
     }
 }
 
+// let navbar = document.querySelector(".navbar");
+// let main = document.querySelector("main");
+let followerPanel = document.querySelector(".follower_panel");
+let followingPanel = document.querySelector(".following_panel");
+let followPopup = document.querySelector(".follow_popup");
+function displayFollowPanel(type, userId) {
+    navbar.classList.add("blur");
+    main.classList.add("blur");
+    if(type === 1) followerPanel.classList.add("show_popup");
+    if(type === 2) followingPanel.classList.add("show_popup");
+}
+
+function closeFollowPopup() {
+    navbar.classList.remove("blur");
+    main.classList.remove("blur");
+    if(followerPanel.classList.contains("show_popup")) {
+        followerPanel.classList.remove("show_popup");
+    }
+    if(followingPanel.classList.contains("show_popup")) {
+        followingPanel.classList.remove("show_popup");
+    }
+}
+
+document.addEventListener("click", e => {
+   if(!followPopup.contains(e.target)
+       && !document.querySelector(".total_followers").contains(e.target)
+       && !document.querySelector(".total_followings").contains(e.target)) {
+       closeFollowPopup();
+   } 
+});

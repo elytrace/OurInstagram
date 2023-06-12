@@ -86,9 +86,9 @@
       <None Include="wwwroot\Resources\heart_fill.png" />
       <None Include="wwwroot\Resources\home.png" />
       <None Include="wwwroot\Resources\image.png" />
-      <None Include="wwwroot\Resources\insta_logo.png" />
-      <None Include="wwwroot\Resources\insta_logo_frame.png" />
-      <None Include="wwwroot\Resources\insta_title.png" />
+      <None Include="wwwroot\Resources\pinsta_logo.png" />
+      <None Include="wwwroot\Resources\pinsta_logo.png" />
+      <None Include="wwwroot\Resources\pinsta_title.png" />
       <None Include="wwwroot\Resources\moon.png" />
       <None Include="wwwroot\Resources\more.png" />
       <None Include="wwwroot\Resources\report.png" />

@@ -13,7 +13,7 @@
 { 
     <script src="~/js/Home/index.js"></script>
     <script>
-        let imageArray = @Html.Raw(JsonConvert.SerializeObject(Model));
+        let imageArray = @Html.Raw(JsonConvert.SerializeObject(Model.Select(m => new {m.imageId, m.imagePath})));
         loadingImages(imageArray);
     </script>
 }

@@ -53,5 +53,126 @@
     "avatarPath": "https://i.pinimg.com/736x/7f/2d/a9/7f2da9cdaaba31c68503277be1ee2d81.jpg",
     "biography": "User test 5",
     "displayedName": "Hiệp Đỗ"
+  },
+  {
+    "username": "anhntl",
+    "password": "123",
+    "email": "anhntl@gmail.com",
+    "phone": "0123456789",
+    "dateOfBirth": "2002-1-1",
+    "gender": 1,
+    "avatarPath": "https://res.cloudinary.com/dy7yri3d9/image/upload/v1685526646/download_nzrik1.jpg",
+    "biography": "User test 6",
+    "displayedName": "Lan Anh"
+  },
+  {
+    "username": "nhattl",
+    "password": "123",
+    "email": "nhattl@gmail.com",
+    "phone": "0123456789",
+    "dateOfBirth": "2002-1-1",
+    "gender": 1,
+    "avatarPath": "https://res.cloudinary.com/dy7yri3d9/image/upload/v1685526646/download_nzrik1.jpg",
+    "biography": "User test 7",
+    "displayedName": "Long Nhật"
+  },
+  {
+    "username": "hieunh",
+    "password": "123",
+    "email": "hieunh@gmail.com",
+    "phone": "0123456789",
+    "dateOfBirth": "2002-1-1",
+    "gender": 1,
+    "avatarPath": "https://res.cloudinary.com/dy7yri3d9/image/upload/v1685526646/download_nzrik1.jpg",
+    "biography": "User test 8",
+    "displayedName": "Hữu Hiếu"
+  },
+  {
+    "username": "sontt",
+    "password": "123",
+    "email": "sontt@gmail.com",
+    "phone": "0123456789",
+    "dateOfBirth": "2002-1-1",
+    "gender": 1,
+    "avatarPath": "https://res.cloudinary.com/dy7yri3d9/image/upload/v1685526646/download_nzrik1.jpg",
+    "biography": "User test 9",
+    "displayedName": "Thanh Sơn"
+  },
+  {
+    "username": "minhtd",
+    "password": "123",
+    "email": "minhtd@gmail.com",
+    "phone": "0123456789",
+    "dateOfBirth": "2002-1-1",
+    "gender": 1,
+    "avatarPath": "https://res.cloudinary.com/dy7yri3d9/image/upload/v1685526646/download_nzrik1.jpg",
+    "biography": "User test 10",
+    "displayedName": "Đức Minh"
+  },
+  {
+    "username": "trungld",
+    "password": "123",
+    "email": "trungld@gmail.com",
+    "phone": "0123456789",
+    "dateOfBirth": "1998-1-1",
+    "gender": 1,
+    "avatarPath": "https://res.cloudinary.com/dy7yri3d9/image/upload/v1685526646/download_nzrik1.jpg",
+    "biography": "User test 11",
+    "displayedName": "Đức Trung"
+  },
+  {
+    "username": "manhmv",
+    "password": "123",
+    "email": "manhmv@gmail.com",
+    "phone": "0123456789",
+    "dateOfBirth": "2002-1-1",
+    "gender": 1,
+    "avatarPath": "https://res.cloudinary.com/dy7yri3d9/image/upload/v1685526646/download_nzrik1.jpg",
+    "biography": "User test 12",
+    "displayedName": "Mai Mạnh"
+  },
+  {
+    "username": "anhnhd",
+    "password": "123",
+    "email": "anhnhd@gmail.com",
+    "phone": "0123456789",
+    "dateOfBirth": "2002-1-1",
+    "gender": 1,
+    "avatarPath": "https://res.cloudinary.com/dy7yri3d9/image/upload/v1685526646/download_nzrik1.jpg",
+    "biography": "User test 13",
+    "displayedName": "Dục Ân"
+  },
+  {
+    "username": "dungvt",
+    "password": "123",
+    "email": "dungvt@gmail.com",
+    "phone": "0123456789",
+    "dateOfBirth": "2002-1-1",
+    "gender": 1,
+    "avatarPath": "https://res.cloudinary.com/dy7yri3d9/image/upload/v1685526646/download_nzrik1.jpg",
+    "biography": "User test 13",
+    "displayedName": "Tiến Dũng"
+  },
+  {
+    "username": "hungpt",
+    "password": "123",
+    "email": "hungpt@gmail.com",
+    "phone": "0123456789",
+    "dateOfBirth": "2002-1-1",
+    "gender": 1,
+    "avatarPath": "https://res.cloudinary.com/dy7yri3d9/image/upload/v1685526646/download_nzrik1.jpg",
+    "biography": "User test 14",
+    "displayedName": "Tuấn Hưng"
+  },
+  {
+    "username": "dongnd",
+    "password": "123",
+    "email": "dongnd@gmail.com",
+    "phone": "0123456789",
+    "dateOfBirth": "2002-1-1",
+    "gender": 1,
+    "avatarPath": "https://res.cloudinary.com/dy7yri3d9/image/upload/v1685526646/download_nzrik1.jpg",
+    "biography": "User test 15",
+    "displayedName": "Duy Đông"
   }
 ]

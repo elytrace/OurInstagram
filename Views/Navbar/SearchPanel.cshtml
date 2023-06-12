@@ -27,6 +27,12 @@
     </div>
     
     <script>
-        accountList = @Html.Raw(JsonConvert.SerializeObject(OurDbContext.context.users));
+        accountList = @Html.Raw(JsonConvert.SerializeObject(
+                          OurDbContext.context.users.Select(
+                              u => new { 
+                                  u.username, u.avatarPath, u.displayedName
+                              }
+                          )
+                      ));
     </script>
 </div>

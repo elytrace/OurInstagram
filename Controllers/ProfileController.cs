@@ -3,6 +3,7 @@ using CloudinaryDotNet;
 using CloudinaryDotNet.Actions;
 using Microsoft.AspNetCore.Mvc;
 using Pinsta.Models;
+using Pinsta.Models.Entities;
 
 namespace Pinsta.Controllers;
 

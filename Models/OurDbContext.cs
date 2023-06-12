@@ -71,11 +71,12 @@ public class OurDbContext : DbContext
         await context.SaveChangesAsync();
 
         // follow
+        Random gen = new Random();
         var userList = context.users.ToList();
         foreach (var user in userList)
         {
-            user.followers = userList.Where(u => u.userId < user.userId).ToList();
-            user.followings = userList.Where(u => u.userId > user.userId).ToList();
+            user.followers = userList.OrderBy(u => Guid.NewGuid()).Take(gen.Next(userList.Count)).ToList();
+            user.followings = userList.OrderBy(u => Guid.NewGuid()).Take(gen.Next(userList.Count)).ToList();
         }
         await context.SaveChangesAsync();
 
@@ -88,7 +89,6 @@ public class OurDbContext : DbContext
         await context.SaveChangesAsync();
         
         // image liked for each user
-        Random gen = new Random();
         var likeList = new List<Like>();
         for (int i = 0; i < userList.Count(); i++)
         {
