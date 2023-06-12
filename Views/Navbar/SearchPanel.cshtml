@@ -1,4 +1,5 @@
-﻿@model List<Pinsta.Models.Entities.SearchRecent>
+﻿@using Newtonsoft.Json
+@model List<Pinsta.Models.Entities.SearchRecent>
 <div class="search_panel hide">
     <div class="sub_panel_header search_header">
         <p class="sub_panel_title">Search</p>
@@ -6,7 +7,7 @@
     </div>
     <div class="section_result">
         <div class="recent_search show" >
-            <p class="sub_panel_title">Recent</p>
+            <p class="sub_panel_title">Recents</p>
             <div class="recent_list">
 
                 @foreach (var item in Model.Select(result => OurDbContext.context.users.FirstOrDefault(u => u.userId == result.resultId)))
@@ -20,8 +21,12 @@
             </div>
         </div>
         <div class="result_search hide">
-            <p class="sub_panel_title">Recent</p>
+            <p class="sub_panel_title">Results</p>
             <div class="result_list"></div>
         </div> 
     </div>
+    
+    <script>
+        accountList = @Html.Raw(JsonConvert.SerializeObject(OurDbContext.context.users));
+    </script>
 </div>

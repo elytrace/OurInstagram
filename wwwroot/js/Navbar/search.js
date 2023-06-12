@@ -21,3 +21,44 @@ for(let [key, value] of btnMap) {
         }
     });
 }
+/************************************************************************************************/
+let searchInput = document.querySelector(".search_input");
+let resultList = document.querySelector(".result_list");
+let resultSearch = document.querySelector(".result_search");
+let recentSearch = document.querySelector(".recent_search");
+searchInput.addEventListener("input", function () {
+    console.log(searchInput.value);
+    resultList.textContent = '';
+    resultSearch.classList.remove("show");
+    resultSearch.classList.add("hide");
+    recentSearch.classList.remove("show");
+    recentSearch.classList.add("hide");
+    if(searchInput.value.length > 2) {
+        let matchList = [];
+        accountList.forEach(account => {
+           if(account['username'].includes(searchInput.value)) {
+               matchList.push(account);
+           } 
+        });
+        if(matchList.length !== 0) {
+            resultSearch.classList.remove("hide");
+            resultSearch.classList.add("show");
+            matchList.forEach(account => {
+                $('.result_list').append("<a class='recent_item' href='Profile?username="+account['username']+"'>" +
+                    "<img class='avatar' src='"+account['avatarPath']+"' alt=''/>\n" +
+                    "<label class='name'>"+account['displayedName']+"</label>\n" +
+                    "</a>");
+            });
+        }
+        else {
+            $('.result_list').append("<p>Không tồn tại kết quả cho '"+searchInput.value+"'</p>")
+        }
+    }
+    // else if(searchInput.value.length > 0) {
+    //     $('.result_list').append("<p>Không tồn tại kết quả cho '"+searchInput.value+"'</p>")
+    // }
+    else if(searchInput.value.length === 0) {
+        recentSearch.classList.remove("hide");
+        recentSearch.classList.add("show");
+    }
+});

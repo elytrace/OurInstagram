@@ -32,23 +32,29 @@ function likeImage(imageId) {
 }
 
 function deleteImage(imageId) {
-    triggerNotification('submit', 'The process will take some minutes...');
-    $.ajax({
-        url: "/NavBar/DeleteImage/",
-        type: "POST",
-        data: { "imageId" : imageId },
-        success: function (data) {
-            // if (data.Success) {
-            window.location.reload();
-            triggerNotification('done', 'Image has been deleted!');
-            // }
-        },
-        error: function(error)
-        {
-            triggerNotification('error', error);
-        }
-    });
-    closeImagePopup();
+    if (confirm('Xoá ảnh này?')) {
+        triggerNotification('submit', 'The process will take some minutes...');
+        $.ajax({
+            url: "/NavBar/DeleteImage/",
+            type: "POST",
+            data: { "imageId" : imageId },
+            success: function (data) {
+                // if (data.Success) {
+                window.location.reload();
+                triggerNotification('done', 'Image has been deleted!');
+                // }
+            },
+            error: function(error)
+            {
+                triggerNotification('error', error);
+            }
+        });
+        closeImagePopup();
+    } 
+    else {
+        selectEditDelete();
+    }
+    
 }
 
 /************************************************************************************************/
