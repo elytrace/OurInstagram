@@ -76,9 +76,7 @@ function loadingImages(imageArray) {
 }
 
 // follow or unfollow other people
-function changeFollowState() {
-    let labelFollow = document.querySelector(".label_follow");
-    let labelUnfollow = document.querySelector(".label_unfollow");
+function changeFollowState(labelFollow, labelUnfollow) {
     if(labelFollow.classList.contains("show")) {
         labelFollow.classList.remove("show");
         labelUnfollow.classList.remove("hide");
@@ -119,9 +117,9 @@ function closeFollowPopup() {
 }
 
 document.addEventListener("click", e => {
-   if(!followPopup.contains(e.target)
+   if(!imageShowing && !followPopup.contains(e.target)
        && !document.querySelector(".total_followers").contains(e.target)
        && !document.querySelector(".total_followings").contains(e.target)) {
        closeFollowPopup();
-   } 
+   }
 });

@@ -1,5 +1,5 @@
 ﻿@using Newtonsoft.Json
-@model List<Pinsta.Models.Entities.SearchRecent>
+@model List<Pinsta.Models.Entities.SearchRecent>?
 <div class="search_panel hide">
     <div class="sub_panel_header search_header">
         <p class="sub_panel_title">Search</p>
@@ -9,15 +9,19 @@
         <div class="recent_search show" >
             <p class="sub_panel_title">Recents</p>
             <div class="recent_list">
-
-                @foreach (var item in Model.Select(result => OurDbContext.context.users.FirstOrDefault(u => u.userId == result.resultId)))
-                {
-                    <a class="recent_item" href="@Url.Action("Index", "Profile", new { item.username })">
-                        <img class="avatar" src="@item.avatarPath" alt=""/>
-                        <label class="name">@item.username</label>
-                    </a>
+                
+                @{
+                    if (Model != null)
+                    {
+                        foreach (var item in Model.Select(result => OurDbContext.context.users.FirstOrDefault(u => u.userId == result.resultId)))
+                        {
+                            <a class="recent_item" href="@Url.Action("Index", "Profile", new { item.username })">
+                                <img class="avatar" src="@item.avatarPath" alt=""/>
+                                <label class="name">@item.username</label>
+                            </a>
+                        }
+                    }
                 }
-
             </div>
         </div>
         <div class="result_search hide">
@@ -28,11 +32,9 @@
     
     <script>
         accountList = @Html.Raw(JsonConvert.SerializeObject(
-                          OurDbContext.context.users.Select(
-                              u => new { 
-                                  u.username, u.avatarPath, u.displayedName
-                              }
-                          )
+                          OurDbContext.context.users.Select(u => new { 
+                              u.username, u.avatarPath, u.displayedName
+                          })
                       ));
     </script>
 </div>

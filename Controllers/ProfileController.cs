@@ -69,4 +69,20 @@ public class ProfileController : Controller
         OurDbContext.context.SaveChangesAsync();
         return Json(userToFollow.followers.Count);
     }
+    
+    [HttpPost]
+    public ActionResult FollowDirectly(int userId)
+    {
+        var userToFollow = OurDbContext.context.users.FirstOrDefault(u => u.userId == userId);
+        if (userToFollow.followers.Contains(Models.Entities.User.currentUser))
+        {
+            userToFollow.followers.Remove(Models.Entities.User.currentUser);
+        }
+        else
+        {
+            userToFollow.followers.Add(Models.Entities.User.currentUser);
+        }
+        OurDbContext.context.SaveChangesAsync();
+        return Json(Models.Entities.User.currentUser.followings?.Count);
+    }
 }

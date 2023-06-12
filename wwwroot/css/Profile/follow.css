@@ -1,0 +1,47 @@
+.follow_item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    /*height: 10%;*/
+    height: 40px;
+    width: 90%;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 25px 15px 15px 25px;
+    text-decoration: none;
+    color: unset;
+}
+.follow_item:hover {
+    cursor: pointer;
+    /*border: 1px solid var(--text1);*/
+    /*background-color: lightgray;*/
+}
+.follow_item:hover .name {
+    cursor: pointer;
+    font-weight: 600;
+}
+.follow_item .avatar {
+    display: block;
+    height: 100%;
+    width: auto;
+    aspect-ratio: 1/1;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+.follow_item .name {
+    color: var(--text1);
+    width: 150px;
+    font-weight: 450;
+    font-size: 2.3vh;
+    margin-left: 10px;
+}
+.follow_item .info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}

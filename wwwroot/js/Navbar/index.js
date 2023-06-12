@@ -1,6 +1,7 @@
 
 
 function closeImagePopup() {
+    imageShowing = false;
     navbar.classList.remove("blur");
     main.classList.remove("blur");
     imageDetailPanel.classList.remove("show_popup");

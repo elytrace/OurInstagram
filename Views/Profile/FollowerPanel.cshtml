@@ -1,5 +1,7 @@
 @model List<Pinsta.Models.Entities.User>
 
+<link rel="stylesheet" type="text/css"  href="~/css/Profile/follow.css"/>
+
 <div class="follower_panel">
     <div class="follow_popup">
         <div class="follow_header">
@@ -8,27 +10,29 @@
         </div>
         <div class="follow_list">
         
-            @foreach (var item in Model)
-            {
-                <a class="recent_item" href="@Url.Action("Index", "Profile", new { item.username })">
-                    <div class="info">
-                        <img class="avatar" src="@item.avatarPath" alt=""/>
-                        <label class="name">@item.username</label>
+            @{
+                foreach (var item in Model)
+                {
+                    <div class="follow_item">
+                        <a class="info" href="@Url.Action("Index", "Profile", new { item.username })">
+                            <img class="avatar" src="@item.avatarPath" alt=""/>
+                            <label class="name">@item.username</label>
+                        </a>
+                        <input type="button" id='@item.userId' class="btn_follow" onclick="followOnly(this, @item.userId)"/>
+                        @{
+                            if (Pinsta.Models.Entities.User.currentUser.followings!.Contains(item))
+                            {
+                                <label for='@item.userId' class="label_follow show">Following</label>
+                                <label for='@item.userId' class="label_unfollow hide">Follow</label>
+                            }
+                            else
+                            {
+                                <label for='@item.userId' class="label_follow hide">Following</label>
+                                <label for='@item.userId' class="label_unfollow show">Follow</label>
+                            }
+                        }
                     </div>
-                    <input type="button" id="follow" class="btn_follow"/>
-                    @{
-                        if (Pinsta.Models.Entities.User.currentUser.followings.Contains(item))
-                        {
-                            <label for="follow" class="label_follow show">Following</label>
-                            <label for="follow" class="label_unfollow hide">Follow</label>
-                        }
-                        else
-                        {
-                            <label for="follow" class="label_follow hide">Following</label>
-                            <label for="follow" class="label_unfollow show">Follow</label>
-                        }
-                    }  
-                </a>
+                }
             }
         </div>
     </div>

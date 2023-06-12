@@ -39,11 +39,11 @@ public class User
     [StringLength(255)]
     public string? displayedName { get; set; }
     
-    public virtual ICollection<Image> images { get; set; }
-    public virtual ICollection<User> followers { get; set; }
-    public virtual ICollection<User> followings { get; set; }
+    public virtual ICollection<Image>? images { get; set; }
+    public virtual ICollection<User>? followers { get; set; }
+    public virtual ICollection<User>? followings { get; set; }
     
-    public virtual ICollection<Like> likes { get; set; }
-    public virtual ICollection<Comment> comments { get; set; }
-    public virtual ICollection<SearchRecent> searchs { get; set; }
+    public virtual ICollection<Like>? likes { get; set; }
+    public virtual ICollection<Comment>? comments { get; set; }
+    public virtual ICollection<SearchRecent>? searchs { get; set; }
 }

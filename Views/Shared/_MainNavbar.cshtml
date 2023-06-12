@@ -38,6 +38,8 @@
         let commentSend = null;
         let deleteBtn = null;
         let accountList = null;
+        let imagePopup = null;
+        let imageShowing = false;
     </script>
 </head>
 <body>
@@ -91,7 +93,7 @@
     </div>
     
     @* SEARCH PANEL *@
-    @{ await Html.RenderPartialAsync("~/Views/Navbar/SearchPanel.cshtml", Pinsta.Models.Entities.User.currentUser.searchs.ToList()); }
+    @{ await Html.RenderPartialAsync("~/Views/Navbar/SearchPanel.cshtml", Pinsta.Models.Entities.User.currentUser.searchs?.ToList()); }
 </div>
 
 @* CREATE POPUP *@

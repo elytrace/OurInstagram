@@ -72,6 +72,7 @@ window.addEventListener("DOMContentLoaded", function () {
             main.classList.add("blur");
             imageDetailPanel.classList.add("show_popup");
             console.log(postList[i].id);
+            imageShowing = true;
             $(".image_details_panel").load(actionPath, { imageId: postList[i].id });
         });
     }
