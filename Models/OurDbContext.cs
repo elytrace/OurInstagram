@@ -14,9 +14,11 @@ public class OurDbContext : DbContext
     public DbSet<Image> images { get; set; }
 
     private const string connectionString = "server='localhost';userid=root;database=Pinsta;";
-    // private const string connectionString = "server='85.10.205.173';userid=admincnpm;password=admincnpm;database=ourpinsta;";
-    // private const string connectionString = "server='sql12.freemysqlhosting.net';userid=sql12623727;password=pCa1QB9GjA;database='sql12623727';";
-
+    
+    // private const string connectionString =
+    //     "server='containers-us-west-43.railway.app';" +
+    //     "port=7532;userid='root';password=VXCOkrTmhkPNWe6VpUFY;database=railway";
+    
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         base.OnConfiguring(optionsBuilder);
@@ -41,7 +43,7 @@ public class OurDbContext : DbContext
 
     public static async Task CreateDatabase()
     {
-        // context = new OurDbContext();
+        context = new OurDbContext();
         string databasename = context.Database.GetDbConnection().Database;
 
         Console.WriteLine("Creating " + databasename + "...");
@@ -65,10 +67,12 @@ public class OurDbContext : DbContext
         var users = JsonConvert.DeserializeObject<List<User>>(await File.ReadAllTextAsync("./SampleData/users.json"));
         await context.AddRangeAsync(users);
         await context.SaveChangesAsync();
+        Console.WriteLine("Finish inserting table Users");
 
         var images = JsonConvert.DeserializeObject<List<Image>>(await File.ReadAllTextAsync("./SampleData/images.json"));
         await context.AddRangeAsync(images);
         await context.SaveChangesAsync();
+        Console.WriteLine("Finish inserting table Images");
 
         // follow
         Random gen = new Random();
@@ -79,6 +83,7 @@ public class OurDbContext : DbContext
             user.followings = userList.Except(new[] { user }).OrderBy(u => Guid.NewGuid()).Take(gen.Next(userList.Count)).ToList();
         }
         await context.SaveChangesAsync();
+        Console.WriteLine("Finish inserting table Follows");
 
         // image uploaded for each user
         var imageList = context.images;
@@ -101,6 +106,7 @@ public class OurDbContext : DbContext
         }
         await context.AddRangeAsync(likeList);
         await context.SaveChangesAsync();
+        Console.WriteLine("Finish inserting table Likes");
 
         foreach (var image in imageList)
         {
@@ -126,6 +132,7 @@ public class OurDbContext : DbContext
         }
         await context.AddRangeAsync(commentList);
         await context.SaveChangesAsync();
+        Console.WriteLine("Finish inserting table Comments");
 
         foreach (var image in imageList)
         {
@@ -151,6 +158,7 @@ public class OurDbContext : DbContext
         }
         await context.AddRangeAsync(searchRecentList);
         await context.SaveChangesAsync();
+        Console.WriteLine("Finish inserting table Searchs");
 
         foreach (var user in userList)
         {
