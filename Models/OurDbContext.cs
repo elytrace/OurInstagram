@@ -75,8 +75,8 @@ public class OurDbContext : DbContext
         var userList = context.users.ToList();
         foreach (var user in userList)
         {
-            user.followers = userList.OrderBy(u => Guid.NewGuid()).Take(gen.Next(userList.Count)).ToList();
-            user.followings = userList.OrderBy(u => Guid.NewGuid()).Take(gen.Next(userList.Count)).ToList();
+            user.followers = userList.Except(new[] { user }).OrderBy(u => Guid.NewGuid()).Take(gen.Next(userList.Count)).ToList();
+            user.followings = userList.Except(new[] { user }).OrderBy(u => Guid.NewGuid()).Take(gen.Next(userList.Count)).ToList();
         }
         await context.SaveChangesAsync();
 

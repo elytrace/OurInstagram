@@ -76,8 +76,8 @@
     <p class="placeholder hide"><em>Uploaded images will be shown below</em></p>
 </main>
 
-@{ await Html.RenderPartialAsync("FollowerPanel", Model.followers.ToList()); }
-@{ await Html.RenderPartialAsync("FollowingPanel", Model.followings.ToList()); }
+<div class="follower_panel"></div>
+<div class="following_panel"></div>
 
 <script src="js/Profile/follow.js" type="text/javascript" defer></script>
 @if (Pinsta.Models.Entities.User.currentUser.username != Model.username)

@@ -27,6 +27,30 @@ public class ProfileController : Controller
         return View(user);
     }
 
+    public ActionResult FollowerPanel(int userId = 0)
+    {
+        if (userId == 0)
+        {
+            return PartialView(Models.Entities.User.currentUser.followers?.ToList());
+        }
+        var followerList = OurDbContext.context.users
+            .FirstOrDefault(u => u.userId == userId)?
+            .followers?.ToList();
+        return PartialView(followerList);
+    }
+    
+    public ActionResult FollowingPanel(int userId = 0)
+    {
+        if (userId == 0)
+        {
+            return PartialView(Models.Entities.User.currentUser.followings?.ToList());
+        }
+        var followingList = OurDbContext.context.users
+            .FirstOrDefault(u => u.userId == userId)?
+            .followings?.ToList();
+        return PartialView(followingList);
+    }
+
     [HttpPost]
     public ActionResult ConfirmEditImage(int imageId, string imageUrl)
     {
@@ -73,16 +97,23 @@ public class ProfileController : Controller
     [HttpPost]
     public ActionResult FollowDirectly(int userId)
     {
+        var followState = false;
         var userToFollow = OurDbContext.context.users.FirstOrDefault(u => u.userId == userId);
         if (userToFollow.followers.Contains(Models.Entities.User.currentUser))
         {
             userToFollow.followers.Remove(Models.Entities.User.currentUser);
+            followState = false;
         }
         else
         {
             userToFollow.followers.Add(Models.Entities.User.currentUser);
+            followState = true;
         }
         OurDbContext.context.SaveChangesAsync();
-        return Json(Models.Entities.User.currentUser.followings?.Count);
+        return Json(new
+        {
+            cnt = Models.Entities.User.currentUser.followings?.Count,
+            following = followState
+        });
     }
 }

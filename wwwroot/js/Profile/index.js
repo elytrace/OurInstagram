@@ -78,31 +78,44 @@ function loadingImages(imageArray) {
 // follow or unfollow other people
 function changeFollowState(labelFollow, labelUnfollow) {
     if(labelFollow.classList.contains("show")) {
-        labelFollow.classList.remove("show");
-        labelUnfollow.classList.remove("hide");
+        if(confirm("Unfollow this account")) {
+            labelFollow.classList.remove("show");
+            labelUnfollow.classList.remove("hide");
 
-        labelFollow.classList.add("hide");
-        labelUnfollow.classList.add("show");
+            labelFollow.classList.add("hide");
+            labelUnfollow.classList.add("show");
+            return true;
+        }
+        else return false;
     }
     else {
-        labelFollow.classList.remove("hide");
-        labelUnfollow.classList.remove("show");
+        // if(confirm("Follow this account")) {
+            labelFollow.classList.remove("hide");
+            labelUnfollow.classList.remove("show");
 
-        labelFollow.classList.add("show");
-        labelUnfollow.classList.add("hide");
+            labelFollow.classList.add("show");
+            labelUnfollow.classList.add("hide");
+            return true;
+        // }
+        // return false;
     }
 }
 
-// let navbar = document.querySelector(".navbar");
-// let main = document.querySelector("main");
 let followerPanel = document.querySelector(".follower_panel");
 let followingPanel = document.querySelector(".following_panel");
-let followPopup = document.querySelector(".follow_popup");
 function displayFollowPanel(type, userId) {
     navbar.classList.add("blur");
     main.classList.add("blur");
-    if(type === 1) followerPanel.classList.add("show_popup");
-    if(type === 2) followingPanel.classList.add("show_popup");
+    if(type === 1) {
+        followerPanel.classList.add("show_popup");
+        let url = "Profile/FollowerPanel";
+        $(".follower_panel").load(url, { userId: userId });
+    }
+    if(type === 2) {
+        followingPanel.classList.add("show_popup");
+        let url = "Profile/FollowingPanel";
+        $(".following_panel").load(url, { userId: userId });
+    }
 }
 
 function closeFollowPopup() {
@@ -115,11 +128,3 @@ function closeFollowPopup() {
         followingPanel.classList.remove("show_popup");
     }
 }
-
-document.addEventListener("click", e => {
-   if(!imageShowing && !followPopup.contains(e.target)
-       && !document.querySelector(".total_followers").contains(e.target)
-       && !document.querySelector(".total_followings").contains(e.target)) {
-       closeFollowPopup();
-   }
-});
