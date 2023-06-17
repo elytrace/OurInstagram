@@ -25,7 +25,7 @@ body {
     /*dimension*/
     min-width: 350px;
     width: 60%;
-    height: 80%;
+    height: 90%;
     border-radius: 40px;
     background-color: var(--Color1);
     outline-style: groove;
