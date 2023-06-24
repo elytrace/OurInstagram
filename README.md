@@ -10,7 +10,7 @@
 <p align="center"></p>
 
 <p align="center">
-	<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png" width = "150px" height = "auto">
+	<img src="https://res.cloudinary.com/dy7yri3d9/image/upload/v1687612752/pinsta_logo_sk9ood.png" width = "150px" height = "auto">
 </p>
 
 <p align="center">
