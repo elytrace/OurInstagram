@@ -21,6 +21,7 @@
 </p>
 
 ## Team members
+* A25962 Lê Đức Trung
 * A38659 Phạm Trung Nguyên
 * A38861 Đặng Huyền Trang
 * A40807 Đoàn Tuấn Khang
