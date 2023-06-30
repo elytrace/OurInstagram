@@ -43,7 +43,8 @@ public class NavBarController : Controller
     [HttpPost]
     public ActionResult DisplayImage(int imageId)
     {
-        var image = OurDbContext.context.images.FirstOrDefault(image => image.imageId == imageId);
+        using var context = new OurDbContext();
+        var image = context.images.FirstOrDefault(image => image.imageId == imageId);
         image.isLiked = image.likes.Select(like => like.userId).Contains(Models.Entities.User.currentUser.userId);
         return PartialView(image);
     }
@@ -51,7 +52,8 @@ public class NavBarController : Controller
     [HttpPost]
     public ActionResult LikeImage(int imageId)
     {
-        var image = OurDbContext.context.images.FirstOrDefault(image => image.imageId == imageId);
+        using var context = new OurDbContext();
+        var image = context.images.FirstOrDefault(image => image.imageId == imageId);
         if (!image.isLiked)
         {
             image.likes.Add(new Like
@@ -67,7 +69,7 @@ public class NavBarController : Controller
             if (itemToRemove != null) image.likes.Remove(itemToRemove);
         }
         image.isLiked = !image.isLiked;
-        OurDbContext.context.SaveChangesAsync();
+        context.SaveChangesAsync();
         
         return Json(image.likes.Count);
     }
@@ -75,7 +77,8 @@ public class NavBarController : Controller
     [HttpPost]
     public ActionResult CommentImage(string comment, int imageId)
     {
-        var image = OurDbContext.context.images.FirstOrDefault(image => image.imageId == imageId);
+        using var context = new OurDbContext();
+        var image = context.images.FirstOrDefault(image => image.imageId == imageId);
         var newComment = new Comment
         {
             imageId = imageId,
@@ -84,7 +87,7 @@ public class NavBarController : Controller
             timeStamp = DateTime.Now
         };
         image.comments.Add(newComment);
-        OurDbContext.context.SaveChangesAsync();
+        context.SaveChangesAsync();
         
         return Json(image.comments.Count);
     }
@@ -92,10 +95,11 @@ public class NavBarController : Controller
     [HttpPost]
     public ActionResult DeleteImage(int imageId)
     {
-        var imageToDelete = OurDbContext.context.images.FirstOrDefault(image => image.imageId == imageId);
+        using var context = new OurDbContext();
+        var imageToDelete = context.images.FirstOrDefault(image => image.imageId == imageId);
         Models.Entities.User.currentUser.images.Remove(imageToDelete);
-        OurDbContext.context.Remove(imageToDelete);
-        OurDbContext.context.SaveChangesAsync();
+        context.Remove(imageToDelete);
+        context.SaveChangesAsync();
         
         // return RedirectToAction("Index", "Profile", new { Models.Entities.User.currentUser.username });
         return Json(new

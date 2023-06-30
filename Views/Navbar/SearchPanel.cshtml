@@ -13,9 +13,10 @@
             <div class="recent_list">
                 
                 @{
+                    await using var context = new OurDbContext();
                     if (Model != null)
                     {
-                        foreach (var item in Model.Select(result => OurDbContext.context.users.FirstOrDefault(u => u.userId == result.resultId)))
+                        foreach (var item in Model.Select(result => context.users.FirstOrDefault(u => u.userId == result.resultId)))
                         {
                             <a class="recent_item" href="@Url.Action("Index", "Profile", new { item.username })">
                                 <img class="avatar" src="@item.avatarPath" alt=""/>
@@ -31,12 +32,13 @@
             <div class="result_list"></div>
         </div> 
     </div>
-    
-    <script>
-        accountList = @Html.Raw(JsonConvert.SerializeObject(
-                          OurDbContext.context.users.Select(u => new { 
-                              u.username, u.avatarPath, u.displayedName
-                          })
-                      ));
-    </script>
+   @{
+        <script>
+            accountList = @Html.Raw(JsonConvert.SerializeObject(
+                              context.users.Select(u => new { 
+                                  u.username, u.avatarPath, u.displayedName
+                              })
+                              ));
+        </script>
+    }
 </div>

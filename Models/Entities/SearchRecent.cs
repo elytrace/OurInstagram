@@ -12,6 +12,7 @@ public class SearchRecent
     public int searchId { get; set; }
     // who search?
     public int userId { get; set; }
+    public User user { get; set; }
     // search who?
     public int resultId { get; set; }
     

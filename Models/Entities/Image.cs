@@ -8,9 +8,8 @@ public class Image
 {
     public Image()
     {
-        likes = new List<Like>();
-        comments = new List<Comment>();
-        guid = Guid.NewGuid();
+        likes = new HashSet<Like>();
+        comments = new HashSet<Comment>();
     }
 
     [Key]
@@ -29,13 +28,10 @@ public class Image
     // owner
     [ForeignKey("userId")]
     public int userId { get; set; }
-    [NotMapped]
     public User user { get; set; }
     public virtual ICollection<Like> likes { get; set; }
     public virtual ICollection<Comment> comments { get; set; }
     
     [NotMapped]
     public bool isLiked { get; set; }
-    
-    public Guid guid { get; set; }
 }

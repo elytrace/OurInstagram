@@ -6,6 +6,16 @@ namespace Pinsta.Models.Entities;
 [Table("users")]
 public class User
 {
+    public User()
+    {
+        images = new HashSet<Image>();
+        followers = new HashSet<User>();
+        followings = new HashSet<User>();
+        likes = new HashSet<Like>();
+        comments = new HashSet<Comment>();
+        searchs = new HashSet<SearchRecent>();
+    }
+
     [NotMapped]
     public static User currentUser = new User();
 

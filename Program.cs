@@ -1,5 +1,6 @@
 using CloudinaryDotNet;
 using dotenv.net;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using Pinsta.Models;
 
@@ -13,6 +14,7 @@ JsonConvert.DefaultSettings = () => new JsonSerializerSettings {
 
 // Cloudinary credentials
 DotEnv.Load(options: new DotEnvOptions(probeForEnv: true));
+Console.WriteLine(Environment.GetEnvironmentVariable("CLOUDINARY_URL"));
 Cloudinary cloudinary = new Cloudinary(Environment.GetEnvironmentVariable("CLOUDINARY_URL"));
 cloudinary.Api.Secure = true;
 
@@ -23,9 +25,11 @@ cloudinary.Api.Secure = true;
 //     )
 // ));
 
-OurDbContext.DeleteDatabase().Wait();
+builder.Services.AddDbContext<OurDbContext>(ServiceLifetime.Transient, ServiceLifetime.Transient);
+
+ OurDbContext.DeleteDatabase().Wait();
 OurDbContext.CreateDatabase().Wait();
-OurDbContext.InsertSampleData().Wait();
+ OurDbContext.InsertSampleData().Wait();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();

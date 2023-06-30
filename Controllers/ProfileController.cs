@@ -23,17 +23,19 @@ public class ProfileController : Controller
 
     public IActionResult Index(string username)
     {
-        var user = OurDbContext.context.users.FirstOrDefault(u => u.username == username);
+        using var context = new OurDbContext();
+        var user = context.users.FirstOrDefault(u => u.username == username);
         return View(user);
     }
 
     public ActionResult FollowerPanel(int userId = 0)
     {
+        using var context = new OurDbContext();
         if (userId == 0)
         {
             return PartialView(Models.Entities.User.currentUser.followers?.ToList());
         }
-        var followerList = OurDbContext.context.users
+        var followerList = context.users
             .FirstOrDefault(u => u.userId == userId)?
             .followers?.ToList();
         return PartialView(followerList);
@@ -41,11 +43,12 @@ public class ProfileController : Controller
     
     public ActionResult FollowingPanel(int userId = 0)
     {
+        using var context = new OurDbContext();
         if (userId == 0)
         {
             return PartialView(Models.Entities.User.currentUser.followings?.ToList());
         }
-        var followingList = OurDbContext.context.users
+        var followingList = context.users
             .FirstOrDefault(u => u.userId == userId)?
             .followings?.ToList();
         return PartialView(followingList);
@@ -54,6 +57,7 @@ public class ProfileController : Controller
     [HttpPost]
     public ActionResult ConfirmEditImage(int imageId, string imageUrl)
     {
+        using var context = new OurDbContext();
         var uploadParams = new ImageUploadParams
         {
             File = new FileDescription(imageUrl)
@@ -66,22 +70,23 @@ public class ProfileController : Controller
         }
         else if (imageId == -2)
         {
-            OurDbContext.UploadImage(uploadResult.SecureUrl.ToString(), Models.Entities.User.currentUser.userId);
+            context.UploadImage(uploadResult.SecureUrl.ToString(), Models.Entities.User.currentUser.userId, context);
         }
         else
         {
-            OurDbContext.context.images
+            context.images
                 .FirstOrDefault(i => i.imageId == imageId)!.imagePath = uploadResult.SecureUrl.ToString();
         }
 
-        OurDbContext.context.SaveChangesAsync();
+        context.SaveChangesAsync();
         return Json(uploadResult.SecureUrl.ToString());
     }
 
     [HttpPost]
     public ActionResult Follow(int userId)
     {
-        var userToFollow = OurDbContext.context.users.FirstOrDefault(u => u.userId == userId);
+        using var context = new OurDbContext();
+        var userToFollow = context.users.FirstOrDefault(u => u.userId == userId);
         if (userToFollow.followers.Contains(Models.Entities.User.currentUser))
         {
             userToFollow.followers.Remove(Models.Entities.User.currentUser);
@@ -90,15 +95,16 @@ public class ProfileController : Controller
         {
             userToFollow.followers.Add(Models.Entities.User.currentUser);
         }
-        OurDbContext.context.SaveChangesAsync();
+        context.SaveChangesAsync();
         return Json(userToFollow.followers.Count);
     }
     
     [HttpPost]
     public ActionResult FollowDirectly(int userId)
     {
+        using var context = new OurDbContext();
         var followState = false;
-        var userToFollow = OurDbContext.context.users.FirstOrDefault(u => u.userId == userId);
+        var userToFollow = context.users.FirstOrDefault(u => u.userId == userId);
         if (userToFollow.followers.Contains(Models.Entities.User.currentUser))
         {
             userToFollow.followers.Remove(Models.Entities.User.currentUser);
@@ -109,7 +115,7 @@ public class ProfileController : Controller
             userToFollow.followers.Add(Models.Entities.User.currentUser);
             followState = true;
         }
-        OurDbContext.context.SaveChangesAsync();
+        context.SaveChangesAsync();
         return Json(new
         {
             cnt = Models.Entities.User.currentUser.followings?.Count,

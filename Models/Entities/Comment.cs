@@ -13,12 +13,10 @@ public class Comment
     [StringLength(500)]
     public string? comment { get; set; }
     public int userId { get; set; }
-    // [ForeignKey("userId")]
-    // public User user { get; set; }
+    public User user { get; set; }
     
     public int imageId { get; set; }
-    // [ForeignKey("imageId")]
-    // public Image image { get; set; }
+    public Image image { get; set; }
 
     [DataType(DataType.DateTime)]
     public DateTime timeStamp { get; set; }

@@ -19,8 +19,9 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+        using var context = new OurDbContext();
         var followings = Models.Entities.User.currentUser.followings.Select(user => user.userId);
-        var imageList = OurDbContext.context.images
+        var imageList = context.images
             .Where(user => followings.Contains(user.userId)).ToList();
         
         return View(imageList);
@@ -29,13 +30,14 @@ public class HomeController : Controller
     [HttpPost]
     public ActionResult UploadImage(string imageURL)
     {
+        using var context = new OurDbContext();
         var uploadParams = new ImageUploadParams
         {
             File = new FileDescription(imageURL)
         };
         var uploadResult = new Cloudinary().Upload(uploadParams);
         Console.WriteLine("Upload OK. Result: " + uploadResult.JsonObj);
-        OurDbContext.UploadImage(uploadResult.SecureUrl.ToString(), Models.Entities.User.currentUser.userId);
+        context.UploadImage(uploadResult.SecureUrl.ToString(), Models.Entities.User.currentUser.userId, context);
         return View("Index");
     }
 

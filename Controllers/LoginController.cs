@@ -35,12 +35,13 @@ public class LoginController : Controller
     [HttpPost]
     public ActionResult Login(LoginModel model)
     {
+        using var context = new OurDbContext();
         model.SignupInput = null;
         ModelState["Signup Error"]?.Errors.Clear();
 
         if (ModelState.IsValid)
         {
-            var status = OurDbContext.ValidateLogin(model.LoginInput.Username, model.LoginInput.Password);
+            var status = context.ValidateLogin(model.LoginInput.Username, model.LoginInput.Password, context);
             if (status == LoginState.LOGIN_SUCCESS)
                 return RedirectToAction("Index", "Home");
             if (status == LoginState.WRONG_PASSWORD)
@@ -60,15 +61,16 @@ public class LoginController : Controller
     [HttpPost]
     public ActionResult Signup(LoginModel model)
     {
+        using var context = new OurDbContext();
         model.LoginInput = null;
         ModelState["Login Error"]?.Errors.Clear();
         
         if (ModelState.IsValid)
         {
-            var status = OurDbContext.ValidateSignup(model.SignupInput.Username, model.SignupInput.Password, model.SignupInput.ConfirmPassword);
+            var status = context.ValidateSignup(model.SignupInput.Username, model.SignupInput.Password, model.SignupInput.ConfirmPassword, context);
             if (status == LoginState.SIGNUP_SUCCESS)
             {
-                OurDbContext.CreateNewUser(model.SignupInput.Username, model.SignupInput.Password);
+                context.CreateNewUser(model.SignupInput.Username, model.SignupInput.Password, context);
                 return RedirectToAction("Index", "Home");
             }
             if (status == LoginState.USERNAME_EXISTED)

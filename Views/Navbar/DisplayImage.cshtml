@@ -72,9 +72,10 @@
         </div>
         <div class="comment_list">
             @{
+                await using var context = new OurDbContext();
                 foreach (var comment in Model.comments.OrderByDescending(c => c.timeStamp))
                 {
-                    var user = OurDbContext.context.users.FirstOrDefault(u => u.userId == comment.userId);
+                    var user = context.users.FirstOrDefault(u => u.userId == comment.userId);
                     <div class="comment_item">
                         <a class="avatar_link" href="@Url.Action("Index", "Profile", new { user.username })">
                             <div class="owner_avatar"

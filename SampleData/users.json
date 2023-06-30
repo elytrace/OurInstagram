@@ -1,5 +1,6 @@
 [
   {
+    "userId": 1,
     "username": "hieuhc",
     "password": "171114",
     "email": "hieuhc@gmail.com",
@@ -11,6 +12,7 @@
     "displayedName": "Chí Hiếu"
   },
   {
+    "userId": 2,
     "username": "trangdh",
     "password": "110402",
     "email": "trangdh@gmail.com",
@@ -22,6 +24,7 @@
     "displayedName": "Đặng Trang"
   },
   {
+    "userId": 3,
     "username": "nguyenpt",
     "password": "123",
     "email": "nguyenpt@gmail.com",
@@ -33,6 +36,7 @@
     "displayedName": "Phạm Nguyên"
   },
   {
+    "userId": 4,
     "username": "khangdt",
     "password": "123",
     "email": "khangdt@gmail.com",
@@ -44,6 +48,7 @@
     "displayedName": "Tuấn Khang"
   },
   {
+    "userId": 5,
     "username": "hiepdn",
     "password": "123",
     "email": "hiepdn@gmail.com",
@@ -55,6 +60,7 @@
     "displayedName": "Hiệp Đỗ"
   },
   {
+    "userId": 6,
     "username": "anhntl",
     "password": "123",
     "email": "anhntl@gmail.com",
@@ -66,6 +72,7 @@
     "displayedName": "Lan Anh"
   },
   {
+    "userId": 7,
     "username": "nhattl",
     "password": "123",
     "email": "nhattl@gmail.com",
@@ -77,6 +84,7 @@
     "displayedName": "Long Nhật"
   },
   {
+    "userId": 8,
     "username": "hieunh",
     "password": "123",
     "email": "hieunh@gmail.com",
@@ -88,6 +96,7 @@
     "displayedName": "Hữu Hiếu"
   },
   {
+    "userId": 9,
     "username": "sontt",
     "password": "123",
     "email": "sontt@gmail.com",
@@ -99,6 +108,7 @@
     "displayedName": "Thanh Sơn"
   },
   {
+    "userId": 10,
     "username": "minhtd",
     "password": "123",
     "email": "minhtd@gmail.com",
@@ -110,6 +120,7 @@
     "displayedName": "Đức Minh"
   },
   {
+    "userId": 11,
     "username": "trungld",
     "password": "123",
     "email": "trungld@gmail.com",
@@ -121,6 +132,7 @@
     "displayedName": "Đức Trung"
   },
   {
+    "userId": 12,
     "username": "manhmv",
     "password": "123",
     "email": "manhmv@gmail.com",
@@ -132,6 +144,7 @@
     "displayedName": "Mai Mạnh"
   },
   {
+    "userId": 13,
     "username": "anhnhd",
     "password": "123",
     "email": "anhnhd@gmail.com",
@@ -143,6 +156,7 @@
     "displayedName": "Dục Ân"
   },
   {
+    "userId": 14,
     "username": "dungvt",
     "password": "123",
     "email": "dungvt@gmail.com",
@@ -154,6 +168,7 @@
     "displayedName": "Tiến Dũng"
   },
   {
+    "userId": 15,
     "username": "hungpt",
     "password": "123",
     "email": "hungpt@gmail.com",
@@ -165,6 +180,7 @@
     "displayedName": "Tuấn Hưng"
   },
   {
+    "userId": 16,
     "username": "dongnd",
     "password": "123",
     "email": "dongnd@gmail.com",
