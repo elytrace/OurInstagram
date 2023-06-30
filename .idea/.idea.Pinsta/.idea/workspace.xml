@@ -25,22 +25,22 @@
       <change beforePath="$PROJECT_DIR$/Controllers/LoginController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/LoginController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controllers/NavBarController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/NavBarController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controllers/ProfileController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/ProfileController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HDSD/HDSD_Pinsta.fbd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HDSD/HDSD_Pinsta.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HDSD/HDSD_Pinsta.pcmx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HDSD/HDSD_Pinsta.toc" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Models/Entities/Comment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Entities/Comment.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Models/Entities/Image.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Entities/Image.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Models/Entities/Like.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Entities/Like.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Models/Entities/SearchRecent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Entities/SearchRecent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Entities/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Entities/User.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Models/OurDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/OurDbContext.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pinsta.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Pinsta.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Properties/launchSettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SampleData/images.json" beforeDir="false" afterPath="$PROJECT_DIR$/SampleData/images.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Properties/ServiceDependencies/Pinsta - Zip Deploy/profile.arm.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/SampleData/users.json" beforeDir="false" afterPath="$PROJECT_DIR$/SampleData/users.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/Navbar/DisplayImage.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Navbar/DisplayImage.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/Navbar/SearchPanel.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Navbar/SearchPanel.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/global.json" beforeDir="false" afterPath="$PROJECT_DIR$/global.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wwwroot/css/Home/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/wwwroot/css/Home/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,13 +53,28 @@
         <option value="MsDeployPackage" />
         <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JSON File" />
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RESET_MODE" value="HARD" />
+  </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c3f347194c2ded55dfd0195cb3b785a32b1818de597af373e3d64d4c1605b8a/DbContextOptionsBuilder.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/653f676cb8a24da9a57f814cb4a726864ee00/07/90fdee62/Cloudinary.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f5e45d44574348649068861fbb4edf421906600/18/13157e6d/BaseDirHelper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f5e45d44574348649068861fbb4edf421906600/ca/563d1923/MySqlServer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/598be7b76329747735b1e8e8b423ca7a2fff54b0a9474b23f1e0f920a889444d/RazorView.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5e2bd0914ab527b3e9796d2314dc186883fed605fe36b6413f761da5937d/UrlHelperExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/787371443d916adb03d52e881bdc7cffdbb27868633048a39c4280f564d2d8/GoogleExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/794bcfedceb3c6d957fbddf0e1c9a04afca77f9b5470c6859466cfba35e1ddb1/Task.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7d9a41d47547e1fe7fe548b21ab4de12cc2671170a023bc8c629017837eb5f4/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9636e4aaa3a7c848bf8fa34f53f6dbe2a30426b9db159372d6d29aba3e9785f/GoogleOptions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/974fa14c57bab8fe29f1bddd39b1a6548b9cc8cf9e0ef5e670c2407a56d9/String.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c6ecd37839cf234019749482ed6ffa34c835430d549605fffeb2ff132a1e/TagHelperExecutionContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c9ca552eea9bb8fababbf1cd3f981cf68849ccc365dcca5627376f98e505c74/ControllerActionInvoker.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f9749fe3576a687c3c42f3794cefe8f8d91e62f939c66c0a32dbb3f74255/ManualResetEventSlim.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d555b6bc78df652895d9bf368762f415ad13deb21ca2dc977dd48593f46e2/RazorPageBase.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e3bc3f84cc248cc742fc1c5f56a7727d2febed13ab281104470f728796baac5/RazorPage.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Properties/launchSettings.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/package-lock.json" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/wwwroot/lib/fullpage/dist/fullpage.min.css.map" root0="FORCE_HIGHLIGHTING" />
@@ -115,6 +130,7 @@
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
+      <browser name="37cae5b9-e8b2-4949-9172-aafa37fbc09c" />
       <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
       <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
       <option name="SEND_DEBUG_REQUEST" value="1" />

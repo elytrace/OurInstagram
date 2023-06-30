@@ -28,7 +28,7 @@ public class Image
     // owner
     [ForeignKey("userId")]
     public int userId { get; set; }
-    public User user { get; set; }
+    public virtual User user { get; set; }
     public virtual ICollection<Like> likes { get; set; }
     public virtual ICollection<Comment> comments { get; set; }
     

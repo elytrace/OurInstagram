@@ -11,10 +11,10 @@ public class Like
     public int likeId { get; set; }
     
     public int userId { get; set; }
-    public User user { get; set; }
+    public virtual User user { get; set; }
     
     public int imageId { get; set; }
-    public Image image { get; set; }
+    public virtual Image image { get; set; }
     
     [DataType(DataType.DateTime)]
     public DateTime timeStamp { get; set; }

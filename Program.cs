@@ -15,7 +15,7 @@ JsonConvert.DefaultSettings = () => new JsonSerializerSettings {
 // Cloudinary credentials
 DotEnv.Load(options: new DotEnvOptions(probeForEnv: true));
 Console.WriteLine(Environment.GetEnvironmentVariable("CLOUDINARY_URL"));
-Cloudinary cloudinary = new Cloudinary(Environment.GetEnvironmentVariable("CLOUDINARY_URL"));
+Cloudinary cloudinary = new Cloudinary("cloudinary://118591439573672:d6Me8w-RoHBAhA6lDUTmUnEaKcU@dy7yri3d9");
 cloudinary.Api.Secure = true;
 
 // Database
@@ -25,11 +25,22 @@ cloudinary.Api.Secure = true;
 //     )
 // ));
 
-builder.Services.AddDbContext<OurDbContext>(ServiceLifetime.Transient, ServiceLifetime.Transient);
+builder.Services.AddDbContext<OurDbContext>(
+     // {
+     //     options.UseMySQL(
+     //         builder.Configuration.GetConnectionString("DefaultConnection"),
+     //         mySqlOptions => mySqlOptions.EnableRetryOnFailure(
+     //             maxRetryCount: 10,
+     //             maxRetryDelay: TimeSpan.FromSeconds(30),
+     //             errorNumbersToAdd: null
+     //         ).CommandTimeout(120)
+     //     );
+     // },
+ServiceLifetime.Transient, ServiceLifetime.Transient);
 
- OurDbContext.DeleteDatabase().Wait();
-OurDbContext.CreateDatabase().Wait();
- OurDbContext.InsertSampleData().Wait();
+//OurDbContext.context.DeleteDatabase().Wait();
+OurDbContext.context.CreateDatabase().Wait();
+//OurDbContext.context.InsertSampleData().Wait();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
