@@ -38,10 +38,12 @@
 * Backend: C#
 
 ## Getting Started
+<br>
 1. Tải thư mục Project hoặc Clone Project
 ````
 https://github.com/elytrace/Pinsta.git
 ````
+<br>
 2. Tải <a href="https://www.apachefriends.org/download.html">XAMPP</a> bản mới nhất, sau đó cài đặt và bật <strong>XAMPP Control Panel</strong>.
 <br><br>
 3. Start <strong>Apache</strong> và <strong>MySQL</strong>.
