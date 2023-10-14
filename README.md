@@ -47,14 +47,9 @@ https://github.com/elytrace/Pinsta.git
 3. Start <strong>Apache</strong> và <strong>MySQL</strong>.
 <img src="Readme_Materials/xampp.png">
 <br><br>
-4. Nếu ko bật được 1 trong 2 Module trên thì chọn <em>Apache -> Config -> Apache (httpd.conf) -> Đổi các cổng 80 thành cổng khác.</em> Ví dụ:
-````
-#Listen 12.34.56.78:8080
-Listen 8080
-````
-5. Cài đặt 1 trong 2 IDE <a href="https://visualstudio.microsoft.com/vs/community/">Visual Studio</a> hoặc <a href="https://www.jetbrains.com/rider/">Jetbrains Rider</a>.
+4. Cài đặt 1 trong 2 IDE <a href="https://visualstudio.microsoft.com/vs/community/">Visual Studio</a> hoặc <a href="https://www.jetbrains.com/rider/">Jetbrains Rider</a>.
 <br><br>
-6. Mở Project bằng cách chọn file <strong>.sln</strong> trong cây thư mục:<br>
+5. Mở Project bằng cách chọn file <strong>.sln</strong> trong cây thư mục:<br>
 ````
 Pinsta.sln
 ````
