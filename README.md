@@ -38,7 +38,7 @@
 * Backend: C#
 
 ## Getting Started
-<br>
+
 1. Tải thư mục Project hoặc Clone Project
 ````
 https://github.com/elytrace/Pinsta.git
