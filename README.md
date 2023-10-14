@@ -49,13 +49,9 @@ https://github.com/elytrace/Pinsta.git
 <br><br>
 4. Cài đặt 1 trong 2 IDE <a href="https://visualstudio.microsoft.com/vs/community/">Visual Studio</a> hoặc <a href="https://www.jetbrains.com/rider/">Jetbrains Rider</a>.
 <br><br>
-5. Mở Project bằng cách chọn file <strong>.sln</strong> trong cây thư mục:<br>
-````
-Pinsta.sln
-````
-
+5. Mở Project bằng cách chọn file <strong>Pinsta.sln</strong> trong cây thư mục:<br>
 <strong>Lưu ý:</strong>
 <br>
 Nếu sử dụng <strong>Visual Studio</strong> thì thay đổi <strong>.Net SDK Version</strong> thành 7.0.0 trong file <strong>global.json</strong>.
-7. Ở góc trên màn hình, thay đổi <strong>Run Configuration</strong> thành <strong>IIS Express</strong> sau đó <strong>Run</strong>.
+6. Ở góc trên màn hình, thay đổi <strong>Run Configuration</strong> thành <strong>IIS Express</strong> sau đó <strong>Run</strong>.
 <img src="Readme_Materials/configuration.png">
