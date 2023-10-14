@@ -53,6 +53,7 @@ https://github.com/elytrace/Pinsta.git
 ````
 Pinsta.sln
 ````
+
 <strong>Lưu ý:</strong>
 <br>
 Nếu sử dụng <strong>Visual Studio</strong> thì thay đổi <strong>.Net SDK Version</strong> thành 7.0.0 trong file <strong>global.json</strong>.
