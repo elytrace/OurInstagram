@@ -43,16 +43,16 @@
 https://github.com/elytrace/Pinsta.git
 ````
 2. Tải <a href="https://www.apachefriends.org/download.html">XAMPP</a> bản mới nhất, sau đó cài đặt và bật <strong>XAMPP Control Panel</strong>.
-<br>
+<br><br>
 3. Start <strong>Apache</strong> và <strong>MySQL</strong>.
 <img src="Readme_Materials/xampp.png">
-<br>
+<br><br>
 4. Cài đặt 1 trong 2 IDE <a href="https://visualstudio.microsoft.com/vs/community/">Visual Studio</a> hoặc <a href="https://www.jetbrains.com/rider/">Jetbrains Rider</a>.
-<br>
+<br><br>
 5. Mở Project bằng cách chọn file <strong>Pinsta.sln</strong> trong cây thư mục:<br>
 <strong>Lưu ý:</strong>
 <br>
 Nếu sử dụng <strong>Visual Studio</strong> thì thay đổi <strong>.Net SDK Version</strong> thành 7.0.0 trong file <strong>global.json</strong>.
-<br>
+<br><br>
 6. Ở góc trên màn hình, thay đổi <strong>Run Configuration</strong> thành <strong>IIS Express</strong> sau đó <strong>Run</strong>.
 <img src="Readme_Materials/configuration.png">
